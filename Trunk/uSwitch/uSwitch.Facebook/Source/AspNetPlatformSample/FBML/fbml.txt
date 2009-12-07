@@ -1,0 +1,35 @@
+Instructions for configuring fbml sample canvas application.
+
+1) Request a new developer api key from http://www.facebook.com/developers/
+2) Configure the following fields.  The values here are the values used by the sample, you can replace with your own values.
+- Callback URL: http://facebook.claritycon.com/FBML/ (this should be a page you host yourself)
+- Canvas Page URL : aspnetcanvasfbml
+- Use IFRAME: false; Use FBML: true
+- Application Type: Website
+- Can your application be added on facebook: yes
+- Post-Add URL: http://apps.facebook.com/aspnetcanvasfbml  (same as canvas page)
+- Default Profile Box: Wide
+- Side Nav URL: http://apps.facebook.com/aspnetcanvasfbml (same as canvas page)
+3) Create new asp.net website in Visual Studio
+4) Add reference to Facebook.dll
+5) Add reference to Facebook.WebControls.dll
+6) Update codebehind (Default.aspx.cs) on Default.aspx to subclass Facebook.WebControls.CanvasIFrameBasePage
+using Facebook;
+using Facebook.WebControls;
+
+public partial class _Default : CanvasIFrameBasePage 
+7) Add code to set API key, secret (Make sure to use your own api key and secret acquired during step 2
+8) Add code to call base.Page_Loaded
+    private const string FACEBOOK_API_KEY = "c559128010f3edee33796fd4205361c2";
+    private const string FACEBOOK_SECRET = "85887d1c9a8334e5059742468a5400ee";
+    new protected void Page_Load(object sender, EventArgs e)
+    {
+        base.Api = FACEBOOK_API_KEY;
+        base.Secret = FACEBOOK_SECRET;
+        base.Page_Load(sender, e);
+9) Add code to use FacebookService to invoke API calls on behalf of the logged in user.
+
+
+NOTES- If you do not require users to login to your app.  You can login yourself one time, set infinite session checkbox to true
+and then capture the resulting sessionKey and userId.  You can then add sets for those 2 properties in addition to API and Secret.
+

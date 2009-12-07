@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveNation.Selenium.Domain", "LiveNation.Selenium.Domain\LiveNation.Selenium.Domain.csproj", "{E5DFDDDA-A1C7-40B2-B5E1-45AA492F37C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveNation.Selenium.Domain.UnitTests", "LiveNation.Selenium.Domain.UnitTests\LiveNation.Selenium.Domain.UnitTests.csproj", "{EE444F59-2598-4C1E-903A-10A47304CDCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveNation.Selenium.Console", "LiveNation.Selenium.Console\LiveNation.Selenium.Console.csproj", "{5597F100-7B3E-4EEB-8FD1-9D2F7D25D45F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveNation.Selenium.SmokeTest", "LiveNation.Selenium.SmokeTest\LiveNation.Selenium.SmokeTest.csproj", "{F02C5496-C52C-49CB-8841-4E228552CEF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SeleniumTests", "SeleniumTests", "{5F111394-48D9-414C-9017-5ED618F6914F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{96FE4A78-7975-44B7-A478-057F94E61290}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E86F096F-C43F-4452-8AB9-0FB5C99AE323}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5DFDDDA-A1C7-40B2-B5E1-45AA492F37C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5DFDDDA-A1C7-40B2-B5E1-45AA492F37C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5DFDDDA-A1C7-40B2-B5E1-45AA492F37C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5DFDDDA-A1C7-40B2-B5E1-45AA492F37C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE444F59-2598-4C1E-903A-10A47304CDCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE444F59-2598-4C1E-903A-10A47304CDCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE444F59-2598-4C1E-903A-10A47304CDCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE444F59-2598-4C1E-903A-10A47304CDCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5597F100-7B3E-4EEB-8FD1-9D2F7D25D45F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5597F100-7B3E-4EEB-8FD1-9D2F7D25D45F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5597F100-7B3E-4EEB-8FD1-9D2F7D25D45F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5597F100-7B3E-4EEB-8FD1-9D2F7D25D45F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F02C5496-C52C-49CB-8841-4E228552CEF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F02C5496-C52C-49CB-8841-4E228552CEF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F02C5496-C52C-49CB-8841-4E228552CEF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F02C5496-C52C-49CB-8841-4E228552CEF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F02C5496-C52C-49CB-8841-4E228552CEF4} = {5F111394-48D9-414C-9017-5ED618F6914F}
+		{E5DFDDDA-A1C7-40B2-B5E1-45AA492F37C1} = {96FE4A78-7975-44B7-A478-057F94E61290}
+		{5597F100-7B3E-4EEB-8FD1-9D2F7D25D45F} = {96FE4A78-7975-44B7-A478-057F94E61290}
+		{EE444F59-2598-4C1E-903A-10A47304CDCE} = {E86F096F-C43F-4452-8AB9-0FB5C99AE323}
+	EndGlobalSection
+EndGlobal

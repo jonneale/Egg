@@ -1,0 +1,57 @@
+﻿body 
+{
+	font-family: verdana,arial,helvetica,sans-serif; 
+	font-size:small;
+}
+#friendList, #userProfile,#photoAlbum
+{
+	border: solid 1px #ddd;
+    width:180pt;
+    position:absolute;
+    top: 15pt;	
+	background: #f7f7f7;
+	padding-left: 3px;
+}
+
+#friendListItem 
+{
+    padding-bottom:15pt;
+}
+#friendListItem div 
+{
+	font-size:xx-small;
+}
+
+.userProfileLabel 
+{
+	font-weight: bold;
+	padding-right: 3pt;
+}
+.userProfileData 
+{
+	position: absolute;
+	left: 80pt;
+}
+#userProfile 
+{
+	position: absolute;
+	left: 200pt;
+	
+}
+#photoAlbum 
+{
+    width:180pt;
+    top: 15pt;	
+	position: absolute;
+	left: 400pt;
+}
+#photoAlbumHeader, #friendListHeader, #userProfileHeader
+{
+	background-color:#3b5998;
+    color: #ffffff;
+    font-size: 14pt;
+    margin-bottom:3px;
+    margin-left: -3px;
+	
+}
+

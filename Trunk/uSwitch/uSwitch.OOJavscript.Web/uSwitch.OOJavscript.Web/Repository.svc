@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="uSwitch.OOJavaScript.Web.Repository" CodeBehind="Repository.svc.cs" Factory="System.ServiceModel.Activation.WebServiceHostFactory"  %>

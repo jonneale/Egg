@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://facebook.claritycon.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://facebook.claritycon.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://facebook.claritycon.com/">
+      <s:element name="GetFriends">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="api" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="secret" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="session" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFriendsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFriendsResult" type="tns:ArrayOfUserJSON" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUserJSON">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserJSON" nillable="true" type="tns:UserJSON" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserJSON">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Birthday" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProfileUpdateDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Music" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Activities" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Interests" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TVShows" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Movies" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Books" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Quotes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AboutMe" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PictureUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SignificantOtherId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Religion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotesCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WallCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ArrayOfUserJSON" nillable="true" type="tns:ArrayOfUserJSON" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetFriendsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFriends" />
+  </wsdl:message>
+  <wsdl:message name="GetFriendsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFriendsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFriendsHttpGetIn">
+    <wsdl:part name="api" type="s:string" />
+    <wsdl:part name="secret" type="s:string" />
+    <wsdl:part name="session" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFriendsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUserJSON" />
+  </wsdl:message>
+  <wsdl:message name="GetFriendsHttpPostIn">
+    <wsdl:part name="api" type="s:string" />
+    <wsdl:part name="secret" type="s:string" />
+    <wsdl:part name="session" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFriendsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUserJSON" />
+  </wsdl:message>
+  <wsdl:portType name="SilverlightServiceSoap">
+    <wsdl:operation name="GetFriends">
+      <wsdl:input message="tns:GetFriendsSoapIn" />
+      <wsdl:output message="tns:GetFriendsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SilverlightServiceHttpGet">
+    <wsdl:operation name="GetFriends">
+      <wsdl:input message="tns:GetFriendsHttpGetIn" />
+      <wsdl:output message="tns:GetFriendsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SilverlightServiceHttpPost">
+    <wsdl:operation name="GetFriends">
+      <wsdl:input message="tns:GetFriendsHttpPostIn" />
+      <wsdl:output message="tns:GetFriendsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SilverlightServiceSoap" type="tns:SilverlightServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFriends">
+      <soap:operation soapAction="http://facebook.claritycon.com/GetFriends" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SilverlightServiceSoap12" type="tns:SilverlightServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFriends">
+      <soap12:operation soapAction="http://facebook.claritycon.com/GetFriends" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SilverlightServiceHttpGet" type="tns:SilverlightServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetFriends">
+      <http:operation location="/GetFriends" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SilverlightServiceHttpPost" type="tns:SilverlightServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetFriends">
+      <http:operation location="/GetFriends" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SilverlightService">
+    <wsdl:port name="SilverlightServiceSoap" binding="tns:SilverlightServiceSoap">
+      <soap:address location="http://facebook.claritycon.com/SilverlightService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SilverlightServiceSoap12" binding="tns:SilverlightServiceSoap12">
+      <soap12:address location="http://facebook.claritycon.com/SilverlightService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SilverlightServiceHttpGet" binding="tns:SilverlightServiceHttpGet">
+      <http:address location="http://facebook.claritycon.com/SilverlightService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SilverlightServiceHttpPost" binding="tns:SilverlightServiceHttpPost">
+      <http:address location="http://facebook.claritycon.com/SilverlightService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

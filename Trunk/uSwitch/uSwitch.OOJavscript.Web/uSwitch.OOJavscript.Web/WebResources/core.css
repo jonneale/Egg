@@ -1,0 +1,7 @@
+﻿body
+{
+	font-family:Verdana Arial;
+}
+.inputdiv { padding:5px; border:1px solid; margin:2px; }
+
+select { width:150px; }

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="LiveNation.Selenium.SmokeTest\bin\Debug\LiveNation.Selenium.SmokeTest.dll" total="4" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2009-12-02" time="18:37:46">
+  <environment nunit-version="2.5.2.9222" clr-version="2.0.50727.4200" os-version="Microsoft Windows NT 6.0.6002 Service Pack 2" platform="Win32NT" cwd="I:\MemoryStickBackUp\Projects\LiveNation.Selenium" machine-name="UKARGD0120" user="ukjwi04" user-domain="LYV" />
+  <culture-info current-culture="en-GB" current-uiculture="en-US" />
+  <test-suite name="LiveNation.Selenium.SmokeTest\bin\Debug\LiveNation.Selenium.SmokeTest.dll" executed="True" success="False" time="58.016" asserts="0">
+    <results>
+      <test-suite name="LiveNation" executed="True" success="True" time="44.183" asserts="0">
+        <results>
+          <test-suite name="Selenium" executed="True" success="True" time="44.181" asserts="0">
+            <results>
+              <test-suite name="SmokeTest" executed="True" success="True" time="44.179" asserts="0">
+                <results>
+                  <test-suite name="All_events" executed="True" success="True" time="20.004" asserts="0">
+                    <results>
+                      <test-case name="LiveNation.Selenium.SmokeTest.All_events.Browsing_all_events_section_of_website" executed="True" success="True" time="19.731" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="My_live_nation" executed="True" success="True" time="13.920" asserts="0">
+                    <results>
+                      <test-case name="LiveNation.Selenium.SmokeTest.My_live_nation.Login_to_my_live_nation_account" executed="True" success="True" time="13.919" asserts="2" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="Search" executed="True" success="True" time="10.243" asserts="0">
+                    <results>
+                      <test-case name="LiveNation.Selenium.SmokeTest.Search.Search_for_artist_called_clutch_from_homepage" executed="True" success="True" time="10.243" asserts="5" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+      <test-suite name="SeleniumTests" executed="True" success="False" time="13.822" asserts="0">
+        <results>
+          <test-suite name="Buying_dragonforce_tickets" executed="True" success="False" time="13.817" asserts="0">
+            <results>
+              <test-case name="SeleniumTests.Buying_dragonforce_tickets.TheUntitled2Test" executed="True" success="False" time="13.817" asserts="2">
+                <failure>
+                  <message><![CDATA[Selenium.SeleniumException : ERROR: Element artist_event_date not found
+TearDown : NUnit.Framework.AssertionException :   Expected string length 0 but was 37. Strings differ at index 0.
+  Expected: <string.Empty>
+  But was:  "  Expected: True\r\n  But was:  False\r\n"
+  -----------^
+]]></message>
+                  <stack-trace><![CDATA[at Selenium.HttpCommandProcessor.DoCommand(String command, String[] args)
+at Selenium.HttpCommandProcessor.GetString(String commandName, String[] args)
+at Selenium.DefaultSelenium.GetText(String locator)
+at SeleniumTests.Buying_dragonforce_tickets.TheUntitled2Test() in I:\MemoryStickBackUp\Projects\LiveNation.Selenium\LiveNation.Selenium.SmokeTest\Buying_dragonforce_tickets.cs:line 32
+--TearDown
+at LiveNation.Selenium.Domain.SeleniumTestFixture.Teardown() in I:\MemoryStickBackUp\Projects\LiveNation.Selenium\LiveNation.Selenium.Domain\SeleniumTestFixture.cs:line 76
+]]></stack-trace>
+                </failure>
+              </test-case>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

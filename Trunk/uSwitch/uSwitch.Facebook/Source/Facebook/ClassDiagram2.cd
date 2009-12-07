@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Segoe UI" Size="9" />
+  <Class Name="Facebook.Album">
+    <Position X="13.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Album.cs</FileName>
+      <HashCode>AAAgICAAAAAgACAEAAKABBQAAANAAAAEACAAAAEAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Facebook.Errors">
+    <Position X="15" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Errors.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <NestedTypes>
+      <Enum Name="Facebook.Errors.ErrorCodes" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Errors.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+  </Class>
+  <Class Name="Facebook.Event">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Event.cs</FileName>
+      <HashCode>AHUAoCAAIICgASQEAAIAAAQAIACgCIAAESAAhAAIIAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Facebook.EventUser">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EventUser.cs</FileName>
+      <HashCode>ACEAAAAAAAAAAAAAAAAAAAgAIAgAAAAAAAAAAAAAACA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Facebook.Group">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Group.cs</FileName>
+      <HashCode>AFQAqCAAIIGhAQQEAIAAIAQAAABAAIAAMQAAgAAIIAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Facebook.GroupUser">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>GroupUser.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAAAgAAAAAAgAAAgAQAAAIAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Facebook.HigherEducation">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>HigherEducation.cs</FileName>
+      <HashCode>AQAAAAACAAgAAAAAAAACAAAAAAAAAAAAQAkAAAAAACA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Facebook.HigherEducation.SchoolType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>HigherEducation.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+  </Class>
+  <Class Name="Facebook.HighSchool">
+    <Position X="16.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>HighSchool.cs</FileName>
+      <HashCode>AAAAgAAIAAAAIAAAAAEEAACAQAAIAAAAAEACAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Facebook.Location">
+    <Position X="15" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Location.cs</FileName>
+      <HashCode>AAAAAAAgAAACAAAIAUAACAAAAAIAAAABAAgABACCAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Facebook.Network">
+    <Position X="18.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Network.cs</FileName>
+      <HashCode>AEAAIAAEBAAAAAQAAAAAAAYAAAAAAAAAAQAAAAAIIAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Facebook.Photo">
+    <Position X="20.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Photo.cs</FileName>
+      <HashCode>AAAAAAAAEgAAAAAABACAABAAIADAAEAACAABQAAAAgA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Facebook.PhotoTag">
+    <Position X="7.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PhotoTag.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAgAEAAAAAAYAAACIEAAAAAAAAAAgA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Facebook.SchoolHistory">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>SchoolHistory.cs</FileName>
+      <HashCode>AEAAAIAAAAAAAAAAAAQAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Facebook.Status">
+    <Position X="13.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Status.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAEAAAIAAAAQA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Facebook.User">
+    <Position X="18.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>User.cs</FileName>
+      <HashCode>BJEh5MGQAlAUFBERQAUAEGwRmAgIAAEAEFAQjIAAAAg=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Facebook.Work">
+    <Position X="20.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Work.cs</FileName>
+      <HashCode>AAAAQAAAAAAgIAIkAAIAAAAgAAAEAAAAACAAgEAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Facebook.Components.FacebookClient">
+    <Position X="11.25" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <FileName>Components\FacebookClient.cs</FileName>
+      <HashCode>AggAAAEAQCAAAgDwAACAhABCAAgAARAEAAIAAEAACAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Facebook.Properties.Resources">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAJAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+</ClassDiagram>

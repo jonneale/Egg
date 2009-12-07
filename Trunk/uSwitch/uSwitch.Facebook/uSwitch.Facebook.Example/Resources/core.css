@@ -1,0 +1,32 @@
+﻿#us-wrapper
+{
+	width: 914px;
+	margin: 0px auto;
+}
+.loginpanel
+{
+	color:#ffffff;
+	float: right;
+	width: 250px;
+}
+#us-header
+{
+	background-color:#003399;
+	overflow: hidden;
+	height:80px;
+}
+#us-content { padding:10px; }
+
+body, p, h1, h2, h3, h4 { font-family:Verdana, Arial; font-size:12px;} 
+
+a img { border:0px solid #ffffff; }
+
+#user { padding:5px; overflow:hidden; }
+
+.profile-name { float:left; width:180px; }
+.profile-pic { float:left; display:block; padding-right:5px; }
+.profile-signin-message { float:left; display:block; padding-top:10px; }
+.profile-button { float:left; padding:5px; }
+.profile-button div { display:inline;  }
+
+ul li { padding:5px; }

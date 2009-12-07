@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Test" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+    <Target Name="Build">
+        <Message Text="Starting to Build"/>
+        <MSBuild Projects="LiveNation.Selenium.SmokeTest\LiveNation.Selenium.SmokeTest.csproj" Properties="Configuration=Debug" />
+    </Target>
+    <Target Name="Test" DependsOnTargets="Build">
+        <Message Text="Starting to Test"/>
+        <Nunit
+			OutputXmlFile="TestResult.xml" 
+			ToolPath="C:\Program Files\NUnit 2.5.2\bin\net-2.0\"
+			Assemblies="LiveNation.Selenium.SmokeTest\bin\Debug\LiveNation.Selenium.SmokeTest.dll" />
+    </Target>
+</Project>

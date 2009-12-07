@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="uSwitch.Facebook">
+</Property><Property Name="Solution File" Value="G:\Projects\uSwitch.Facebook\uSwitch.Facebook.sln">
+</Property><Property Name="Date" Value="09 March 2009">
+</Property><Property Name="Time" Value="22:26:42">
+</Property></Properties><Event ErrorLevel="0" Project="Facebook" Source="Source\Facebook\Facebook.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Facebook" Source="Source\Facebook\Facebook.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Facebook" Source="Source\Facebook\Facebook.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

@@ -1,0 +1,7 @@
+﻿
+<viewdata Name="string" Id="int" />
+
+<h2>Product Name:  ${Name}</h2>
+<p>
+  Product Id: ${Id} 
+</p>

@@ -1,0 +1,7 @@
+[user]
+	name = James Williamson
+	email = jwilliamson@gmail.com
+[core]
+	autocrlf = false
+	safecrlf = false
+	excludesfile = c:/Users/Egg/.gitignore

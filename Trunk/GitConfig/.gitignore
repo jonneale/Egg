@@ -1,0 +1,10 @@
+*.pdb
+bin/
+*.suo
+*resharper.user  
+[Dd]ebug/  
+[Rr]elease/  
+*.suo  
+_ReSharper.*/
+*.user
+obj/

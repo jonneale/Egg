@@ -1,0 +1,166 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8F4B9954-1BA5-4664-BBCE-B79519FEE120}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Facebook.Controls</RootNamespace>
+    <AssemblyName>Facebook.Controls</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseControl.Designer.cs">
+      <DependentUpon>BaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventList.Designer.cs">
+      <DependentUpon>EventList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventListItem.Designer.cs">
+      <DependentUpon>EventListItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FriendList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FriendList.Designer.cs">
+      <DependentUpon>FriendList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FriendMap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FriendMap.Designer.cs">
+      <DependentUpon>FriendMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InviteeList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InviteeList.Designer.cs">
+      <DependentUpon>InviteeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoAlbum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PhotoAlbum.Designer.cs">
+      <DependentUpon>PhotoAlbum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProfileListItem.Designer.cs">
+      <DependentUpon>ProfileListItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseControl.resx">
+      <DependentUpon>BaseControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventList.resx">
+      <DependentUpon>EventList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventListItem.resx">
+      <DependentUpon>EventListItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FriendList.resx">
+      <DependentUpon>FriendList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FriendMap.resx">
+      <DependentUpon>FriendMap.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteeList.resx">
+      <DependentUpon>InviteeList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhotoAlbum.resx">
+      <DependentUpon>PhotoAlbum.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfileListItem.resx">
+      <DependentUpon>ProfileListItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Facebook\Facebook.csproj">
+      <Project>{2CA46CD1-7165-4ED6-8918-C8E8D71A1EFA}</Project>
+      <Name>Facebook</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MapPage.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_default.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseControl.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

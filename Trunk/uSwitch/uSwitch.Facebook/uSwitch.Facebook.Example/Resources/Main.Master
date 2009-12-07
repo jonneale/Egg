@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="uSwitch.FacebookApp.Example.Resources.Main" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head runat="server">
+	<title></title>
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+	<link rel="Stylesheet" type="text/css" href="/resources/core.css" />
+	<script type="text/javascript" src="/resources/jquery-1.3.2.min.js"></script>
+</head>
+<body>
+
+	<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php"
+		type="text/javascript"></script>
+
+	<div id="us-wrapper">
+		<form id="form1" runat="server">
+		<div id="us-header">
+			<div class="loginpanel">
+				<div id="user">
+				    <span> Are you a Facebook user? </span>
+				    <span class="profile-signin-message">Sign in using:</span>
+				    <span class="profile-button">
+						<fb:login-button></fb:login-button>
+					</span>
+				</div>
+			</div>
+			<a href="/default.aspx">
+			    <img style="padding:5px;" src="/resources/images/logo.jpg" alt="uSwitch.com" />
+			</a>
+		</div>
+		
+		<div id="us-content">
+			<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+			</asp:ContentPlaceHolder>
+		</div>
+		</form>
+	</div>
+	<!-- Javascript need for login -->
+
+	<script type="text/javascript">
+
+
+	    function update_user_box(someUserId) {
+	        //alert(someUserId)
+			var user_box = document.getElementById("user");
+			//add in some XFBML. note that we set useyou=false so it doesn't display "you" 
+			user_box.innerHTML = "<span>"
+        + "<span class=\"profile-pic\"><fb:profile-pic uid=\"loggedinuser\" facebook-logo=\"true\"></fb:profile-pic></span>"
+        + "<span class=\"profile-name\">Welcome, <fb:name uid=loggedinuser useyou=false></fb:name>. You are signed in with your Facebook account.</span>"
+        + "</span>";
+        
+			// because this is XFBML, we need to tell Facebook to re-process the document
+			FB.XFBML.Host.parseDomTree();
+            //var temp = function() { alert('Somecallback'); };
+            //FB.Connect.showShareDialog('http://localhost:49652/Default.aspx', temp);
+		} 
+	</script>
+
+	<script type="text/javascript">
+
+//var temp = function() { FB.Connect.pollLoginStatus(60000, 100, update_user_box); } ; //Wait one minute before polling again
+FB.init("5d34dd02f7cd22ef3e49e1776d525649", "xd_receiver.htm", { "ifUserConnected": update_user_box });
+
+	    
+	</script>
+
+</body>
+</html>
