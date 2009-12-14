@@ -13,6 +13,8 @@ namespace LiveNation.Selenium.SmokeTest
 		[Test]
 		public void Browsing_all_events_section_of_website()
 		{
+            selenium.DeleteAllVisibleCookies();
+
 			selenium.Open("/");
 			selenium.Click("link=All Events");
 			selenium.WaitForPageToLoad("30000");
