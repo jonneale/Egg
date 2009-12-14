@@ -1,0 +1,43 @@
+<TemplatesExport family="Live Templates">
+  <Template uid="13935d0e-4e49-402b-84d0-7021aebe1a7f" shortcut="BaseContext" description="" text="[TestFixture]&#xD;&#xA;public class $Subject$_BaseContext : SpecBase&lt;$Subject$&gt;&#xD;&#xA;{&#xD;&#xA;	[SetUp]&#xD;&#xA;	public override void MainSetup()&#xD;&#xA;	{&#xD;&#xA;		base.MainSetup();&#xD;&#xA;	}&#xD;&#xA;&#xD;&#xA;	protected override $Subject$ Establish_context()&#xD;&#xA;	{&#xD;&#xA;            return new $Subject$();&#xD;&#xA;	}&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Everywhere" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="Subject" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="9155db63-55c4-4678-aa3f-1e6c25cf0a1a" shortcut="Given" description="" text="namespace Given_$GivenDescription$&#xD;&#xA;{&#xD;&#xA;	&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Everywhere" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="GivenDescription" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="649884b1-4786-49ed-8e42-75920b9f9e05" shortcut="Then" description="" text="[Specification]&#xD;&#xA;public void then_$thenassert$()&#xD;&#xA;{&#xD;&#xA;	&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Everywhere" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="thenassert" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="39dd40b2-9500-4d08-8594-234c02c1964a" shortcut="When" description="" text="public class When_$action$ : $BaseContext$&#xD;&#xA;{&#xD;&#xA;	protected override void Because_of()&#xD;&#xA;	{&#xD;&#xA;		base.Because_of();&#xD;&#xA;	}&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Everywhere" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="action" expression="" initialRange="0" />
+      <Variable name="BaseContext" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+</TemplatesExport>
