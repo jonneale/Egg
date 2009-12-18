@@ -8,8 +8,8 @@
     <ProjectGuid>{8169E843-781A-4609-9F44-7C856A7CBAF0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LiveNation.Testing.Release._2._3.AcceptanceTests</RootNamespace>
-    <AssemblyName>LiveNation.Testing.Release.2.3.AcceptanceTests</AssemblyName>
+    <RootNamespace>LiveNation.Testing.Release.v2_3.AcceptanceTests</RootNamespace>
+    <AssemblyName>LiveNation.Testing.Release.v2_3.AcceptanceTests</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NBehave.Narrator.Framework, Version=0.4.5.183, Culture=neutral, PublicKeyToken=d421feca0f4a05f6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\NBehave.Narrator.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="NBehave.Spec.Framework, Version=0.4.5.183, Culture=neutral, PublicKeyToken=d421feca0f4a05f6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\NBehave.Spec.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="NBehave.Spec.NUnit, Version=0.4.5.183, Culture=neutral, PublicKeyToken=d421feca0f4a05f6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\NBehave.Spec.NUnit.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -45,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionSteps\General.cs" />
     <Compile Include="ActionSteps\my_LiveNation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -53,13 +66,15 @@
       <Project>{62D4DDAE-41E1-4ECE-BF5E-DBA2BBDAA349}</Project>
       <Name>LiveNation.Testing.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LiveNation.Testing.Selenium.Domain\LiveNation.Testing.Selenium.Domain.csproj">
+    <ProjectReference Include="..\LiveNation.Testing.Selenium.Domain\LiveNation.Testing.Selenium.csproj">
       <Project>{E5DFDDDA-A1C7-40B2-B5E1-45AA492F37C1}</Project>
-      <Name>LiveNation.Testing.Selenium.Domain</Name>
+      <Name>LiveNation.Testing.Selenium</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Features\my_LiveNation.feature" />
+    <None Include="Features\my_LiveNation.feature">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

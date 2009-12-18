@@ -1,71 +1,72 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
+using LiveNation.Selenium.Domain;
 using LiveNation.Selenium.Domain.Factories;
 using LiveNation.Selenium.Domain.Model;
-using LiveNation.Testing.Domain;
 using LiveNation.Testing.Domain.IOC;
 using NUnit.Framework;
 using Selenium;
-using StructureMap;
 
-namespace LiveNation.Selenium.Domain
+namespace LiveNation.Selenium.Domain.Acceptance
 {
-    [TestFixture]
-    public abstract class SeleniumTestFixture
+    public abstract class BaseDefinitions
     {
+        protected ISelenium _selenium;
+
         protected static ISeleniumFactory SeleniumFactory
         {
-            get
-            {
-                return ServiceLocater.GetInstance<ISeleniumFactory>();
-            }
+            get;
+            set;
         }
         protected StringBuilder verificationErrors
         {
-            get; 
+            get;
             set;
         }
 
         protected ISelenium selenium
         {
-            set;
-            get;
+            get
+            {
+                if (_selenium == null)
+                {
+                    CreateNewInstanceOfBrowser();
+                }
+                return _selenium;
+            }
         }
 
-		public void SaveScreenShot()
-		{
-
-
-		    string fileName = Path.Combine(Environment.CurrentDirectory,
+        public void SaveScreenShot()
+        {
+            string fileName = Path.Combine(Environment.CurrentDirectory,
                                            string.Format("{0}-{1:dd-MM-yyyy-hhmm}.{2}", GetType().Name, DateTime.Now, "jpg")
-		        );
+                );
 
-		    int counter = 2;
-		    while (File.Exists(fileName))
-		    {
+            int counter = 2;
+            while (File.Exists(fileName))
+            {
                 fileName = string.Format("{0}-{1}.{2}", Path.GetFileNameWithoutExtension(fileName), counter, "jpg");
-		        counter++;
-		    }
+                counter++;
+            }
 
             selenium.CaptureEntirePageScreenshot(fileName, "");
-		}
+        }
 
-		public IAppConfig Config
-		{
-			get
-			{
-			    return ServiceLocater.GetInstance<IAppConfig>();
-			}
-		}
+        public IAppConfig Config
+        {
+            get;
+            set;
+        }
 
-        static SeleniumTestFixture()
+        static BaseDefinitions()
         {
             new IOC.BootScrapper().Configure();
         }
 
-        [TearDown]
-        public void Teardown()
+        public void CloserBrowserAndAssertVerifies()
         {
             try
             {
@@ -76,19 +77,19 @@ namespace LiveNation.Selenium.Domain
                 // Ignore errors if unable to close the browser
             }
             Assert.AreEqual("", verificationErrors.ToString());
+
+            _selenium = null;
+            verificationErrors = null;
         }
 
-        [SetUp]
-        public void NUnitTestSetup()
+        protected void CreateNewInstanceOfBrowser()
         {
-            selenium = SeleniumFactory.CreateInstance(new BrowserClient {Address = "localhost", Port = 4444},
-                                                          new BrowserSetup("*firefox", 
+            //Environment.GetEnvironmentVariable("", EnvironmentVariableTarget.
+
+            _selenium = SeleniumFactory.CreateInstance(new BrowserClient { Address = "localhost", Port = 4444 },
+                                                          new BrowserSetup("*firefox",
                                                           new Uri("http://www.livenation.co.uk/")));
-            StartTest();
-        }
 
-        public void StartTest()
-        {
             selenium.Start();
             verificationErrors = new StringBuilder();
         }

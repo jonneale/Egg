@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveNation.Testing.Release.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{65D8D529-229F-46E7-8773-185EED1A0CA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveNation.Testing.Selenium.Domain", "LiveNation.Testing.Selenium.Domain\LiveNation.Testing.Selenium.Domain.csproj", "{E5DFDDDA-A1C7-40B2-B5E1-45AA492F37C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveNation.Testing.Selenium", "LiveNation.Testing.Selenium.Domain\LiveNation.Testing.Selenium.csproj", "{E5DFDDDA-A1C7-40B2-B5E1-45AA492F37C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveNation.Testing.Domain", "LiveNation.Testing.Domain\LiveNation.Testing.Domain.csproj", "{62D4DDAE-41E1-4ECE-BF5E-DBA2BBDAA349}"
 EndProject
