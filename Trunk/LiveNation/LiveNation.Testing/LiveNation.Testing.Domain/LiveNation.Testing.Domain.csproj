@@ -71,7 +71,14 @@
   <ItemGroup>
     <Compile Include="IOC\BootStrapper.cs" />
     <Compile Include="IOC\ServiceLocater.cs" />
+    <Compile Include="NBehave\ActionStepAssemblyFinder.cs" />
+    <Compile Include="NBehave\FeatureFinder.cs" />
+    <Compile Include="NBehave\IActionStepAssemblyFinder.cs" />
+    <Compile Include="NBehave\IFeatureFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reflector\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

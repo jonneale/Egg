@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Smoke", "Smoke", "{7CBAA5F9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveNation.Testing.SmokeTests", "LiveNation.Testing.SmokeTests\LiveNation.Testing.SmokeTests.csproj", "{325C8F69-FA7D-4344-94DB-2D6A9F85AF21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveNation.Testing.NBehave", "LiveNation.Testing.NBehave\LiveNation.Testing.NBehave.csproj", "{0245CA1D-C29B-45F8-910D-E78991E389A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{325C8F69-FA7D-4344-94DB-2D6A9F85AF21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{325C8F69-FA7D-4344-94DB-2D6A9F85AF21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{325C8F69-FA7D-4344-94DB-2D6A9F85AF21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0245CA1D-C29B-45F8-910D-E78991E389A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0245CA1D-C29B-45F8-910D-E78991E389A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0245CA1D-C29B-45F8-910D-E78991E389A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0245CA1D-C29B-45F8-910D-E78991E389A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{8169E843-781A-4609-9F44-7C856A7CBAF0} = {DC01988E-6AE3-4F0C-A1FF-83639253C4CA}
 		{E5DFDDDA-A1C7-40B2-B5E1-45AA492F37C1} = {65D8D529-229F-46E7-8773-185EED1A0CA7}
 		{62D4DDAE-41E1-4ECE-BF5E-DBA2BBDAA349} = {65D8D529-229F-46E7-8773-185EED1A0CA7}
+		{0245CA1D-C29B-45F8-910D-E78991E389A5} = {65D8D529-229F-46E7-8773-185EED1A0CA7}
 		{325C8F69-FA7D-4344-94DB-2D6A9F85AF21} = {7CBAA5F9-AA1B-4BCA-B5FA-8D3BA1690AF6}
 	EndGlobalSection
 EndGlobal

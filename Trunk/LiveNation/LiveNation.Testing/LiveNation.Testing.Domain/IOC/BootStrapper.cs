@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using StructureMap;
+using LiveNation.Testing.Domain.NBehave;
 
 namespace LiveNation.Testing.Domain.IOC
 {
@@ -15,12 +16,17 @@ namespace LiveNation.Testing.Domain.IOC
 
         public BootStrapper Configure(IContainer container)
         {
-            container.Configure(x => 
-                x.ForRequestedType<IContainer>()
-                .TheDefault.IsThis(container));
+			container.Configure(x =>
+			{
+				x.ForRequestedType<IContainer>()
+					.TheDefault.IsThis(container);
+
+				x.ForRequestedType<IFeatureFinder>()
+					.TheDefaultIsConcreteType<FeatureFinder>()
+
+			});
 
             return this;
-            
         }
 
         public BootStrapper SetContainerOnServiceLocater(IContainer container)
