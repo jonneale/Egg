@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Diagnostics;
+using LiveNation.Testing.Domain.IOC;
 
 namespace LiveNation.Testing.NBehave
 {
@@ -10,13 +11,17 @@ namespace LiveNation.Testing.NBehave
 	{
 		static void Main(string[] args)
 		{
-			new 
+		    ConfigureApplication();
 
-			string workingPath = args[0];
+		    var process = ServiceLocater.GetInstance<NBehaveProcess>();
+            process.Run(Environment.CurrentDirectory, args);
 
-
-
-			Console.ReadLine();
+		    Console.ReadLine();
 		}
+
+	    private static void ConfigureApplication()
+	    {
+	        new BootStrapper().Configure();
+	    }
 	}
 }

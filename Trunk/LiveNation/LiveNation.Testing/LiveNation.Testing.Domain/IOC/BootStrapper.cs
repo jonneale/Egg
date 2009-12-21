@@ -21,10 +21,14 @@ namespace LiveNation.Testing.Domain.IOC
 				x.ForRequestedType<IContainer>()
 					.TheDefault.IsThis(container);
 
-				x.ForRequestedType<IFeatureFinder>()
-					.TheDefaultIsConcreteType<FeatureFinder>()
+			    x.ForRequestedType<IFeatureFinder>()
+			        .TheDefaultIsConcreteType<FeatureFinder>();
 
+                x.ForRequestedType<IActionStepAssemblyFinder>()
+                    .TheDefaultIsConcreteType<ActionStepAssemblyFinder>();
 			});
+
+            SetContainerOnServiceLocater(container);
 
             return this;
         }

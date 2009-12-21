@@ -8,7 +8,7 @@ namespace LiveNation.Testing.Domain.NBehave
 {
 	public class FeatureFinder : LiveNation.Testing.Domain.NBehave.IFeatureFinder
 	{
-		private IList<string> _extensions;
+		private readonly IList<string> _extensions;
 
 		public FeatureFinder()
 		{
@@ -17,12 +17,12 @@ namespace LiveNation.Testing.Domain.NBehave
 
 		protected FeatureFinder(IEnumerable<string> extensions)
 		{
-			extensions = extensions.ToList();
+            _extensions = extensions.ToList();
 		}
 
 		public IEnumerable<string> Find(string directory)
 		{
-			string[] filePaths = Directory.GetFiles(directory, string.Format("*.{0}", extensions.First()), SearchOption.AllDirectories);
+            string[] filePaths = Directory.GetFiles(directory, string.Format("*.{0}", _extensions.First()), SearchOption.AllDirectories);
 			return filePaths;
 		}
 	}

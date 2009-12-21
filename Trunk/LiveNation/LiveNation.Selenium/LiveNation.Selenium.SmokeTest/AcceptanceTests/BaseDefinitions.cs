@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using LiveNation.Selenium.Domain;
 using LiveNation.Selenium.Domain.Factories;
 using LiveNation.Selenium.Domain.Model;
@@ -91,7 +92,6 @@ namespace LiveNation.Selenium.SmokeTest.AcceptanceTests
         protected void CreateNewInstanceOfBrowser()
         {
 			//Environment.GetEnvironmentVariable("", EnvironmentVariableTarget.
-
             _selenium = SeleniumFactory.CreateInstance(new BrowserClient { Address = "localhost", Port = 4444 },
                                                           new BrowserSetup("*firefox", 
                                                           new Uri("http://www.livenation.co.uk/")));
