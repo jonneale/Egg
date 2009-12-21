@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E86F096F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AcceptanceTest", "AcceptanceTest", "{15012615-A50D-4C5F-B511-7669304D41F4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{F573D912-5B02-454E-97CD-28A86CDC1064}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -11,10 +11,12 @@ namespace LiveNation.Selenium.Domain.Factories
     {
         public ISelenium CreateInstance(BrowserClient browserClient, BrowserSetup browserSetup)
         {
-            ISelenium selenium = new DefaultSelenium(browserClient.Address
-                , browserClient.Port
-                , browserSetup.Profile
-                , browserSetup.BaseUrl.ToString());
+            //ISelenium selenium = new DefaultSelenium(browserClient.Address
+            //    ,browserClient.Port
+            //    ,browserSetup.Profile
+            //    ,browserSetup.BaseUrl.ToString());
+
+            ServiceLocater.GetInstance<>()
 
             return selenium;
         }

@@ -57,7 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionSteps\General.cs" />
     <Compile Include="ActionSteps\my_LiveNation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -65,10 +64,6 @@
     <ProjectReference Include="..\LiveNation.Testing.Domain\LiveNation.Testing.Domain.csproj">
       <Project>{62D4DDAE-41E1-4ECE-BF5E-DBA2BBDAA349}</Project>
       <Name>LiveNation.Testing.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LiveNation.Testing.Selenium.Domain\LiveNation.Testing.Selenium.csproj">
-      <Project>{E5DFDDDA-A1C7-40B2-B5E1-45AA492F37C1}</Project>
-      <Name>LiveNation.Testing.Selenium</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

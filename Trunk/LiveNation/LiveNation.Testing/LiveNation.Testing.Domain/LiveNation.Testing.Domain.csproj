@@ -69,6 +69,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Framework\IProcess.cs" />
+    <Compile Include="Framework\Process.cs" />
     <Compile Include="IOC\BootStrapper.cs" />
     <Compile Include="IOC\ServiceLocater.cs" />
     <Compile Include="NBehave\ActionStepAssemblyFinder.cs" />
