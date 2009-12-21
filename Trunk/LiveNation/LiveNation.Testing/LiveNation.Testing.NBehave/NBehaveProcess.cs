@@ -26,7 +26,6 @@ namespace LiveNation.Testing.NBehave
             var assemblies = _actionStepAssemblyFinder.Find(workingDirectory);
 	        var featurePaths = _featureFinder.Find(workingDirectory);
 
-
             var nbehaveConsole = new NBehaveConsoleProcessStart(_container, assemblies, featurePaths);
             nbehaveConsole.Start();
 		}

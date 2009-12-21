@@ -11,7 +11,14 @@ namespace LiveNation.Testing.Domain.Framework
 
         public System.Diagnostics.ProcessStartInfo StartInfo
         {
-            get; set;
+            get
+            {
+            	return _process.StartInfo;
+            }
+			set
+			{
+				_process.StartInfo = value;
+			}
         }
 
         public Process(System.Diagnostics.Process process)

@@ -7,7 +7,7 @@ using LiveNation.Testing.Domain.IOC;
 
 namespace LiveNation.Testing.NBehave
 {
-	class Program
+	public class Program
 	{
 		static void Main(string[] args)
 		{
@@ -15,8 +15,6 @@ namespace LiveNation.Testing.NBehave
 
 		    var process = ServiceLocater.GetInstance<NBehaveProcess>();
             process.Run(Environment.CurrentDirectory, args);
-
-		    Console.ReadLine();
 		}
 
 	    private static void ConfigureApplication()

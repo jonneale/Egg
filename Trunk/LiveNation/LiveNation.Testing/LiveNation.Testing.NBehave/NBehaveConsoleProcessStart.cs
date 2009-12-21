@@ -13,8 +13,8 @@ namespace LiveNation.Testing.NBehave
 	{
         private const string _filePath = "nbehave-console.exe";
 	    private readonly IContainer _container;
-        private IEnumerable<Assembly> _assemblies;
-		private IEnumerable<string> _featureFilePaths;
+        private readonly IEnumerable<Assembly> _assemblies;
+		private readonly IEnumerable<string> _featureFilePaths;
 
 		public NBehaveConsoleProcessStart(IContainer container, IEnumerable<Assembly> assemblies, IEnumerable<string> featureFilePaths)
 		{
@@ -25,20 +25,12 @@ namespace LiveNation.Testing.NBehave
 
 		public void Start()
 		{
-		    string dllsString = GetDllsCommandArgument();
-		    string featuresCommandArg = GetFeaturePathsCommandArgument();
-
-            Console.WriteLine(_filePath);
-            Console.WriteLine(dllsString);
-            Console.WriteLine(featuresCommandArg);
-
 		    var process = _container.GetInstance<IProcess>();
 
 			process.StartInfo = new ProcessStartInfo
 			{
                 FileName = _filePath,
-                Arguments = string.Empty,
-				RedirectStandardOutput = true,
+				Arguments = GetArgumentString(),
 				UseShellExecute = false
 			};
 

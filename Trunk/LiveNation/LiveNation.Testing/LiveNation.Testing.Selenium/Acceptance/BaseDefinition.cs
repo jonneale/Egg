@@ -14,20 +14,30 @@ namespace LiveNation.Selenium.Domain.Acceptance
 {
     public abstract class BaseDefinitions
     {
-        protected ISelenium _selenium;
+		protected static ISelenium _selenium;
+    	protected static StringBuilder _verificationErrors;
 
         protected static ISeleniumFactory SeleniumFactory
         {
-            get;
-            set;
-        }
-        protected StringBuilder verificationErrors
-        {
-            get;
-            set;
+            get
+            {
+            	return ServiceLocater.GetInstance<ISeleniumFactory>();
+            }
         }
 
-        protected ISelenium selenium
+		protected static StringBuilder verificationErrors
+        {
+            get
+            {
+            	if (_verificationErrors == null)
+            	{
+            		_verificationErrors = new StringBuilder();
+            	}
+            	return _verificationErrors;
+            }
+        }
+
+        protected static ISelenium selenium
         {
             get
             {
@@ -76,22 +86,19 @@ namespace LiveNation.Selenium.Domain.Acceptance
             {
                 // Ignore errors if unable to close the browser
             }
-            Assert.AreEqual("", verificationErrors.ToString());
+            Assert.AreEqual(string.Empty, verificationErrors.ToString());
 
             _selenium = null;
-            verificationErrors = null;
+			_verificationErrors = null;
         }
 
-        protected void CreateNewInstanceOfBrowser()
+        protected static void CreateNewInstanceOfBrowser()
         {
-            //Environment.GetEnvironmentVariable("", EnvironmentVariableTarget.
-
             _selenium = SeleniumFactory.CreateInstance(new BrowserClient { Address = "localhost", Port = 4444 },
                                                           new BrowserSetup("*firefox",
                                                           new Uri("http://www.livenation.co.uk/")));
 
             selenium.Start();
-            verificationErrors = new StringBuilder();
         }
     }
 }

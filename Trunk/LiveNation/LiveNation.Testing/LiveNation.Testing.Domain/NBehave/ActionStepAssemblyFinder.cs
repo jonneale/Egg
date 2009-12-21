@@ -20,7 +20,7 @@ namespace LiveNation.Testing.Domain.NBehave
 	    {
 	        foreach (var path in dllPaths)
 	        {
-	            Assembly assembly = Assembly.LoadFile(path);
+	            Assembly assembly = Assembly.LoadFrom(path);
 	            if (assembly.GetTypes().Any(x =>
                                         x.GetCustomAttributes(true)
                                         .Any(a => a.GetType()

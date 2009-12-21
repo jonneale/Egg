@@ -63,10 +63,20 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.Selenium.Core, Version=0.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\ThoughtWorks.Selenium.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="General.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LiveNation.Testing.Selenium\LiveNation.Testing.Selenium.csproj">
+      <Project>{AC711364-E391-4A7C-A348-0454AF7FFB85}</Project>
+      <Name>LiveNation.Testing.Selenium</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
