@@ -3,33 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace LiveNation.Selenium.Domain.Model
+namespace LiveNation.Testing.Selenium.Model
 {
-    public class BrowserSetup
-    {
-        private string _profile;
-        private Uri _baseUrl;
+	public class BrowserSetup
+	{
+		private string _profile;
+		private Uri _baseUrl;
 
-        public Uri BaseUrl
-        {
-            get
-            {
-                return _baseUrl;
-            }
-        }
+		public Uri BaseUrl
+		{
+			get
+			{
+				return _baseUrl;
+			}
+		}
 
-        public string Profile
-        {
-            get
-            {
-                return _profile;
-            }
-        }
+		public string Profile
+		{
+			get
+			{
+				return _profile;
+			}
+		}
 
-        public BrowserSetup(string profile, Uri baseUrl)
-        {
-            _profile = profile;
-            _baseUrl = baseUrl;
-        }
-    }
+		public BrowserSetup(string profile, Uri baseUrl)
+		{
+			_profile = profile;
+			_baseUrl = baseUrl;
+		}
+	}
 }

@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Net;
 
-namespace LiveNation.Testing.Selenium.Model
+namespace LiveNation.DAL.Model
 {
-	public class BrowserClient
+	public class Event : Content
 	{
-		public string Address
+		public virtual DateTime DateOfEvent
 		{
 			get;
 			set;
 		}
 
-		public int Port
+		public virtual IList<Artist> Artists
 		{
 			get; set;
 		}

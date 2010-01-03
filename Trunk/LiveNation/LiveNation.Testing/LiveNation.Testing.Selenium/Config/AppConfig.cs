@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using LiveNation.Selenium.Domain.Config;
 using System.Configuration;
 
-namespace LiveNation.Selenium.Domain
+namespace LiveNation.Testing.Selenium.Config
 {
-	public class AppConfig : LiveNation.Selenium.Domain.IAppConfig
+	public class AppConfig : IAppConfig
 	{
 		public EnvironmentsConfigSection Environments
 		{

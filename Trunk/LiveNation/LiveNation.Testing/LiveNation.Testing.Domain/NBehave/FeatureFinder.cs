@@ -25,5 +25,10 @@ namespace LiveNation.Testing.Domain.NBehave
             string[] filePaths = Directory.GetFiles(directory, string.Format("*.{0}", _extensions.First()), SearchOption.AllDirectories);
 			return filePaths;
 		}
+
+		public string FindSingle(string directory, string fileName)
+		{
+			return Directory.GetFiles(directory, string.Format("{0}.{1}", fileName, _extensions.First()), SearchOption.AllDirectories).First();
+		}
 	}
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Configuration;
 
-namespace LiveNation.Selenium.Domain.Config
+namespace LiveNation.Testing.Selenium.Config
 {
 	public class EnvironmentsConfigSection : ConfigurationSection
 	{

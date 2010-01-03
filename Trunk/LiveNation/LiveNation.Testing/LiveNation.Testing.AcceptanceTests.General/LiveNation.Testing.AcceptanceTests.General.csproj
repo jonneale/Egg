@@ -70,13 +70,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="General.cs" />
+    <Compile Include="GeneralActionStepsBase.cs" />
+    <Compile Include="NavigationActionSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeleniumExtensions.cs" />
+    <Compile Include="UrlFinder.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LiveNation.Testing.Domain\LiveNation.Testing.Domain.csproj">
+      <Project>{62D4DDAE-41E1-4ECE-BF5E-DBA2BBDAA349}</Project>
+      <Name>LiveNation.Testing.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LiveNation.Testing.Selenium\LiveNation.Testing.Selenium.csproj">
       <Project>{AC711364-E391-4A7C-A348-0454AF7FFB85}</Project>
       <Name>LiveNation.Testing.Selenium</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PageNameToUrl.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

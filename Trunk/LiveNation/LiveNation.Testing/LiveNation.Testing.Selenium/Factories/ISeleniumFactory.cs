@@ -1,11 +1,11 @@
 ﻿using System;
+using LiveNation.Testing.Selenium.Model;
 using Selenium;
-using LiveNation.Selenium.Domain.Model;
 
-namespace LiveNation.Selenium.Domain.Factories
+namespace LiveNation.Testing.Selenium.Factories
 {
-    public interface ISeleniumFactory
-    {
-        ISelenium CreateInstance(BrowserClient browserClient, BrowserSetup browserSetup);
-    }
+	public interface ISeleniumFactory
+	{
+		ISelenium CreateInstance(BrowserClient browserClient, BrowserSetup browserSetup);
+	}
 }

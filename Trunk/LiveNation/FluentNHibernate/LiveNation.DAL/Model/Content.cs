@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Net;
 
-namespace LiveNation.Testing.Selenium.Model
+namespace LiveNation.DAL.Model
 {
-	public class BrowserClient
+	public abstract class Content
 	{
-		public string Address
+		public virtual int Id
 		{
 			get;
-			set;
+			protected set;
 		}
 
-		public int Port
+		public virtual string Name
 		{
 			get; set;
 		}
