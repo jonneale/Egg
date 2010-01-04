@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="BowlingGame" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <UsingTask AssemblyFile="C:\Program Files\LiveNation\NBehave\NBehave.MSBuild.dll" TaskName="NBehave.MSBuild.NBehaveTask" />
+
+  <PropertyGroup>
+  </PropertyGroup>
+
+  <Target Name="BowlingGame">
+
+    <NBehaveTask
+      DryRun="false"
+      FailBuild="true"
+      XmlOutputFile="build_output.xml"
+      TextOutputFile="build_output.txt"
+      TestAssemblies="bin\debug\LiveNation.Testing.AcceptanceTests.dll;bin\debug\LiveNation.Testing.AcceptanceTests.General.dll"
+      ScenarioFiles="bin\debug\Release2_3\Features\homepage.feature"/>
+  </Target>
+
+  <Target Name="build">
+    <MSBuild Projects="LiveNation.Testing.AcceptanceTests.csproj" Properties="Configuration=Debug" />
+  </Target>
+
+</Project>

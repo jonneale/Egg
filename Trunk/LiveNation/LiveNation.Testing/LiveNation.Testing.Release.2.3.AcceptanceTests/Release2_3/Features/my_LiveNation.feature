@@ -11,6 +11,8 @@ Scenario: A new fan comes to livenation and registers to become a my livenation 
 Given a user goes to the my livenation register page
 When I enter "James" as my first name
 And enter "Williamson" as my last name
+And enter "TestJames" as my nick name
 And enter "15/02/1983" as date of birth
 Then the details should validate
 And I'm taken to the confirmation page
+

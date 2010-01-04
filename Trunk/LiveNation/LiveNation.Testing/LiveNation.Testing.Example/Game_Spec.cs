@@ -9,7 +9,7 @@ using NUnit.Framework;
 namespace LiveNation.Testing.Example.Game_Specs
 {
     [TestFixture]
-    public class Game_BaseContext : SpecBase<Game>
+    public class Game_SpecBaseContext : SpecBase<Game>
     {
         [SetUp]
         public override void MainSetup()
@@ -40,7 +40,7 @@ namespace LiveNation.Testing.Example.Game_Specs
 
     namespace Given_I_begin_a_new_game
     {
-        public class When_I_roll_and_knock_6_pins_over : Game_BaseContext
+        public class When_I_roll_and_knock_6_pins_over : Game_SpecBaseContext
         {
             protected override void Because_of()
             {
@@ -55,7 +55,7 @@ namespace LiveNation.Testing.Example.Game_Specs
             }
         }
 
-        public class When_I_roll_and_knock_6_pins_over_and_3_more_on_the_second_roll : Game_BaseContext
+        public class When_I_roll_and_knock_6_pins_over_and_3_more_on_the_second_roll : Game_SpecBaseContext
         {
             protected override void Because_of()
             {
@@ -70,11 +70,19 @@ namespace LiveNation.Testing.Example.Game_Specs
                 Sut.TotalPoints.ShouldEqual(9);
             }
         }
+
+        namespace and_im_on_my_second_frame
+        {
+            public class When_I_roll_and_knock_6_pins_over : Game_SpecBaseContext
+            {
+
+            }
+        }
     }
 
     namespace Given_I_have_a_spare_in_my_first_frame
     {
-        public class When_I_roll_and_knock_over_5_pins : Game_BaseContext
+        public class When_I_roll_and_knock_over_5_pins : Game_SpecBaseContext
         {
             protected override Game Establish_context()
             {
@@ -97,7 +105,7 @@ namespace LiveNation.Testing.Example.Game_Specs
 
     namespace Given_I_have_a_strike_in_my_first_game
     {
-        public class When_I_roll_a_6 : Game_BaseContext
+        public class When_I_roll_a_6 : Game_SpecBaseContext
         {
             protected override Game Establish_context()
             {

@@ -12,6 +12,7 @@ namespace LiveNation.Testing.AcceptanceTests.General
 	{
 		[Given("a user browse's to the \"$pageName\" page")]
 		[Given("I browse to the \"$pageName\" page")]
+        [When("I browse to the \"$pageName\" page")]
 		public void BrowserToPage(string pageName)
 		{
 			Selenium.NavigateToPage(pageName);

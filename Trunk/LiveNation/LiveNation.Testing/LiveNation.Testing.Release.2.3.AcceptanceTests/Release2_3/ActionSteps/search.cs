@@ -30,6 +30,5 @@ namespace LiveNation.Testing.Release.v2_3.AcceptanceTests.ActionSteps
 		{
 			Selenium.AssertElementPresent("link=Madonna");
 		}
-
 	}
 }

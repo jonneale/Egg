@@ -31,22 +31,22 @@ namespace LiveNation.Testing.Release.v2_3.AcceptanceTests.ActionSteps
 				.AndWaitForPageToLoad();
 		}
 
-		[When("I enter \"$name\" as my nick name")]
+		[When("enter \"$name\" as my nick name")]
 		public void When_I_enter_a_name_as_my_nick_name(string name)
 		{
-			Selenium.Type("Nickname", "testnickname");
+            Selenium.Type("Nickname", name);
 		}
 
 		[When("I enter \"$name\" as my first name")]
 		public void When_I_enter_a_name_as_my_first_name(string name)
 		{
-			Selenium.Type("FirstName", "testfirstname");
+            Selenium.Type("FirstName", name);
 		}
 
 		[When("enter \"$name\" as my last name")]
 		public void When_I_Enter_an_name_as_last_name(string name)
 		{
-			Selenium.Type("LastName", "testfirstname");
+            Selenium.Type("LastName", name);
 		}
 
 		[When("enter \"$dateofbirth\" as date of birth")]
@@ -65,17 +65,17 @@ namespace LiveNation.Testing.Release.v2_3.AcceptanceTests.ActionSteps
 			Selenium.Click("IsAccountHolder");
 		}
 
-		[Then]
-		public void Then_the_details_should_validate()
-		{
+        //[Then]
+        //public void Then_the_details_should_validate()
+        //{
 			
-		}
+        //}
 
-		[Then("I'm taken to the confirmation page")]
-		public void Then_Im_taken_to_the_confirmation_page()
-		{
+        //[Then("I'm taken to the confirmation page")]
+        //public void Then_Im_taken_to_the_confirmation_page()
+        //{
 			
-		}
+        //}
 
     	[When]
         public void When_I_click_the_My_Live_Nation()
