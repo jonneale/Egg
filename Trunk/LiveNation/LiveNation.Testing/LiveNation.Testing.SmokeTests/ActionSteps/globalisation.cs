@@ -15,8 +15,9 @@ namespace LiveNation.Testing.SmokeTests.ActionSteps
         [Given]
         public void Given_I_start_on_the_uk_home_page()
         {
-        Selenium.Open("/");
-}
+			Selenium.Open("/");
+		}
+
         [When("I browse to the \"$country\" domain")]
         public void I_browse_to_the_site_name_domain(string country)
         {

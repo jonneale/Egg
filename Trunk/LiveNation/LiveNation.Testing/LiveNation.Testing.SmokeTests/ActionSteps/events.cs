@@ -7,10 +7,10 @@ using LiveNation.Testing.Selenium;
 using NBehave.Narrator.Framework;
 using NUnit.Framework;
 
-namespace LiveNation.Testing.AcceptanceTests.Release2_3.ActionSteps
+namespace LiveNation.Testing.SmokeTests.ActionSteps
 {
 	[ActionSteps]
-	public class events : SeleniumActionStepsBase
+	public class events: SeleniumActionStepsBase
 	{
 		[When("I click on the Find tickets link at the top of the search results table")]
 		public void When_I_click_on_the_Find_tickets_link_at_the_top_of_the_search_results_table()
@@ -26,6 +26,19 @@ namespace LiveNation.Testing.AcceptanceTests.Release2_3.ActionSteps
 			var storedText = Context.GetItem<string>("text");
 			Assert.IsNotNullOrEmpty(storedText);
 			Selenium.AssertTextPresent(storedText);
+		}
+
+		[Then("able to click on the \"Buy tickets\" button")]
+		public void Then_able_to_click_on_the_Buy_tickets_button()
+		{
+			Selenium.ClickAndWait("link=Buy tickets");
+		}
+
+		[Then("then appear on the ticket master website")]
+		public void Then_appear_on_the_ticket_master_website()
+		{
+			string location = Selenium.GetLocation();
+			Assert.IsTrue(location.ToLowerInvariant().Contains("ticketmaster"));
 		}
 	}
 }

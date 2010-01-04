@@ -83,15 +83,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Release2_3\ActionSteps\events.cs" />
-    <Compile Include="Release2_3\ActionSteps\homepage.cs" />
     <Compile Include="Release2_3\ActionSteps\search.cs" />
-    <None Include="Release2_3\Features\events.feature">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Release2_3\Features\homepage.feature">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Release2_3\Features\my_LiveNation.feature">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

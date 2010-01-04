@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="ActionSteps\globalisation.cs" />
     <Compile Include="ActionSteps\home_page.cs" />
+    <Compile Include="ActionSteps\events.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +85,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Features\events.feature">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Features\globalisation.feature">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
