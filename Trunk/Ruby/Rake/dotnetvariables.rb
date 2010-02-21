@@ -1,0 +1,1 @@
+DOT_NET_PATH = "C:/Windows/Microsoft.NET/Framework/v3.5/"
