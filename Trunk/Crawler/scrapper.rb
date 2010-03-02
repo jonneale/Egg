@@ -1,8 +1,7 @@
 require 'open-uri'
 
 class Scrapper
-  def scrap
-    url = "http://www.google.com/"
+  def scrap(url)
     connection = open(url)
     content = connection.read
     return content;
