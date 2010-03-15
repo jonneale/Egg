@@ -5,21 +5,16 @@ using System.Text;
 
 namespace uSwitch.Content.Domain
 {
-	public class Template
+	public class ContentRelationship : Entity
 	{
-		public virtual string Name
+		public virtual ContentBase Parent
 		{
 			get; set;
 		}
 
-		public virtual string Source
+		public virtual ContentBase Child
 		{
 			get; set;
-		}
-
-		public virtual string GetSource()
-		{
-			return Source;
 		}
 	}
 }

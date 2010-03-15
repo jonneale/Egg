@@ -9,9 +9,20 @@ using uSwitch.Content.Domain.ContentTypes;
 
 namespace uSwitch.Content.Domain
 {
-	public class ContentBase : IGetPropertiesAsDictionary
+	public class ContentBase : Entity
 	{
+		public virtual ICollection<ContentRelationship> Relationships
+		{
+			get;
+			set;
+		}
+
 		protected virtual ICollection<ContentRevision> Revisions
+		{
+			get; set;
+		}
+
+		protected virtual ContentRevision Current
 		{
 			get; set;
 		}
@@ -25,26 +36,28 @@ namespace uSwitch.Content.Domain
 		{
 			get; set;
 		}
-		
-		public virtual string SerializeProperties()
+
+		public virtual string Name { get; set; }
+
+		protected virtual string SerializedProperties
 		{
-			return string.Empty;
+			get; set;
+		}
+
+		public virtual string GetSerializedProperties()
+		{
+			
 		}
 
 		public ContentRevision GetCurrentRevision()
 		{
-			return new ContentRevision();
+			return Current;
 		}
 
-		public virtual IDictionary<string, object> GetDictionary()
+		protected virtual IEnumerable<PropertyInfo> GetPropertys()
 		{
-			var contentProperties = GetType().GetProperties(BindingFlags.GetProperty | BindingFlags.Public).Where(
-				p => p.GetCustomAttributes(typeof (ContentPropertyAttribute), true).Count() > 0);
-
-			var dictionary = new Dictionary<string, object>(
-				contentProperties.ToDictionary(p => p.Name, p => p.GetGetMethod().Invoke(this, null)));
-
-			return dictionary;
+			return GetType().GetProperties(BindingFlags.GetProperty | BindingFlags.Public).Where(
+				p => p.GetCustomAttributes(typeof(ContentPropertyAttribute), true).Count() > 0);
 		}
 
 		public virtual void Publish()

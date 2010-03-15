@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>a4df1cd4-ec08-457f-aa3e-97c0269d0be1</ProjectGuid>
+    <ProjectGuid>{E99CF0BB-EEC2-4F5A-ACF3-218E5D557DF7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>uSwitch.Content.Types</RootNamespace>
@@ -45,8 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ContentBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\uSwitch.Content.Domain\uSwitch.Content.Domain.csproj">
+      <Project>{3AC1293F-5D3B-4E50-8AC8-BB7294836078}</Project>
+      <Name>uSwitch.Content.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\uSwitch.Content.Templates\uSwitch.Content.Templates.csproj">
+      <Project>{FA0B6F4F-2727-4D94-B6A4-B90AA1424648}</Project>
+      <Name>uSwitch.Content.Templates</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

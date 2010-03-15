@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("uSwitch.Content.Publishing")]
+[assembly: AssemblyTitle("uSwitch.Content.Domain.UnitTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("uSwitch.Content.Publishing")]
+[assembly: AssemblyProduct("uSwitch.Content.Domain.UnitTests")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a013de1f-ccf2-4d58-923a-0da44f89f79f")]
+[assembly: Guid("69072f3f-e426-4111-8290-7bf565e8582e")]
 
 // Version information for an assembly consists of the following four values:
 //

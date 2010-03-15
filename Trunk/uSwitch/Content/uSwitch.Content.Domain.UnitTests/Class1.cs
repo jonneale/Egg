@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace uSwitch.Content.Domain.Persistance
+namespace uSwitch.Content.Domain.UnitTests
 {
-	public class NHibernateConfiguration
+	public class Class1
 	{
-
 	}
 }

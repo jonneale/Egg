@@ -10,22 +10,22 @@ namespace uSwitch.Content.Domain.Services
 	public class ContentService
 	{
 		private readonly ContentRepository _repository;
-		private readonly IPublisher _publisher;
+		private readonly IContentPublisher _contentPublisher;
 
-		public ContentService(ContentRepository repository, IPublisher publisher)
+		public ContentService(ContentRepository repository, IContentPublisher contentPublisher)
 		{
 			_repository = repository;
-			_publisher = publisher;
+			_contentPublisher = contentPublisher;
 		}
 
-		public void Create(ContentBase content)
+		public void Create<TContent>(TContent content) where TContent : ContentBase
 		{
 			_repository.Add(content);
 		}
 
-		public ICollection<ContentBase> FindContent(string path, string name)
+		public ContentBase FindContent(string name, string path)
 		{
-			return null;
+			return _repository.FindByNameAndPath(name, path);
 		}
 
 		public void Publish(PublishingList publishList)

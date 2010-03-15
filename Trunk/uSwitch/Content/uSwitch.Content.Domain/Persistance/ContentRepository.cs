@@ -1,28 +1,20 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using NHibernate;
+using NHibernate.Linq;
 
 namespace uSwitch.Content.Domain.Persistance
 {
-	public class ContentRepository : IRepository<ContentBase>
+	public class ContentRepository : Repository<ContentBase>
 	{
-		public ContentBase Get(int id)
+		public ContentRepository(ISession session) : base(session)
 		{
-			throw new NotImplementedException();
 		}
 
-		public ContentBase Delete(int id)
+		public ContentBase FindByNameAndPath(string name, string path)
 		{
-			throw new NotImplementedException();
-		}
-
-		public ContentBase Add(ContentBase entity)
-		{
-			throw new NotImplementedException();
-		}
-
-		public IEnumerable<ContentBase> All()
-		{
-			throw new NotImplementedException();
+			return session.Linq<ContentBase>().Single(c => c.Path.Equals(path) && c.Name.Equals(name));
 		}
 	}
 }

@@ -9,12 +9,12 @@ namespace uSwitch.Content.Domain
 			get; set;
 		}
 
-		public virtual IDictionary<string, string> Properties
+		public virtual ICollection<Conte Properties
 		{
 			get; set;
 		}
 
-		public string RawSource
+		public virtual string PropertiesSource
 		{ 
 			get; set;
 		}
