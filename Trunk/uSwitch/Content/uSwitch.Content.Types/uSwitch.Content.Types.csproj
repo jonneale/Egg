@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2ColPage.cs" />
     <Compile Include="ContentBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

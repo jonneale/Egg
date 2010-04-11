@@ -47,12 +47,23 @@
   <ItemGroup>
     <Compile Include="ApplicationServices\CMSService.cs" />
     <Compile Include="ApplicationServices\PublishService.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="ApiFacade.cs" />
+    <Compile Include="Handlers\Commands\AddContentCommandHandler.cs" />
+    <Compile Include="Handlers\IHandler.cs" />
+    <Compile Include="Model\Content.cs" />
+    <Compile Include="Model\Folder.cs" />
+    <Compile Include="Model\Site.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles\IGetMeContent.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
+    <ProjectReference Include="..\uSwitch.Content.Service.Dtos\uSwitch.Content.Common.csproj">
+      <Project>{93CDEC32-B957-46F2-AE6F-3BC0AFDDE88F}</Project>
+      <Name>uSwitch.Content.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Handlers\Queries\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

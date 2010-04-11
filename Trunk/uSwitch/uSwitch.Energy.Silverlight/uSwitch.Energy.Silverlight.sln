@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uSwitch.Energy.Silverlight", "uSwitch.Energy.Silverlight\uSwitch.Energy.Silverlight.csproj", "{86007EBE-DFBC-4ADC-8C39-696C927BC7A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uSwitch.Energy.Silverlight.Web", "uSwitch.Energy.Silverlight.Web\uSwitch.Energy.Silverlight.Web.csproj", "{443DAD51-052A-4B56-8B22-83CBA7538EAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86007EBE-DFBC-4ADC-8C39-696C927BC7A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86007EBE-DFBC-4ADC-8C39-696C927BC7A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86007EBE-DFBC-4ADC-8C39-696C927BC7A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86007EBE-DFBC-4ADC-8C39-696C927BC7A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{443DAD51-052A-4B56-8B22-83CBA7538EAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{443DAD51-052A-4B56-8B22-83CBA7538EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{443DAD51-052A-4B56-8B22-83CBA7538EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{443DAD51-052A-4B56-8B22-83CBA7538EAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

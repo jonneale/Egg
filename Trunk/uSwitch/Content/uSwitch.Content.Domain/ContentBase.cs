@@ -9,8 +9,16 @@ using uSwitch.Content.Domain.ContentTypes;
 
 namespace uSwitch.Content.Domain
 {
-	public class ContentBase : Entity
+	public abstract class ContentBase : Entity
 	{
+		public virtual Folder Folder
+		{
+			get
+			{
+				return new Folder();
+			}
+		}
+
 		public virtual ICollection<ContentRelationship> Relationships
 		{
 			get;
@@ -27,12 +35,22 @@ namespace uSwitch.Content.Domain
 			get; set;
 		}
 
-		public virtual string Title
+		public virtual string Path
 		{
 			get; set;
 		}
 
-		public virtual string Path
+		public virtual DateTime Created
+		{
+			get; set;
+		}
+
+		public virtual DateTime LastModified
+		{
+			get; set;
+		}
+
+		public virtual bool IsLocked
 		{
 			get; set;
 		}
@@ -46,7 +64,17 @@ namespace uSwitch.Content.Domain
 
 		public virtual string GetSerializedProperties()
 		{
+			return string.Empty;
+		}
+
+		public void Lock()
+		{
 			
+		}
+
+		public void Unlock()
+		{
+
 		}
 
 		public ContentRevision GetCurrentRevision()
@@ -58,11 +86,6 @@ namespace uSwitch.Content.Domain
 		{
 			return GetType().GetProperties(BindingFlags.GetProperty | BindingFlags.Public).Where(
 				p => p.GetCustomAttributes(typeof(ContentPropertyAttribute), true).Count() > 0);
-		}
-
-		public virtual void Publish()
-		{
-			
 		}
 	}
 }

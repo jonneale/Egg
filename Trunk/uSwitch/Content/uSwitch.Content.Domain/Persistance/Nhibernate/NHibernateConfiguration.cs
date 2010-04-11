@@ -11,7 +11,7 @@ using NHibernate.Cfg;
 
 namespace uSwitch.Content.Domain.Persistance.NHibernate
 {
-	public class NHibernateConfiguration
+	public static class NHibernateConfiguration
 	{
 		private static ISessionFactory _factory;
 
@@ -25,15 +25,28 @@ namespace uSwitch.Content.Domain.Persistance.NHibernate
 				.BuildSessionFactory();
 		}
 
+		public static void SqliteConfigure()
+		{
+			_factory = Fluently.Configure()
+				.Database(SQLiteConfiguration.Standard
+							.UsingFile("content.db")
+							.ShowSql())
+							.Mappings(x => x.AutoMappings.Add(GetAutoPersistenceModel()))
+				.BuildSessionFactory();
+		}
+
 		private static AutoPersistenceModel GetAutoPersistenceModel()
 		{
-
-
-			return new AutoPersistenceModel().AddEntityAssembly(Assembly.GetExecutingAssembly())
+			return new AutoPersistenceModel()
+				.AddEntityAssembly(Assembly.GetExecutingAssembly())
 				.Where(type => typeof (Entity).IsAssignableFrom(type)
 				               && type.IsClass
 							   && !type.IsAbstract)
-				.Conventions.AddFromAssemblyOf<NHibernateConfiguration>();
+				.AddEntityAssembly(Assembly.Load("uSwitch.Content.Types"))
+				.Where(type => typeof(Entity).IsAssignableFrom(type)
+							   && type.IsClass
+							   && !type.IsAbstract)
+				.Conventions.AddFromAssemblyOf<Entity>();
 		}
 
 		public static ISessionFactory GetFactory()

@@ -9,7 +9,7 @@ namespace uSwitch.Content.Domain
 			get; set;
 		}
 
-		public virtual ICollection<Conte Properties
+		public virtual ICollection<ContentPropertyValue> Properties
 		{
 			get; set;
 		}

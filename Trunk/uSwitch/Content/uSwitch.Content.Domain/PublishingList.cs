@@ -7,9 +7,24 @@ namespace uSwitch.Content.Domain
 {
 	public class PublishingList : Entity
 	{
-		public virtual ICollection<ContentBase> Content
+		public virtual Site Owner
 		{
 			get; set;
+		}
+
+		public virtual IList<IPublishable> Content
+		{
+			get; protected set;
+		}
+
+		public PublishingList()
+		{
+			
+		}
+
+		public PublishingList(ICollection<IPublishable> list)
+		{
+			
 		}
 	}
 }
