@@ -11,8 +11,19 @@ using System.Windows.Shapes;
 
 namespace uSwitch.Energy.Silverlight.Model
 {
-	public class Plan
+	public class Plan : IRestResource
 	{
 		public string Name { get; set; }
+
+		public string ResourceLocation
+		{
+			get;
+			set;
+		}
+
+		public string GetUri()
+		{
+			return ResourceLocation;
+		}
 	}
 }

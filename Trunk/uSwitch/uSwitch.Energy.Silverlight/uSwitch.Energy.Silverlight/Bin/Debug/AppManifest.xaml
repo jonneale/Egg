@@ -2,6 +2,9 @@
   <Deployment.Parts>
     <AssemblyPart x:Name="uSwitch.Energy.Silverlight" Source="uSwitch.Energy.Silverlight.dll" />
     <AssemblyPart x:Name="System.ComponentModel.DataAnnotations" Source="System.ComponentModel.DataAnnotations.dll" />
+    <AssemblyPart x:Name="System.Json" Source="System.Json.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Data" Source="System.Windows.Controls.Data.dll" />
     <AssemblyPart x:Name="System.Windows.Controls.Data.Input" Source="System.Windows.Controls.Data.Input.dll" />
+    <AssemblyPart x:Name="System.Windows.Data" Source="System.Windows.Data.dll" />
   </Deployment.Parts>
 </Deployment>

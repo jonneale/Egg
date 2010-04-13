@@ -10,16 +10,12 @@ using System.Windows.Shapes;
 
 namespace uSwitch.Energy.Silverlight
 {
-	public partial class MainPage : UserControl
+	public partial class ResultsTable : UserControl
 	{
-		public MainPage()
+		public ResultsTable()
 		{
 			// Required to initialize variables
 			InitializeComponent();
-
-			//comparisonResultsTable.Visibility = Visibility.Visible;
-			//currentSuppliersCanvas.Visibility = Visibility.Collapsed;
-
 		}
 	}
 }

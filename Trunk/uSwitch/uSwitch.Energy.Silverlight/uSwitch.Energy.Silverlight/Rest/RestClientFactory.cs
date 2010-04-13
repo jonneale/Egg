@@ -9,23 +9,13 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace uSwitch.Energy.Silverlight.Model
+namespace uSwitch.Energy.Silverlight.Rest
 {
-	public class Supplier : IRestResource
+	public static class RestClientFactory
 	{
-		public string Name
+		public static IRestClient GetDefault()
 		{
-			get; set;
-		}
-
-		public string ResourceLocation
-		{
-			get; set;
-		}
-
-		public string GetUri()
-		{
-			return ResourceLocation;
+			return new JsonRestClient();
 		}
 	}
 }

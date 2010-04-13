@@ -27,8 +27,8 @@ namespace uSwitch.Energy.Silverlight.Rest
 		{
 			var reader = new StreamReader(content);
 			var client = new WebClient();
-			client.UploadStringAsync(url, "POST", reader.ReadToEnd());
 			client.UploadStringCompleted += (sender, e) => PostWebRequestComplete(sender, e, callback);
+			client.UploadStringAsync(url, "POST", reader.ReadToEnd());
 		}
 
 		private static void PostWebRequestComplete<TJson>(object sender, UploadStringCompletedEventArgs e, Action<TJson> callback)
