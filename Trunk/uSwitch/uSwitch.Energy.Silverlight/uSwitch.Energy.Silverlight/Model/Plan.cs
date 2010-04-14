@@ -15,6 +15,21 @@ namespace uSwitch.Energy.Silverlight.Model
 	{
 		public string Name { get; set; }
 
+        public bool IsDualFuelOnly
+        {
+            get; set;
+        }
+
+        public bool IsGreen
+        {
+            get; set;
+        }
+
+        public string Key
+        {
+            get; set;
+        }
+
 		public string ResourceLocation
 		{
 			get;

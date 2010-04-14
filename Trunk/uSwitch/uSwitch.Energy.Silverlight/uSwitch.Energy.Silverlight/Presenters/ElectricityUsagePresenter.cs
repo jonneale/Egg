@@ -25,7 +25,7 @@ namespace uSwitch.Energy.Silverlight.Presenters
 		{
 			base.SelectSupplier(supplier);
 
-			var query = new PlansForSupplierQuery(supplier);
+			var query = new PlansForSupplierQuery(supplier, string.Empty);
 			//var plans = query.Execute(RestClient);
 		}
 	}

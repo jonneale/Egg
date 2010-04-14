@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="uSwitch.Energy.Silverlight.RestTests"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="400" Height="300">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <StackPanel Orientation="Vertical">
+            <Button x:Name="findAllSuppliersButton" Width="100" Height="25" Content="All suppliers" ClickMode="Release" Click="findAllSuppliersButton_Click"></Button>
+            <TextBlock x:Name="resultsTextBlock" Text="Results are displayed here 1" />
+            
+            <Button x:Name="findregion" Content="Find postcode" Click="findregion_Click" ></Button>
+            <TextBox x:Name="postcodeTextbox"></TextBox>
+            <TextBlock x:Name="findregionTextBlock" Text="Region result" />
+        </StackPanel>
+    </Grid>
+</UserControl>

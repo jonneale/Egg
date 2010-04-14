@@ -7,26 +7,31 @@ namespace uSwitch.Energy.Silverlight.Queries
 {
 	public class PlansForSupplierQuery : IAsyncQuery<IEnumerable<Plan>>
 	{
-		private readonly Supplier _supplier;
+	    private const string RestUrl =
+	        Rest.Rest.BaseUrl + "/gas-electricity/regions/southern/products/electricity/suppliers/{0}/payment-methods/{1}/plans/";
 
-		public Supplier Supplier
+		private readonly Supplier _supplier;
+	    private readonly string _paymentMethod;
+
+	    public string PaymentMethod
+	    {
+	        get { return _paymentMethod; }
+	    }
+
+	    public Supplier Supplier
 		{
 			get { return _supplier; }
 		}
 
-		public PlansForSupplierQuery(Supplier supplier)
+		public PlansForSupplierQuery(Supplier supplier, string paymentMethod)
 		{
-			_supplier = supplier;
-		}
-
-		private static Uri ConstructUri(IRestResource supplier)
-		{
-			return new Uri(string.Empty + supplier.GetUri());
+		    _supplier = supplier;
+		    _paymentMethod = paymentMethod;
 		}
 
 		public void Execute(IRestClient client, Action<IEnumerable<Plan>> queryCallback)
 		{
-			client.Get<Plan[]>(ConstructUri(_supplier), x => queryCallback(x));
+            client.Get<Plan[]>(new Uri(string.Format(RestUrl, Supplier.UrlEncodedName(), PaymentMethod.Replace(" ", "%20"))), x => queryCallback(x));
 		}
 	}
 }

@@ -69,17 +69,34 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Commands\CompareCommand.cs" />
+    <Compile Include="Commands\IAsyncCommand.cs" />
     <Compile Include="EnergyUsageControl.xaml.cs">
       <DependentUpon>EnergyUsageControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Comparison.cs" />
+    <Compile Include="Model\ComparisonRequest.cs" />
+    <Compile Include="Model\ComparisonResult.cs" />
+    <Compile Include="Model\DefaultEnergyResult.cs" />
     <Compile Include="Model\IRestResource.cs" />
+    <Compile Include="Model\PaymentMethods.cs" />
+    <Compile Include="Model\PostcodeLookupResult.cs" />
+    <Compile Include="Model\Products.cs" />
     <Compile Include="Presenters\ElectricityUsagePresenter.cs" />
     <Compile Include="Presenters\GasUsagePresenter.cs" />
+    <Compile Include="Rest\Constants.cs" />
+    <Compile Include="Queries\GetDefaultEnergyPlansForAllRegionsQuery.cs" />
+    <Compile Include="Queries\GetDefaultEnergyPlansForRegionQuery.cs" />
     <Compile Include="Queries\IAsyncQuery.cs" />
     <Compile Include="Queries\IQuery.cs" />
-    <Compile Include="Queries\AllSuppliersQuery.cs" />
+    <Compile Include="Queries\AllSuppliersForProductAndRegionQuery.cs" />
     <Compile Include="Queries\PlansForSupplierQuery.cs" />
+    <Compile Include="Queries\GetRegionFromPostCodeQuery.cs" />
+    <Compile Include="RestTests.xaml.cs">
+      <DependentUpon>RestTests.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rest\RestClientFactory.cs" />
+    <Compile Include="Rest\RestExtensions.cs" />
     <Compile Include="Views\IEnergyUsageView.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -104,6 +121,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="RestTests.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
     </Page>

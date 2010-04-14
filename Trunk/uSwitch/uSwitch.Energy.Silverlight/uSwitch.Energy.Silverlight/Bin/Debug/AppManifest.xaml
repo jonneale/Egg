@@ -1,4 +1,4 @@
-﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="uSwitch.Energy.Silverlight" EntryPointType="uSwitch.Energy.Silverlight.App" RuntimeVersion="3.0.40624.0">
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="uSwitch.Energy.Silverlight" EntryPointType="uSwitch.Energy.Silverlight.App" RuntimeVersion="3.0.40818.0">
   <Deployment.Parts>
     <AssemblyPart x:Name="uSwitch.Energy.Silverlight" Source="uSwitch.Energy.Silverlight.dll" />
     <AssemblyPart x:Name="System.ComponentModel.DataAnnotations" Source="System.ComponentModel.DataAnnotations.dll" />
