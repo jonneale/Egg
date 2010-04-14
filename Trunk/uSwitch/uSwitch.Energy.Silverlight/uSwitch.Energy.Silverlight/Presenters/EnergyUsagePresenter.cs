@@ -1,49 +1,55 @@
-﻿using uSwitch.Energy.Silverlight.Model;
+﻿using System;
+using System.Windows.Threading;
+using uSwitch.Energy.Silverlight.Core;
+using uSwitch.Energy.Silverlight.Events;
+using uSwitch.Energy.Silverlight.Model;
 using uSwitch.Energy.Silverlight.Rest;
 using uSwitch.Energy.Silverlight.Views;
 
 namespace uSwitch.Energy.Silverlight.Presenters
 {
-	public class EnergyUsagePresenter
+	public abstract class EnergyUsagePresenter
 	{
 		protected readonly IEnergyUsageView View;
 		protected IRestClient RestClient;
+		protected readonly Dispatcher Dispatcher;
+		protected readonly IEventHub EventHub = Core.EventHub.GetCurrent();
 
-		public EnergyUsagePresenter(IEnergyUsageView view) : this(view, RestClientFactory.GetDefault())
+		protected EnergyUsagePresenter(IEnergyUsageView view, Dispatcher dispatcher)
+			: this(view, RestClientFactory.GetDefault(), dispatcher)
 		{
 		}
 
-		public EnergyUsagePresenter(IEnergyUsageView view, IRestClient restClient)
+		protected EnergyUsagePresenter(IEnergyUsageView view, IRestClient restClient, Dispatcher dispatcher)
 		{
 			View = view;
 			RestClient = restClient;
-			View.LoadDefaults += (sender, args) => LoadDefaultUI();
+			Dispatcher = dispatcher;
 			View.PlanSelected += SelectPlan;
-			view.SupplierSelected += SelectSupplier;
+			View.SupplierSelected += SelectSupplier;
+			View.PaymentMethodSelected += SelectPaymentMethod;
 		}
 
-		public void LoadDefaultUI()
+		public abstract void SelectPlan(Plan plan);
+
+		public abstract void SelectSupplier(Supplier supplier);
+
+		public abstract void SelectPaymentMethod(string paymentMethod);
+
+		public virtual void Loaded()
 		{
-			View.Suppliers = new[]
-			                 	{
-			                 		new Supplier {Name = "Power gen"},
-									new Supplier {Name = "British gas"},
-			                 		new Supplier {Name = "E.on"}
-			                 	};
-			View.Plans = new[]
-			             	{
-			             		new Plan {Name = "Best plan 1"},
-								new Plan {Name = "Another plan"},
-								new Plan {Name = "Cheap plan"}
-			             	};
+			EventHub.Register<RegionFoundEvent>(e =>
+			                                    	{
+														View.Region = e.Region;
+			                                    		LoadDefaultSuppliersAndPlans(e.Region);
+			                                    	});
 		}
 
-		public virtual void SelectPlan(Plan plan)
-		{
-		}
+		public abstract void LoadDefaultSuppliersAndPlans(string region);
 
-		public virtual void SelectSupplier(Supplier supplier)
+		protected void CallDispatcher(Action action)
 		{
+			Dispatcher.BeginInvoke(action);
 		}
 	}
 }

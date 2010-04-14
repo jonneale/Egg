@@ -22,9 +22,32 @@ namespace uSwitch.Energy.Silverlight
 
 		public event Action<Supplier> SupplierSelected = supplier => { };
 		public event Action<Plan> PlanSelected = plan => { };
-		public event EventHandler LoadDefaults = (sender, args) => { };
+		public event Action<string> PaymentMethodSelected = paymentMethod => { };
 
-		public string EnergyType
+		public bool HasGas
+		{
+			get { throw new NotImplementedException(); }
+			set { throw new NotImplementedException(); }
+		}
+
+		public string Region
+		{
+			get; set;
+		}
+
+		public string PaymentMethod
+		{
+			get
+			{
+				return (string) paymentMethodCombo.SelectedItem;
+			}
+			set
+			{
+				paymentMethodCombo.SelectedItem = value;
+			}
+		}
+
+		public string Product
 		{
 			get; set;
 		}
@@ -39,6 +62,7 @@ namespace uSwitch.Energy.Silverlight
 			{
 				_supplier = value;
 				suppliersCombo.ItemsSource = value.Select(x => x.Name);
+				planCombo.SelectedIndex = 0;
 			}
 		}
 
@@ -52,6 +76,7 @@ namespace uSwitch.Energy.Silverlight
 			{
 				_plans = value;
 				planCombo.ItemsSource = value.Select(x => x.Name);
+				planCombo.SelectedIndex = 0;
 			}
 		}
 
@@ -81,16 +106,29 @@ namespace uSwitch.Energy.Silverlight
 
 		public EnergyUsageControl()
 		{
-			EnergyType = "Gas";
-
 			// Required to initialize variables
 			InitializeComponent();
 
-			EnergyUsagePresenter presenter = EnergyType.Equals("Gas") ? (EnergyUsagePresenter) new GasUsagePresenter(this) : new ElectricityUsagePresenter(this);
+			Loaded += EnergyUsageControl_Loaded;
+		}
 
-			Loaded += (sender, args) => LoadDefaults(sender, args);
+		void EnergyUsageControl_Loaded(object sender, RoutedEventArgs e)
+		{
+			paymentMethodCombo.ItemsSource = PaymentMethods.GetAll();
+			paymentMethodCombo.SelectedIndex = 0;
+
+			EnergyUsagePresenter presenter = GetPresenter();
+
 			suppliersCombo.SelectionChanged += SupplierComboChanged;
 			planCombo.SelectionChanged += PlanComboChanged;
+			paymentMethodCombo.SelectionChanged += PaymentMethodComboChanged;
+
+			presenter.Loaded();
+		}
+
+		private EnergyUsagePresenter GetPresenter()
+		{
+			return Product.Equals("Gas") ? (EnergyUsagePresenter)new GasUsagePresenter(this, Dispatcher) : new ElectricityUsagePresenter(this, Dispatcher);
 		}
 
 		void SupplierComboChanged(object sender, SelectionChangedEventArgs e)
@@ -101,6 +139,11 @@ namespace uSwitch.Energy.Silverlight
 		void PlanComboChanged(object sender, SelectionChangedEventArgs e)
 		{
 			PlanSelected(SelectedPlan);
+		}
+
+		void PaymentMethodComboChanged(object sender, SelectionChangedEventArgs e)
+		{
+			PaymentMethodSelected(PaymentMethod);
 		}
 	}
 }

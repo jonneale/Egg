@@ -71,9 +71,13 @@
     </Compile>
     <Compile Include="Commands\CompareCommand.cs" />
     <Compile Include="Commands\IAsyncCommand.cs" />
+    <Compile Include="Core\EventHub.cs" />
+    <Compile Include="Core\IEvent.cs" />
+    <Compile Include="Core\IEventHub.cs" />
     <Compile Include="EnergyUsageControl.xaml.cs">
       <DependentUpon>EnergyUsageControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Events\RegionFoundEvent.cs" />
     <Compile Include="Model\Comparison.cs" />
     <Compile Include="Model\ComparisonRequest.cs" />
     <Compile Include="Model\ComparisonResult.cs" />
@@ -82,6 +86,7 @@
     <Compile Include="Model\PaymentMethods.cs" />
     <Compile Include="Model\PostcodeLookupResult.cs" />
     <Compile Include="Model\Products.cs" />
+    <Compile Include="Presenters\ComparisonPresenter.cs" />
     <Compile Include="Presenters\ElectricityUsagePresenter.cs" />
     <Compile Include="Presenters\GasUsagePresenter.cs" />
     <Compile Include="Rest\Constants.cs" />
@@ -110,6 +115,7 @@
     <Compile Include="ResultsTable.xaml.cs">
       <DependentUpon>ResultsTable.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\IComparisonView.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

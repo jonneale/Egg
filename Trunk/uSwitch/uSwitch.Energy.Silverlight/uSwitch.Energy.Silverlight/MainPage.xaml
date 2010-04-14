@@ -5,25 +5,31 @@
 	mc:Ignorable="d" xmlns:local="clr-namespace:uSwitch.Energy.Silverlight"
 	x:Class="uSwitch.Energy.Silverlight.MainPage"
 	Width="640" Height="480">
-	<Grid x:Name="LayoutRoot" Background="#FF05005F">
-        <Canvas Name="currentSuppliersCanvas">
-            <StackPanel Margin="8,80,8,8" Width="628" Orientation="Vertical" VerticalAlignment="Top">
-                <local:EnergyUsageControl/>
-                <Rectangle Height="15"/>
-                <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center">
-                	<TextBlock Foreground="White" Text="Do you have gas?" TextWrapping="Wrap" FontSize="13.333" Margin="0,10,10,10"/>
-                	<RadioButton Foreground="White" HorizontalAlignment="Left" Content="Yes" IsChecked="True" GroupName="HasGas" FontSize="13.333" Margin="0,0,12,0" VerticalAlignment="Center"/>
-                	<RadioButton Foreground="White" Content="No" GroupName="HasGas" FontSize="13.333" VerticalAlignment="Center"/>
-                </StackPanel>
-                <local:EnergyUsageControl Margin="0" d:LayoutOverrides="Width"/>
-            </StackPanel>
-        </Canvas>
-        <Canvas Height="87" VerticalAlignment="Top">
+	<StackPanel x:Name="LayoutRoot" Background="#FF05005F">
+		<Canvas Height="87">
 			<Path Fill="#FF1B1672" Stretch="Fill" Height="43" UseLayoutRounding="False" Data="M58,131.99974 L58,174 C58,174 277.99997,132.00008 469.99994,133.5" Width="413" Canvas.Top="44"/>
 			<Rectangle Fill="#FF1B1672" Height="46" Width="640"/>
 			<TextBlock Height="32" Width="253" FontSize="29.333" Foreground="White" TextWrapping="Wrap" Canvas.Left="18" Canvas.Top="11"><Run Text="uSwitch.com"/></TextBlock>
 		</Canvas>
-		<Button Margin="480,0,18,95" VerticalAlignment="Bottom" FontSize="16" Content="Compare"/>
-		<local:ResultsTable Margin="8,80,8,8" d:IsHidden="True" x:Name="comparisonResultsTable"/>
-	</Grid>
+		<StackPanel Height="49" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,30">
+			<TextBlock HorizontalAlignment="Left" Margin="30,0,10,0" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="White" FontSize="13.333" Height="22"><Run Text="Postcode"/><LineBreak/><Run Text=""/></TextBlock>
+			<TextBox x:Name="postcodeTextBox" Height="25" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center" Width="178" Text="Enter postcode....." TextWrapping="Wrap"/>
+			<Button Height="31" x:Name="findRegionButton" Margin="50,0,0,0" VerticalAlignment="Center" Width="130" Content="Find my region" Click="FindRegionButton_Click"/>
+            <TextBlock x:Name="currentRegionTextBlock" Foreground="White" />
+		</StackPanel>
+		<StackPanel x:Name="currentSuppliersCanvas">
+			<StackPanel Margin="8,0,4,0" Orientation="Vertical" VerticalAlignment="Top">
+				<local:EnergyUsageControl Product="Electricity" />
+				<Rectangle Height="15"/>
+				<StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center">
+					<TextBlock Foreground="White" Text="Do you have gas?" TextWrapping="Wrap" FontSize="13.333" Margin="0,10,10,10"/>
+					<RadioButton Foreground="White" HorizontalAlignment="Left" Content="Yes" IsChecked="True" GroupName="HasGas" FontSize="13.333" Margin="0,0,12,0" VerticalAlignment="Center"/>
+					<RadioButton Foreground="White" Content="No" GroupName="HasGas" FontSize="13.333" VerticalAlignment="Center"/>
+				</StackPanel>
+				<local:EnergyUsageControl Margin="0" d:LayoutOverrides="Width" Product="Gas" />
+			</StackPanel>
+		</StackPanel>
+		<Button Margin="480,20,18,0" FontSize="16" Content="Compare"/>
+		<local:ResultsTable Margin="8,0" d:IsHidden="True" x:Name="comparisonResultsTable" Height="1"/>
+	</StackPanel>
 </UserControl>

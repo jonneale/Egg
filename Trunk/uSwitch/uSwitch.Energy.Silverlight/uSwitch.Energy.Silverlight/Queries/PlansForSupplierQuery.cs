@@ -8,12 +8,24 @@ namespace uSwitch.Energy.Silverlight.Queries
 	public class PlansForSupplierQuery : IAsyncQuery<IEnumerable<Plan>>
 	{
 	    private const string RestUrl =
-	        Rest.Rest.BaseUrl + "/gas-electricity/regions/southern/products/electricity/suppliers/{0}/payment-methods/{1}/plans/";
+			Rest.Rest.BaseUrl + "/gas-electricity/regions/{0}/products/{1}/suppliers/{2}/payment-methods/{3}/plans/";
 
 		private readonly Supplier _supplier;
 	    private readonly string _paymentMethod;
+		private readonly string _product;
+		private readonly string _region;
 
-	    public string PaymentMethod
+		public string Region
+		{
+			get { return _region; }
+		}
+
+		public string Product
+		{
+			get { return _product; }
+		}
+
+		public string PaymentMethod
 	    {
 	        get { return _paymentMethod; }
 	    }
@@ -23,15 +35,17 @@ namespace uSwitch.Energy.Silverlight.Queries
 			get { return _supplier; }
 		}
 
-		public PlansForSupplierQuery(Supplier supplier, string paymentMethod)
+		public PlansForSupplierQuery(Supplier supplier, string paymentMethod, string product, string region)
 		{
 		    _supplier = supplier;
-		    _paymentMethod = paymentMethod;
+			_region = region.ToLower();
+			_product = product.ToLower();
+			_paymentMethod = paymentMethod.ToLower();
 		}
 
 		public void Execute(IRestClient client, Action<IEnumerable<Plan>> queryCallback)
 		{
-            client.Get<Plan[]>(new Uri(string.Format(RestUrl, Supplier.UrlEncodedName(), PaymentMethod.Replace(" ", "%20"))), x => queryCallback(x));
+            client.Get<Plan[]>(new Uri(string.Format(RestUrl, Region, Product, Supplier.UrlEncodedName(), PaymentMethod.Replace(" ", "%20"))), x => queryCallback(x));
 		}
 	}
 }

@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Threading;
 using uSwitch.Energy.Silverlight.Model;
 using uSwitch.Energy.Silverlight.Queries;
 using uSwitch.Energy.Silverlight.Rest;
@@ -7,26 +11,55 @@ namespace uSwitch.Energy.Silverlight.Presenters
 {
 	public class ElectricityUsagePresenter : EnergyUsagePresenter
 	{
-		public ElectricityUsagePresenter(IEnergyUsageView view) : base(view)
+		public ElectricityUsagePresenter(IEnergyUsageView view, Dispatcher dispatcher) : base(view, dispatcher)
 		{
 		}
 
-		public ElectricityUsagePresenter(IEnergyUsageView view, IRestClient restClient) : base(view, restClient)
+		public ElectricityUsagePresenter(IEnergyUsageView view, IRestClient restClient, Dispatcher dispatcher)
+			: base(view, restClient, dispatcher)
 		{
 
 		}
 
-		public override void SelectPlan(Plan plan)
+		public override void Loaded()
 		{
-			base.SelectPlan(plan);
+			
+		}
+
+		public override void LoadDefaultSuppliersAndPlans(string region)
+		{
+			var query = new AllSuppliersForProductAndRegionQuery("electricity", region);
+			query.Execute(RestClient, suppliers => CallDispatcher(() =>
+			{
+				View.Suppliers = suppliers;
+			}));
 		}
 
 		public override void SelectSupplier(Supplier supplier)
 		{
-			base.SelectSupplier(supplier);
+			var query = new PlansForSupplierQuery(supplier, View.PaymentMethod, "electricity", View.Region);
 
-			var query = new PlansForSupplierQuery(supplier, string.Empty);
-			//var plans = query.Execute(RestClient);
+			Action<IEnumerable<Plan>> callBack = plans => CallDispatcher(() =>
+			                                                             	{
+			                                                             		View.Plans = plans;
+																				View.SelectedPlan = plans.First();
+			                                                             	});
+			query.Execute(RestClient, callBack);
+		}
+
+		public override void SelectPaymentMethod(string paymentMethod)
+		{
+			var query = new PlansForSupplierQuery(View.SelectedSupplier, paymentMethod, "electricity", View.Region);
+			query.Execute(RestClient, plans => CallDispatcher(() =>
+			{
+				View.Plans = plans;
+				View.SelectedPlan = plans.First();
+			}));
+		}
+
+		public override void SelectPlan(Plan plan)
+		{
+			
 		}
 	}
 }

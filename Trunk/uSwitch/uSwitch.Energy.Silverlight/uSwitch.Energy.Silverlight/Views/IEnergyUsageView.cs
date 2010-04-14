@@ -10,7 +10,22 @@ namespace uSwitch.Energy.Silverlight.Views
 
 		event Action<Plan> PlanSelected;
 
-		event EventHandler LoadDefaults;
+		event Action<string> PaymentMethodSelected;
+
+		bool HasGas
+		{
+			get; set;
+		}
+
+		string Region
+		{
+			get; set;
+		}
+
+		string PaymentMethod
+		{
+			get; set;
+		}
 
 		IEnumerable<Supplier> Suppliers
 		{
@@ -27,6 +42,11 @@ namespace uSwitch.Energy.Silverlight.Views
 		{
 			get;
 			set;
+		}
+
+		string Product
+		{
+			get; set;
 		}
 
 		Plan SelectedPlan

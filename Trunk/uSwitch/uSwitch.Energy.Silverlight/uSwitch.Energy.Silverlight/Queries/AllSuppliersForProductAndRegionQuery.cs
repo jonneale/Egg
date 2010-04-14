@@ -24,7 +24,7 @@ namespace uSwitch.Energy.Silverlight.Queries
 
         public AllSuppliersForProductAndRegionQuery(string product, string region)
         {
-            _product = product;
+            _product = product.ToLower();
             _region = region;
         }
 
