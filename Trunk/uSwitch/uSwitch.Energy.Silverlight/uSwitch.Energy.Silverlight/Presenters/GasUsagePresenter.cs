@@ -31,11 +31,6 @@ namespace uSwitch.Energy.Silverlight.Presenters
 			}));
 		}
 
-		public override void Loaded()
-		{
-			
-		}
-
 		public override void SelectPaymentMethod(string paymentMethod)
 		{
 			var query = new PlansForSupplierQuery(View.SelectedSupplier, paymentMethod, "gas", View.Region);

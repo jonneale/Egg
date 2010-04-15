@@ -24,6 +24,18 @@ namespace uSwitch.Energy.Silverlight
 		public event Action<Plan> PlanSelected = plan => { };
 		public event Action<string> PaymentMethodSelected = paymentMethod => { };
 
+	    public string HeaderText
+	    {
+	        get
+	        {
+	            return consumptionHeader.Text;
+	        }
+            set
+            {
+                consumptionHeader.Text = value;
+            }
+	    }
+
 		public bool HasGas
 		{
 			get { throw new NotImplementedException(); }
@@ -62,7 +74,7 @@ namespace uSwitch.Energy.Silverlight
 			{
 				_supplier = value;
 				suppliersCombo.ItemsSource = value.Select(x => x.Name);
-				planCombo.SelectedIndex = 0;
+                suppliersCombo.SelectedIndex = 0;
 			}
 		}
 
@@ -133,17 +145,26 @@ namespace uSwitch.Energy.Silverlight
 
 		void SupplierComboChanged(object sender, SelectionChangedEventArgs e)
 		{
-			SupplierSelected(SelectedSupplier);
+            if (e.AddedItems.Count > 0)
+            {
+                SupplierSelected(SelectedSupplier);
+            }
 		}
 
 		void PlanComboChanged(object sender, SelectionChangedEventArgs e)
 		{
-			PlanSelected(SelectedPlan);
+            if (e.AddedItems.Count > 0)
+            {
+                PlanSelected(SelectedPlan);
+            }
 		}
 
 		void PaymentMethodComboChanged(object sender, SelectionChangedEventArgs e)
 		{
-			PaymentMethodSelected(PaymentMethod);
+            if (e.AddedItems.Count > 0)
+            {
+                PaymentMethodSelected(PaymentMethod);
+            }
 		}
 	}
 }

@@ -32,8 +32,18 @@ namespace uSwitch.Energy.Silverlight.Presenters
 				{
 					View.Region = result.RegionName;
 					EventHub.Publish(new RegionFoundEvent {Region = result.RegionName});
+
+                    if (!string.IsNullOrEmpty(View.Region))
+                    {
+                        View.UsageFadeInStoryboard.Begin();
+                    }
 				}));
 		}
+
+        public void Compare()
+        {
+            
+        }
 
 		protected void CallDispatcher(Action action)
 		{

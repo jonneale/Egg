@@ -30,8 +30,9 @@ namespace uSwitch.Energy.Silverlight.Core
 			if (!_eventHandlers.ContainsKey(typeof(TEvent)))
 			{
 				_eventHandlers.Add(typeof (TEvent), new List<object>());
-				_eventHandlers[typeof (TEvent)].Add(eventHandler);
 			}
+
+            _eventHandlers[typeof(TEvent)].Add(eventHandler);
 		}
 	}
 }

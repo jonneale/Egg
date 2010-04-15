@@ -21,17 +21,13 @@ namespace uSwitch.Energy.Silverlight.Presenters
 
 		}
 
-		public override void Loaded()
-		{
-			
-		}
-
 		public override void LoadDefaultSuppliersAndPlans(string region)
 		{
 			var query = new AllSuppliersForProductAndRegionQuery("electricity", region);
 			query.Execute(RestClient, suppliers => CallDispatcher(() =>
 			{
 				View.Suppliers = suppliers;
+			    View.SelectedSupplier = suppliers.First();
 			}));
 		}
 

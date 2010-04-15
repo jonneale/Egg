@@ -1,4 +1,5 @@
 using System;
+using System.Windows.Media.Animation;
 
 namespace uSwitch.Energy.Silverlight.Views
 {
@@ -8,5 +9,7 @@ namespace uSwitch.Energy.Silverlight.Views
 		string Postcode { get; set; }
 
 		event Action<string> FindRegionPressed;
+
+        Storyboard UsageFadeInStoryboard { get; }
 	}
 }
