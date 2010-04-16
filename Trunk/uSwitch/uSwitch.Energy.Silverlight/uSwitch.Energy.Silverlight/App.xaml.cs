@@ -26,7 +26,7 @@ namespace uSwitch.Energy.Silverlight
 
 		private void Application_Startup(object sender, StartupEventArgs e)
 		{
-            this.RootVisual = new MainPage();
+            this.RootVisual = new ResultsTable();
 		}
 
 		private void Application_Exit(object sender, EventArgs e)

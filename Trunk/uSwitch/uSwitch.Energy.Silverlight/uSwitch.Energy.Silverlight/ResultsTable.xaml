@@ -9,6 +9,6 @@
 	d:DesignWidth="600" d:DesignHeight="269">
 
 	<StackPanel x:Name="LayoutRoot">
-		<data:DataGrid x:Name="ResultsGrid"/>
+		<data:DataGrid x:Name="resultsGrid"/>
 	</StackPanel>
 </UserControl>
