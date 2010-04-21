@@ -53,5 +53,10 @@ namespace uSwitch.Energy.Silverlight.Views
 		{
 			get; set;
 		}
+
+	    double UsageInKwh
+	    { 
+            get; set;
+	    }
 	}
 }

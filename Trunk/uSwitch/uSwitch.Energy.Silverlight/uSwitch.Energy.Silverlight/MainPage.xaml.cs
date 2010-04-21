@@ -9,7 +9,7 @@ using uSwitch.Energy.Silverlight.Views;
 
 namespace uSwitch.Energy.Silverlight
 {
-	public partial class MainPage : UserControl, IComparisonView
+	public partial class MainPage : UserControl, IApplicationView
 	{
 		public MainPage()
 		{
@@ -18,20 +18,24 @@ namespace uSwitch.Energy.Silverlight
 
 			Loaded += MainPage_Loaded;
 
-            postcodeTextBox.GotFocus += new RoutedEventHandler(postcodeTextBox_GotFocus);
-
-			//comparisonResultsTable.Visibility = Visibility.Visible;
-			//currentSuppliersCanvas.Visibility = Visibility.Collapsed;
+            postcodeTextBox.GotFocus += postcodeTextBox_GotFocus;
+            compareUsageButton.Click += compareUsageButton_Click;
 		}
 
-        void postcodeTextBox_GotFocus(object sender, RoutedEventArgs e)
+        protected void compareUsageButton_Click(object sender, RoutedEventArgs e)
+        {
+            Compare();
+        }
+
+        protected void postcodeTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             postcodeTextBox.Text = string.Empty;
         }
 
 		protected void MainPage_Loaded(object sender, RoutedEventArgs e)
 		{
-			var presenter = new ComparisonPresenter(this, Dispatcher);
+			var presenter = new ApplicationPresenter(this, Dispatcher);
+            presenter.Loaded();
 		}
 
 		private string _region;
@@ -49,6 +53,7 @@ namespace uSwitch.Energy.Silverlight
 		public string Postcode { get; set; }
 
 		public event Action<string> FindRegionPressed = s => { };
+	    public event Action Compare = () => {};
 
 	    public Storyboard UsageFadeInStoryboard
 	    {
@@ -56,6 +61,34 @@ namespace uSwitch.Energy.Silverlight
             {
 	            return UsageFadeIn;
             }
+	    }
+
+        public IEnergyUsageView GasUsageView 
+        { 
+            get
+            {
+                return gasUsageControl;
+            } 
+        }
+	    public IEnergyUsageView ElectricityUsageView
+	    {
+	        get
+	        {
+	            return electricityUsageControl;
+	        }
+	    }
+
+	    public bool UsagePanelsVisible
+	    {
+	        get
+	        {
+	            return currentSuppliersCanvas.Visibility == Visibility.Visible;
+	        }
+	        set
+	        {
+	            currentSuppliersCanvas.Visibility = value ? Visibility.Visible : Visibility.Collapsed;
+                compareUsageButton.Visibility = value ? Visibility.Visible : Visibility.Collapsed;
+	        }
 	    }
 
 	    private void FindRegionButton_Click(object sender, RoutedEventArgs e)

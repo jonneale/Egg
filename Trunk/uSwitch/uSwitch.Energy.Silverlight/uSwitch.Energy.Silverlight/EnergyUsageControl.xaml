@@ -7,22 +7,22 @@
 	x:Class="uSwitch.Energy.Silverlight.EnergyUsageControl"
 	d:DesignWidth="628" d:DesignHeight="100">
 
-	<Grid x:Name="LayoutRoot">
-		<StackPanel x:Name="electricityStackPanel">
-			<TextBlock x:Name="consumptionHeader" Foreground="White"></TextBlock>
-			<StackPanel Orientation="Horizontal">
-				<TextBlock Text="Supplier" TextWrapping="Wrap" Margin="42,0,8,0" VerticalAlignment="Center" FontSize="13.333" Foreground="White"/>
-				<ComboBox x:Name="suppliersCombo" Margin="3,10,10,10" Width="186" Height="24" Foreground="Black"/>
-				<TextBlock Margin="16,0,0,0" VerticalAlignment="Center" Text="Payment method" TextWrapping="Wrap" FontSize="13.333" Foreground="White"/>
-				<ComboBox x:Name="paymentMethodCombo" Margin="8,10,10,10" Width="157" />
-			</StackPanel>
-			<StackPanel Orientation="Horizontal">
-				<TextBlock Margin="67,0,0,0" VerticalAlignment="Center" Width="32" FontSize="13.333" Text="Plan" TextWrapping="Wrap" Foreground="White"/>
-				<ComboBox x:Name="planCombo" HorizontalAlignment="Left" Margin="10" Width="186"/>
-				<TextBlock Text="Electricity usage" TextWrapping="Wrap" Margin="20,0,0,0" VerticalAlignment="Center" FontSize="13.333" Foreground="White"/>
+    <Grid x:Name="LayoutRoot">
+        <StackPanel x:Name="electricityStackPanel">
+            <TextBlock x:Name="consumptionHeader" Foreground="White"></TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Supplier" TextWrapping="Wrap" Margin="42,0,8,0" VerticalAlignment="Center" FontSize="13.333" Foreground="White"/>
+                <ComboBox x:Name="suppliersCombo" Margin="3,10,10,10" Width="186" Height="24" Foreground="Black"/>
+                <TextBlock Margin="16,0,0,0" VerticalAlignment="Center" Text="Payment method" TextWrapping="Wrap" FontSize="13.333" Foreground="White"/>
+                <ComboBox x:Name="paymentMethodCombo" Margin="8,10,10,10" Width="157" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="67,0,0,0" VerticalAlignment="Center" Width="32" FontSize="13.333" Text="Plan" TextWrapping="Wrap" Foreground="White"/>
+                <ComboBox x:Name="planCombo" HorizontalAlignment="Left" Margin="10" Width="186"/>
+                <TextBlock TextWrapping="Wrap" Margin="20,0,0,0" VerticalAlignment="Center" FontSize="13.333" Foreground="White" x:Name="usageTextBlock" />
                 <TextBox x:Name="usageAmountTextbox" Margin="10" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" Width="140" />
                 <TextBlock VerticalAlignment="Center" Text="kwh" TextWrapping="Wrap" Foreground="White"/>
-			</StackPanel>
-		</StackPanel>
-	</Grid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
 </UserControl>

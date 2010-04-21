@@ -9,6 +9,19 @@
 	d:DesignWidth="600" d:DesignHeight="269">
 
 	<StackPanel x:Name="LayoutRoot">
-		<data:DataGrid x:Name="resultsGrid"/>
-	</StackPanel>
+        <data:DataGrid Height="280" Width="600" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" x:Name="resultsGrid" AutoGenerateColumns="False">
+            <data:DataGrid.Columns>
+                <data:DataGridTextColumn Header="Plan" Width="300" Binding="{Binding Plan}" IsReadOnly="True" />
+                <data:DataGridTextColumn Header="Price" Width="100" Binding="{Binding Price}" IsReadOnly="True" />
+                <data:DataGridTextColumn Header="Savings" Width="100" Binding="{Binding Savings}" IsReadOnly="True" />
+                <data:DataGridTemplateColumn Header="Starting saving" Width="80">
+                    <data:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <HyperlinkButton NavigateUri="{Binding SwitchUrl}" Content="Switch now" />
+                        </DataTemplate>
+                    </data:DataGridTemplateColumn.CellTemplate>
+                </data:DataGridTemplateColumn>
+            </data:DataGrid.Columns>
+        </data:DataGrid>
+    </StackPanel>
 </UserControl>

@@ -116,7 +116,19 @@ namespace uSwitch.Energy.Silverlight
 			}
 		}
 
-		public EnergyUsageControl()
+	    public double UsageInKwh
+	    {
+	        get
+	        {
+	            return double.Parse(usageAmountTextbox.Text);
+	        }
+	        set
+	        {
+	            usageAmountTextbox.Text = value.ToString();
+	        }
+	    }
+
+	    public EnergyUsageControl()
 		{
 			// Required to initialize variables
 			InitializeComponent();
@@ -134,6 +146,8 @@ namespace uSwitch.Energy.Silverlight
 			suppliersCombo.SelectionChanged += SupplierComboChanged;
 			planCombo.SelectionChanged += PlanComboChanged;
 			paymentMethodCombo.SelectionChanged += PaymentMethodComboChanged;
+
+            usageTextBlock.Text = string.Format("{0} usage", Product);
 
 			presenter.Loaded();
 		}
