@@ -25,7 +25,6 @@ namespace uSwitch.Energy.Silverlight
                                                                                                                                       x => x.Name).ToArray());
                                                                                           }));
 
-            //resultsTextBlock.Text = "it works";
         }
 
         private void findregion_Click(object sender, RoutedEventArgs e)

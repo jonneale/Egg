@@ -27,6 +27,8 @@ namespace uSwitch.Energy.Silverlight.Commands
 
             var serializedComparisonRequest = new MemoryStream();
             serializer.WriteObject(serializedComparisonRequest, ComparisonRequest);
+            serializedComparisonRequest.Position = 0;
+
             client.Post(new Uri(RestUrl), serializedComparisonRequest, queryCallback);
         }
     }

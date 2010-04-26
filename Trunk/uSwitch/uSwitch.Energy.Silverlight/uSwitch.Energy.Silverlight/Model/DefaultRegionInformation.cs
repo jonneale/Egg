@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 
 namespace uSwitch.Energy.Silverlight.Model
 {
-    public class DefaultEnergyResult
+    public class DefaultRegionInformation
     {
         public string DefaultElectricityPlan
         {

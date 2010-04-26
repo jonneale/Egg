@@ -41,11 +41,11 @@ namespace uSwitch.Energy.Silverlight.Presenters
 			EventHub.Register<RegionFoundEvent>(e =>
 			                                    	{
 														View.Region = e.Region;
-			                                    		LoadDefaultSuppliersAndPlans(e.Region);
+			                                    		LoadDefaultSuppliersAndPlans(e.DefaultRegionInfo);
 			                                    	});
 		}
 
-		public abstract void LoadDefaultSuppliersAndPlans(string region);
+        public abstract void LoadDefaultSuppliersAndPlans(DefaultRegionInformation defaultRegionInfo);
 
 		protected void CallDispatcher(Action action)
 		{

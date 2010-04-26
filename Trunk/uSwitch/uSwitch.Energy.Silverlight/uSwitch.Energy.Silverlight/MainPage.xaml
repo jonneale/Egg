@@ -32,12 +32,12 @@
 		</StackPanel>
 		<StackPanel x:Name="currentSuppliersCanvas" Opacity="0">
 			<StackPanel Margin="8,0,4,0" Orientation="Vertical" VerticalAlignment="Top">
-				<local:EnergyUsageControl Product="Electricity" />
+				<local:EnergyUsageControl Product="Electricity" x:Name="electricityUsageControl" />
 				<Rectangle Height="15"/>
-				<local:EnergyUsageControl Margin="0" d:LayoutOverrides="Width" Product="Gas" />
+				<local:EnergyUsageControl Margin="0" d:LayoutOverrides="Width" Product="Gas" x:Name="gasUsageControl" />
 			</StackPanel>
 		</StackPanel>
-		<Button Margin="480,20,18,0" FontSize="16" Content="Compare"/>
-		<local:ResultsTable Margin="8,0" d:IsHidden="True" x:Name="comparisonResultsTable" Height="1"/>
+		<Button Margin="480,20,18,0" FontSize="16" Content="Compare" x:Name="compareUsageButton" />
+		<local:ResultsTable Margin="8,0" d:IsHidden="True" x:Name="comparisonResultsTable" Visibility="Collapsed" />
 	</StackPanel>
 </UserControl>

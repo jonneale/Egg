@@ -59,7 +59,9 @@ namespace uSwitch.Energy.Silverlight
 			}
 		}
 
-		public string Product
+	    public string RegionDefaultPlanName { get; set; }
+
+	    public string Product
 		{
 			get; set;
 		}
@@ -104,7 +106,9 @@ namespace uSwitch.Energy.Silverlight
 			}
 		}
 
-		public Plan SelectedPlan
+	    public string RegionDefaultSupplierName { get; set; }
+
+	    public Plan SelectedPlan
 		{
 			get
 			{
@@ -116,7 +120,19 @@ namespace uSwitch.Energy.Silverlight
 			}
 		}
 
-		public EnergyUsageControl()
+	    public double UsageInKwh
+	    {
+	        get
+	        {
+	            return double.Parse(usageAmountTextbox.Text);
+	        }
+	        set
+	        {
+	            usageAmountTextbox.Text = value.ToString();
+	        }
+	    }
+
+	    public EnergyUsageControl()
 		{
 			// Required to initialize variables
 			InitializeComponent();
@@ -134,6 +150,8 @@ namespace uSwitch.Energy.Silverlight
 			suppliersCombo.SelectionChanged += SupplierComboChanged;
 			planCombo.SelectionChanged += PlanComboChanged;
 			paymentMethodCombo.SelectionChanged += PaymentMethodComboChanged;
+
+            usageTextBlock.Text = string.Format("{0} usage", Product);
 
 			presenter.Loaded();
 		}

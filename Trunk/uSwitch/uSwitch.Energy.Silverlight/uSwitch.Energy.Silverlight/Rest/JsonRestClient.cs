@@ -27,15 +27,16 @@ namespace uSwitch.Energy.Silverlight.Rest
 		{
 			var reader = new StreamReader(content);
 			var client = new WebClient();
+            client.Headers["Content-Type"] = "application/x-www-form-urlencoded";
 			client.UploadStringCompleted += (sender, e) => PostWebRequestComplete(sender, e, callback);
-			client.UploadStringAsync(url, "POST", reader.ReadToEnd());
+			client.UploadStringAsync(url, "POST", reader.ReadToEnd().ToLower());
 		}
 
 		private static void PostWebRequestComplete<TJson>(object sender, UploadStringCompletedEventArgs e, Action<TJson> callback)
 		{
-			var stream = new MemoryStream();
-			var memoryReader = new StreamWriter(stream);
-			memoryReader.Write(e.Result);
+		    string fullString = e.Result;
+
+            var stream = new MemoryStream(Encoding.UTF8.GetBytes(fullString));
 
 			var serializer = new DataContractJsonSerializer(typeof(TJson));
 			var jsonResult = (TJson)serializer.ReadObject(stream);
@@ -50,7 +51,6 @@ namespace uSwitch.Energy.Silverlight.Rest
 			jsonObject = DeSerializeResponse<TJson>(res);
 
 			callback(jsonObject);
-			//Dispatcher.BeginInvoke(x => )
 		}
 
 		private static TJson DeSerializeResponse<TJson>(WebResponse res)

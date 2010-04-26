@@ -44,6 +44,17 @@ namespace uSwitch.Energy.Silverlight.Views
 			set;
 		}
 
+        string RegionDefaultSupplierName
+        {
+            get; set;
+        }
+
+        string RegionDefaultPlanName
+        {
+            get;
+            set;
+        }
+
 		string Product
 		{
 			get; set;
@@ -53,5 +64,10 @@ namespace uSwitch.Energy.Silverlight.Views
 		{
 			get; set;
 		}
+
+	    double UsageInKwh
+	    { 
+            get; set;
+	    }
 	}
 }

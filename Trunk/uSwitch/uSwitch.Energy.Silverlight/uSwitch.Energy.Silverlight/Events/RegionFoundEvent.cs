@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using uSwitch.Energy.Silverlight.Core;
+using uSwitch.Energy.Silverlight.Model;
 
 namespace uSwitch.Energy.Silverlight.Events
 {
@@ -18,5 +19,10 @@ namespace uSwitch.Energy.Silverlight.Events
 		{
 			get; set;
 		}
+
+        public DefaultRegionInformation DefaultRegionInfo
+        {
+            get; set;
+        }
 	}
 }

@@ -78,18 +78,28 @@
     <Compile Include="EnergyUsageControl.xaml.cs">
       <DependentUpon>EnergyUsageControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Events\CompareEvent.cs" />
+    <Compile Include="Events\CompareEventExtensions.cs" />
+    <Compile Include="Events\ComparisonReceivedEvent.cs" />
     <Compile Include="Events\RegionFoundEvent.cs" />
+    <Compile Include="Events\ResetSessionEvent.cs" />
+    <Compile Include="Events\ResultSelected.cs" />
     <Compile Include="Model\Comparison.cs" />
     <Compile Include="Model\ComparisonRequest.cs" />
     <Compile Include="Model\ComparisonResult.cs" />
-    <Compile Include="Model\DefaultEnergyResult.cs" />
+    <Compile Include="Model\DefaultRegionInformation.cs" />
+    <Compile Include="Model\Extensions\ComparisonResultsExtensions.cs" />
     <Compile Include="Model\IRestResource.cs" />
     <Compile Include="Model\PaymentMethods.cs" />
     <Compile Include="Model\PostcodeLookupResult.cs" />
     <Compile Include="Model\Products.cs" />
-    <Compile Include="Presenters\ComparisonPresenter.cs" />
+    <Compile Include="Model\Rate.cs" />
+    <Compile Include="Model\Tariff.cs" />
+    <Compile Include="Presenters\ApplicationPresenter.cs" />
     <Compile Include="Presenters\ElectricityUsagePresenter.cs" />
     <Compile Include="Presenters\GasUsagePresenter.cs" />
+    <Compile Include="Presenters\ResultsPresenter.cs" />
+    <Compile Include="Queries\GetTariffInfoForPlan.cs" />
     <Compile Include="Rest\Constants.cs" />
     <Compile Include="Queries\GetDefaultEnergyPlansForAllRegionsQuery.cs" />
     <Compile Include="Queries\GetDefaultEnergyPlansForRegionQuery.cs" />
@@ -116,7 +126,9 @@
     <Compile Include="ResultsTable.xaml.cs">
       <DependentUpon>ResultsTable.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\IComparisonView.cs" />
+    <Compile Include="Views\IApplicationView.cs" />
+    <Compile Include="Views\IResultsView.cs" />
+    <Compile Include="Views\PresentationModel\ResultsViewItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
