@@ -11,6 +11,8 @@ namespace uSwitch.Energy.Silverlight
 {
 	public partial class MainPage : UserControl, IApplicationView
 	{
+        private string _region;
+
 		public MainPage()
 		{
 			// Required to initialize variables
@@ -38,9 +40,12 @@ namespace uSwitch.Energy.Silverlight
             presenter.Loaded();
 		}
 
-		private string _region;
+        public DefaultRegionInformation DefaultUsage
+        {
+            get; set;
+        }
 
-		public string Region
+	    public string Region
 		{
 			get { return _region; }
 			set

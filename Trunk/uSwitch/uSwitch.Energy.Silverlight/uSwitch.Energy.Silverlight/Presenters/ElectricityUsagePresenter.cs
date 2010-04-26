@@ -21,13 +21,21 @@ namespace uSwitch.Energy.Silverlight.Presenters
 
 		}
 
-		public override void LoadDefaultSuppliersAndPlans(string region)
+        public void SetDefaultRegionInfo(DefaultRegionInformation regionInfo)
+        {
+            View.RegionDefaultSupplierName = regionInfo.DefaultElectricitySupplier;
+            View.RegionDefaultPlanName = regionInfo.DefaultElectricityPlan;
+        }
+
+		public override void LoadDefaultSuppliersAndPlans(DefaultRegionInformation defaultRegionInfo)
 		{
-			var query = new AllSuppliersForProductAndRegionQuery("electricity", region);
+		    SetDefaultRegionInfo(defaultRegionInfo);
+
+			var query = new AllSuppliersForProductAndRegionQuery("electricity", defaultRegionInfo.Name);
 			query.Execute(RestClient, suppliers => CallDispatcher(() =>
 			{
 				View.Suppliers = suppliers;
-			    View.SelectedSupplier = suppliers.First();
+                View.SelectedSupplier = suppliers.Single(s => s.Name.Equals(View.RegionDefaultSupplierName));
 			}));
 		}
 
@@ -37,8 +45,14 @@ namespace uSwitch.Energy.Silverlight.Presenters
 
 			Action<IEnumerable<Plan>> callBack = plans => CallDispatcher(() =>
 			                                                             	{
+			                                                             	    Plan defaultPlanName =
+			                                                             	        plans.SingleOrDefault(
+			                                                             	            p =>
+			                                                             	            p.Name.Equals(View.RegionDefaultPlanName)) ??
+			                                                             	        plans.First();
+
 			                                                             		View.Plans = plans;
-																				View.SelectedPlan = plans.First();
+                                                                                View.SelectedPlan = defaultPlanName;
 			                                                             	});
 			query.Execute(RestClient, callBack);
 		}

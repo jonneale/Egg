@@ -4,7 +4,7 @@ using uSwitch.Energy.Silverlight.Rest;
 
 namespace uSwitch.Energy.Silverlight.Queries
 {
-    public class GetDefaultEnergyPlansForRegionQuery: IAsyncQuery<DefaultEnergyResult>
+    public class GetDefaultEnergyPlansForRegionQuery: IAsyncQuery<DefaultRegionInformation>
     {
         private readonly string _regionName;
         private const string RestUrl = Rest.Rest.BaseUrl + "/gas-electricity/regions/{0}/";
@@ -19,7 +19,7 @@ namespace uSwitch.Energy.Silverlight.Queries
             get { return _regionName; }
         }
 
-        public void Execute(IRestClient client, Action<DefaultEnergyResult> queryCallback)
+        public void Execute(IRestClient client, Action<DefaultRegionInformation> queryCallback)
         {
             client.Get(new Uri(string.Format(RestUrl, RegionName)), queryCallback);
         }

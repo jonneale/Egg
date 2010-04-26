@@ -15,11 +15,14 @@ using uSwitch.Energy.Silverlight.Presenters;
 using uSwitch.Energy.Silverlight.Rest;
 using uSwitch.Energy.Silverlight.Views;
 using uSwitch.Energy.Silverlight.Views.PresentationModel;
+using System.Linq;
 
 namespace uSwitch.Energy.Silverlight
 {
 	public partial class ResultsTable : UserControl, IResultsView
 	{
+	    public event Action<ResultsViewItem> ResultSelected = item => { };
+
 		public ResultsTable()
 		{
 			// Required to initialize variables
@@ -33,44 +36,6 @@ namespace uSwitch.Energy.Silverlight
             var presenter = new ResultsPresenter(this, Dispatcher);
             presenter.Loaded();
         }
-
-
-        //void ResultsTable_Loaded(object sender, RoutedEventArgs e)
-        //{
-        //    var client = RestClientFactory.GetDefault();
-        //    var request = new ComparisonRequest
-        //                      {
-        //                          ComparisonPaymentMethod = PaymentMethods.FixedMonthlyDirectDebit,
-        //                          ElectricityAnnualConsumptionKwh = 3300.0,
-        //                          ElectricityPaymentMethod = PaymentMethods.PayOnReceiptOfBill,
-        //                          ElectricitySupplierName = "british gas",
-        //                          ElectricityPlanKey = "standard",
-        //                          HasGas = true,
-        //                          GasAnnualConsumptionKwh = 20000,
-        //                          GasPlanKey = "standard",
-        //                          GasSupplierName = "british gas",
-        //                          GasPaymentMethod = PaymentMethods.PayOnReceiptOfBill,
-        //                          PostCode = "ub9 4dw"
-        //                      };
-        //    var command = new CompareCommand(request);
-        //    command.Execute(client, ResultsTableCallBack);
-        //}
-
-        //protected void ResultsTableCallBack(Comparison comparison)
-        //{
-        //    var resultsView = comparison.ComparisonResults.Select(x => new ResultsViewItem
-        //                                                                   {
-        //                                                                       Plan = string.Format("{0}\n{1}", x.SupplierName, x.PlanName), 
-        //                                                                       Savings = x.Savings, 
-        //                                                                       Price = x.Price,
-        //                                                                       SwitchUrl = x.SwitchUrl
-        //                                                                   }).ToList();
-
-        //    Dispatcher.BeginInvoke(() =>
-        //                               {
-        //                                   resultsGrid.ItemsSource = resultsView;
-        //                               });
-        //}
 
 	    public IEnumerable<ResultsViewItem> Results
 	    {
@@ -95,5 +60,16 @@ namespace uSwitch.Energy.Silverlight
 	            Visibility = value ? Visibility.Visible : Visibility.Collapsed;
 	        }
 	    }
+
+        private void resultsGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selected = e.AddedItems.Cast<ResultsViewItem>().FirstOrDefault();
+
+            if (selected != null)
+            {
+                ResultSelected(selected);
+                MessageBox.Show("Row selected - " + selected.PlanTitle);
+            }
+        }
 	}
 }

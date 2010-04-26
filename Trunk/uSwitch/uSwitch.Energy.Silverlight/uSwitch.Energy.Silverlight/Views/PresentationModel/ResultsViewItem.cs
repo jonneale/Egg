@@ -13,7 +13,9 @@ namespace uSwitch.Energy.Silverlight.Views.PresentationModel
 {
     public class ResultsViewItem
     {
-        public string Plan { get; set; }
+        public string SupplierName { get; set; }
+        public string PlanName { get; set; }
+        public string PlanTitle { get; set; }
         public double Price { get; set; }
         public double Savings { get; set; }
         public string SwitchUrl { get; set; }

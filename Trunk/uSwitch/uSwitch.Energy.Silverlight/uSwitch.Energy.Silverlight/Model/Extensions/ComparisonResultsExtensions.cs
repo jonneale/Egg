@@ -20,7 +20,7 @@ namespace uSwitch.Energy.Silverlight.Model.Extensions
         {
             return results.Select(x => new ResultsViewItem
             {
-                Plan = string.Format("{0}\n{1}", x.SupplierName, x.PlanName),
+                PlanTitle = string.Format("{0}\n{1}", x.SupplierName, x.PlanName),
                 Savings = x.Savings,
                 Price = x.Price,
                 SwitchUrl = x.SwitchUrl

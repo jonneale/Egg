@@ -24,6 +24,7 @@ namespace uSwitch.Energy.Silverlight.Presenters
             View = view;
             Dispatcher = dispatcher;
             RestClient = RestClientFactory.GetDefault();
+            View.ResultSelected += ResultSelected;
         }
 
         public void DisplayResults(Comparison comparison)
@@ -40,11 +41,7 @@ namespace uSwitch.Energy.Silverlight.Presenters
 
         private Action<CompareEvent> CreateCallBackEventInDispatcher()
         {
-            return @event => Dispatcher.BeginInvoke(() =>
-                                                        {
-                                                            GetResultsForComparison
-                                                                (@event);
-                                                        });
+            return @event => Dispatcher.BeginInvoke(() => GetResultsForComparison(@event));
         }
 
         public void GetResultsForComparison(CompareEvent @event)
@@ -52,6 +49,11 @@ namespace uSwitch.Energy.Silverlight.Presenters
             ComparisonRequest request = @event.ToRequest();
             var compareCommand = new CompareCommand(request);
             compareCommand.Execute(RestClient, c => Dispatcher.BeginInvoke(() => GetResultsForComparisonCallBack(c)));
+        }
+
+        public void ResultSelected(ResultsViewItem item)
+        {
+            EventHub.Publish(new ResultSelected { PlanName = item.PlanName, SupplierName = item.SupplierName});
         }
 
         private void GetResultsForComparisonCallBack(Comparison comparison)

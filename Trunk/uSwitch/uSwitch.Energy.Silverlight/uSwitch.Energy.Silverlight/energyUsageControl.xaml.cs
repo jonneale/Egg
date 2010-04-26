@@ -59,7 +59,9 @@ namespace uSwitch.Energy.Silverlight
 			}
 		}
 
-		public string Product
+	    public string RegionDefaultPlanName { get; set; }
+
+	    public string Product
 		{
 			get; set;
 		}
@@ -104,7 +106,9 @@ namespace uSwitch.Energy.Silverlight
 			}
 		}
 
-		public Plan SelectedPlan
+	    public string RegionDefaultSupplierName { get; set; }
+
+	    public Plan SelectedPlan
 		{
 			get
 			{
