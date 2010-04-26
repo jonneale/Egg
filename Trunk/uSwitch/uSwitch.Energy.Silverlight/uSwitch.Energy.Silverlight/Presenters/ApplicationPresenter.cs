@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Threading;
 using uSwitch.Energy.Silverlight.Core;
@@ -35,26 +36,25 @@ namespace uSwitch.Energy.Silverlight.Presenters
             };
             EventHub.Register(eventCallBack);
 
-            Action<ResultSelected> resultSelectedEventCallBack = r =>
-                                                                     {
-                                                                         var query =
-                                                                             new GetTariffInfoForPlan(r.SupplierName,
-                                                                                                      r.PlanName,
-                                                                                                      PaymentMethods.
-                                                                                                          FixedMonthlyDirectDebit,
-                                                                                                      Products.
-                                                                                                          Electricity,
-                                                                                                      View.Region
-                                                                                 );
-
-                                                                         query.Execute(RestClient, tariff => CallDispatcher(() =>
-                                                                                                                           {
-                                                                                                                               MessageBox.Show("Tariff information: " + tariff.StandingCharge);
-                                                                                                                           }));
-                                                                     };
-
+        	Action<ResultSelected> resultSelectedEventCallBack = ResultSelectedCallBack;
             EventHub.Register(resultSelectedEventCallBack);
         }
+
+		private void ResultSelectedCallBack(ResultSelected resultSelected)
+		{
+			var query = new GetTariffInfoForPlan(resultSelected.SupplierName, 
+				resultSelected.PlanName,
+				PaymentMethods.FixedMonthlyDirectDebit,
+				Products.Electricity,
+				View.Region);
+
+			query.Execute(RestClient, tariff => CallDispatcher(() =>
+			{
+				string tariffInfo = "Tariff information: " + tariff.StandingCharge + "\n";
+				tariffInfo += "First rate: " + tariff.Rates.First().PencePerkWh + "\n";
+				MessageBox.Show(tariffInfo);
+			}));
+		}
 
 		public void FindRegion(string postcode)
 		{
