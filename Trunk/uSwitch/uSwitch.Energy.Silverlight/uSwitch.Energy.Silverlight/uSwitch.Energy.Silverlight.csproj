@@ -84,6 +84,7 @@
     <Compile Include="Events\RegionFoundEvent.cs" />
     <Compile Include="Events\ResetSessionEvent.cs" />
     <Compile Include="Events\ResultSelected.cs" />
+    <Compile Include="Events\TariffInformationFoundEvent.cs" />
     <Compile Include="Model\Comparison.cs" />
     <Compile Include="Model\ComparisonRequest.cs" />
     <Compile Include="Model\ComparisonResult.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Presenters\ElectricityUsagePresenter.cs" />
     <Compile Include="Presenters\GasUsagePresenter.cs" />
     <Compile Include="Presenters\ResultsPresenter.cs" />
+    <Compile Include="Presenters\TariffPresenter.cs" />
     <Compile Include="Queries\GetTariffInfoForPlan.cs" />
     <Compile Include="Rest\Constants.cs" />
     <Compile Include="Queries\GetDefaultEnergyPlansForAllRegionsQuery.cs" />
@@ -113,6 +115,9 @@
     </Compile>
     <Compile Include="Rest\RestClientFactory.cs" />
     <Compile Include="Rest\RestExtensions.cs" />
+    <Compile Include="TariffPopupControl.xaml.cs">
+      <DependentUpon>TariffPopupControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\IEnergyUsageView.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -128,6 +133,7 @@
     </Compile>
     <Compile Include="Views\IApplicationView.cs" />
     <Compile Include="Views\IResultsView.cs" />
+    <Compile Include="Views\ITariffView.cs" />
     <Compile Include="Views\PresentationModel\ResultsViewItem.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +156,10 @@
     <Page Include="ResultsTable.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TariffPopupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

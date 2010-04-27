@@ -22,6 +22,7 @@ namespace uSwitch.Energy.Silverlight.Model.Extensions
             {
 				PlanName = x.PlanName,
 				SupplierName = x.SupplierName,
+                PlanKey = x.PlanKey,
                 PlanTitle = string.Format("{0}\n{1}", x.SupplierName, x.PlanName),
                 Savings = x.Savings,
                 Price = x.Price,

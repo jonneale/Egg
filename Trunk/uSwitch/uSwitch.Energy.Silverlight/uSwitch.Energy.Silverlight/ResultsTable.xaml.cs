@@ -68,7 +68,6 @@ namespace uSwitch.Energy.Silverlight
             if (selected != null)
             {
                 ResultSelected(selected);
-                MessageBox.Show("Row selected - " + selected.PlanTitle);
             }
         }
 	}

@@ -57,7 +57,13 @@ namespace uSwitch.Energy.Silverlight
 
 		public string Postcode { get; set; }
 
-		public event Action<string> FindRegionPressed = s => { };
+	    public bool HasGas
+	    {
+	        get; set;
+	    }
+
+	    public event Action<string> FindRegionPressed = s => { };
+        public event Action<bool> HasGasChanged = g => { };
 	    public event Action Compare = () => {};
 
 	    public Storyboard UsageFadeInStoryboard
@@ -96,6 +102,22 @@ namespace uSwitch.Energy.Silverlight
 	        }
 	    }
 
+	    public bool InitialQuestionsVisible
+	    {
+	        get
+	        {
+	            return postcodeTextBox.Visibility == Visibility.Visible;
+	        }
+	        set
+	        {
+	            var visibility = value ? Visibility.Visible : Visibility.Collapsed;
+	            postcodeTextBlock.Visibility = visibility;
+                postcodeTextBox.Visibility = visibility;
+	            findRegionButton.Visibility = visibility;
+	            currentRegionTextBlock.Visibility = visibility;
+	        }
+	    }
+
 	    private void FindRegionButton_Click(object sender, RoutedEventArgs e)
 		{
 			FindRegionPressed(postcodeTextBox.Text);
@@ -112,6 +134,16 @@ namespace uSwitch.Energy.Silverlight
             {
                 FindRegionPressed(postcodeTextBox.Text);
             }
+        }
+
+        private void HasGasRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            HasGasChanged(true);
+        }
+
+        private void HasntGasRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            HasGasChanged(false);
         }
 	}
 }

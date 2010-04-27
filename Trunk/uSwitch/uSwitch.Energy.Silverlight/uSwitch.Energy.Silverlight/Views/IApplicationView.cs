@@ -10,7 +10,11 @@ namespace uSwitch.Energy.Silverlight.Views
 		string Region { get; set; }
 		string Postcode { get; set; }
 
+        bool HasGas { get; set; }
+
 		event Action<string> FindRegionPressed;
+
+	    event Action<bool> HasGasChanged;
 
 	    event Action Compare;
 
@@ -27,6 +31,11 @@ namespace uSwitch.Energy.Silverlight.Views
         }
 
         bool UsagePanelsVisible
+        {
+            get; set;
+        }
+
+        bool InitialQuestionsVisible
         {
             get; set;
         }

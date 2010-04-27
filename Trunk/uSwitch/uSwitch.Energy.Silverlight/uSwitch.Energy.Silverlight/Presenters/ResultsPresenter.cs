@@ -53,7 +53,7 @@ namespace uSwitch.Energy.Silverlight.Presenters
 
         public void ResultSelected(ResultsViewItem item)
         {
-            EventHub.Publish(new ResultSelected { PlanName = item.PlanName, SupplierName = item.SupplierName});
+            EventHub.Publish(new ResultSelected { PlanName = item.PlanName, SupplierName = item.SupplierName, PlanKey = item.PlanKey});
         }
 
         private void GetResultsForComparisonCallBack(Comparison comparison)

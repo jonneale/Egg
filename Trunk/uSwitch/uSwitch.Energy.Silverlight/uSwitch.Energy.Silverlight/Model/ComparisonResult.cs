@@ -37,5 +37,11 @@ namespace uSwitch.Energy.Silverlight.Model
             get;
             set;
         }
+
+        public string PlanKey
+        {
+            get;
+            set;
+        }
     }
 }

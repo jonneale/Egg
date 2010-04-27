@@ -18,7 +18,7 @@ namespace uSwitch.Energy.Silverlight.Queries
         public GetTariffInfoForPlan(string supplier, string plan, string paymentMethod, string product, string region)
         {
             _supplier = supplier.Replace(" ", "%20").ToLower();
-            _plan = plan.Replace(" ", "-").ToLower();
+            _plan = plan;
             _paymentMethod = paymentMethod;
             _product = product;
             _region = region;

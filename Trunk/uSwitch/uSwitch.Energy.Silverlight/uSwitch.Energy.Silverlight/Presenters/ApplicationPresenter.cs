@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 using uSwitch.Energy.Silverlight.Core;
@@ -16,7 +17,6 @@ namespace uSwitch.Energy.Silverlight.Presenters
 		protected IRestClient RestClient;
 		protected readonly Dispatcher Dispatcher;
 		protected readonly IEventHub EventHub = Core.EventHub.GetCurrent();
-
 		public IApplicationView View { get; set; }
 
 		public ApplicationPresenter(IApplicationView view, Dispatcher dispatcher)
@@ -26,7 +26,13 @@ namespace uSwitch.Energy.Silverlight.Presenters
 			Dispatcher = dispatcher;
 			view.FindRegionPressed += FindRegion;
 		    View.Compare += Compare;
+            View.HasGasChanged += HasGasChanged;
 		}
+
+        public void HasGasChanged(bool hasGas)
+        {
+            View.
+        }
 
         public void Loaded()
         {
@@ -42,19 +48,54 @@ namespace uSwitch.Energy.Silverlight.Presenters
 
 		private void ResultSelectedCallBack(ResultSelected resultSelected)
 		{
-			var query = new GetTariffInfoForPlan(resultSelected.SupplierName, 
-				resultSelected.PlanName,
+			var queryElectricity = new GetTariffInfoForPlan(resultSelected.SupplierName, 
+				resultSelected.PlanKey,
 				PaymentMethods.FixedMonthlyDirectDebit,
 				Products.Electricity,
 				View.Region);
 
-			query.Execute(RestClient, tariff => CallDispatcher(() =>
+            var queryGas = new GetTariffInfoForPlan(resultSelected.SupplierName, 
+				resultSelected.PlanKey,
+				PaymentMethods.FixedMonthlyDirectDebit,
+				Products.Electricity,
+				View.Region);
+
+		    var state = new Tariff[2];
+
+			queryElectricity.Execute(RestClient, tariff => CallDispatcher(() =>
 			{
-				string tariffInfo = "Tariff information: " + tariff.StandingCharge + "\n";
-				tariffInfo += "First rate: " + tariff.Rates.First().PencePerkWh + "\n";
-				MessageBox.Show(tariffInfo);
+                lock (state)
+			    {
+                    state[0] = tariff;
+                    if (state[1] != null)
+                    {
+                        PublishTariffInformationFoundEvent(state);
+                    }
+			    }
 			}));
+
+            queryGas.Execute(RestClient, tariff => CallDispatcher(() =>
+            {
+                lock (state)
+                {
+                    state[1] = tariff;
+                    if (state[0] != null)
+                    {
+                        PublishTariffInformationFoundEvent(state);
+                    }
+                }
+            }));
 		}
+
+        private void PublishTariffInformationFoundEvent(object[] tariffStateObjects)
+        {
+            PublishTariffInformationFoundEvent((Tariff) tariffStateObjects[0], (Tariff) tariffStateObjects[1]);
+        }
+
+        private void PublishTariffInformationFoundEvent(Tariff electricity, Tariff gas)
+        {
+            EventHub.Publish(new TariffInformationFoundEvent { ElectricityTariff = electricity , GasTariff = gas});
+        }
 
 		public void FindRegion(string postcode)
 		{
@@ -75,6 +116,7 @@ namespace uSwitch.Energy.Silverlight.Presenters
                                                                              if (!string.IsNullOrEmpty(View.Region))
                                                                              {
                                                                                  View.UsageFadeInStoryboard.Begin();
+                                                                                 View.InitialQuestionsVisible = false;
                                                                              }
                                                                          }));
 				}));
