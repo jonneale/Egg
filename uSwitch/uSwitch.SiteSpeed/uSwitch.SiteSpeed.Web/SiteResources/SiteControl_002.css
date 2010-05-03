@@ -1,0 +1,9 @@
+/* ----------------------------------------------------------------------------------------------------
+
+   Footer
+
+---------------------------------------------------------------------------------------------------- */
+
+div#us-footer div.us-footer-leaderboard div.leaderboard div.content iframe { margin-top:10px; height:90px; width:728px; }
+div#us-footer div.us-footer-leaderboard { margin-bottom:5px; width:975px; height:110px; background:#fff url('/SiteResources/themes/default/controls/footer/images/footer-ad-background.jpg') top left repeat-x; }
+div#us-footer div.us-footer-leaderboard div.header { color:#999999; margin:0 31px 0 26px }

@@ -1,0 +1,336 @@
+/* ----------------------------------------------------------------------------------------------------
+
+   uSwitch.Web.UI.Composite.Advertisment CSS
+
+---------------------------------------------------------------------------------------------------- */
+
+div.us-advertisement iframe { border: none; padding: 0; margin: 0; overflow: hidden; }
+
+/* Leaderboard
+-------------------------------------------------- */
+div.us-advertisement div.leaderboard { height: 90px; }
+div.us-advertisement div.leaderboard div.header {margin:0 10px 0 29px; float:left; font-size:0.92em; line-height:1em; color:#FFF; clear:both;}
+div.us-advertisement div.leaderboard iframe { width: 728px; height: 90px; }
+
+/* Three To One Rectangle
+-------------------------------------------------- */
+div.us-advertisement div.threetoonerectangle {margin:0 0 23px 0; padding:3px; position:relative; background:#FFF url("/SiteResources/themes/default/controls/panel/images/global/generic-content-background.jpg") repeat-x;}
+div.us-advertisement div.threetoonerectangle div.header {bottom:-15px; width:100%; position:absolute; font-size:0.92em; line-height:1em; text-align:center; clear:both;}
+div.us-advertisement div.threetoonerectangle div.content {text-align:center;}
+
+/* Medium Rectangle
+-------------------------------------------------- */
+div.us-advertisement div.mediumrectangle {  height: 250px;  }
+div.us-advertisement div.mediumrectangle {width: 302px; margin:0 0 23px 0; padding:3px; position:relative; background:#FFF url("/SiteResources/themes/default/controls/panel/images/global/generic-content-background.jpg") repeat-x;}
+div.us-advertisement div.mediumrectangle div.header {bottom:-15px; width:100%; position:absolute; font-size:0.92em; line-height:1em; text-align:center; clear:both;}
+div.us-advertisement div.mediumrectangle div.content {text-align:center;}
+div.us-advertisement div.mediumrectangle iframe { width: 300px; height: 250px; }
+
+/* Wide Skyscraper
+-------------------------------------------------- */
+div.us-advertisement div.wideskyscraper { height: 620px;}
+div.us-advertisement div.wideskyscraper { width: 122px; margin: 23px 0 0 0; padding:3px; position:relative; background:#FFF url("/SiteResources/themes/default/controls/panel/images/global/generic-content-background.jpg") repeat-x;}
+div.us-advertisement div.wideskyscraper div.header { top: -15px; width:95%; position:absolute; font-size:0.92em; line-height:1em; text-align:center; clear:both;}
+div.us-advertisement div.wideskyscraper div.content {height: 624px; text-align:center;}
+div.us-advertisement div.wideskyscraper iframe { width: 120px; height: 620px; }
+/* ----------------------------------------------------------------------------------------------------
+
+   uSwitch.Web.UI.Composite.ArticleContentBox CSS
+
+---------------------------------------------------------------------------------------------------- */
+
+div.us-article-content-box div.image-container { padding-right: 10px;  float: left; }
+div.us-article-content-box div.content-container { float: left; width: 215px; padding-bottom: 5px; }
+div.us-article-content-box div.content-container span { color: #003399; margin: 0; }
+div.us-article-content-box div.content-container strong { margin-right: 10px; }
+div.us-article-content-box div.content-container div { padding-top: 5px; }
+div.us-article-content-box div.content-container p {  margin: 0; line-height: 1.4em; }
+div.us-article-content-box div.content-container ul { margin: 0; }/* ----------------------------------------------------------------------------------------------------
+
+   CategoryStyleImporter
+
+---------------------------------------------------------------------------------------------------- */
+
+.us h1.underline {border-color:#003399;}
+.us h2 {color:#003399; }
+.us h2.underline {border-color:#003399;}
+.us ul li {background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/bullet.gif");}
+.us-results-header {border-color:#003399;}
+
+/* Buttons
+-------------------------------------------------- */
+/* XX-Small */
+a.us-xx-small-button {background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/xx-small-button.gif");}
+input.us-xx-small-button {background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/xx-small-button.gif");}
+
+/* X-Small */
+a.us-x-small-button {background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/x-small-button.jpg");}
+input.us-x-small-button {background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/x-small-button.jpg");}
+
+/* Small */
+a.us-small-button {background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/small-button.jpg");}
+input.us-small-button {background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/small-button.jpg");}
+
+/* Medium */
+a.us-medium-button {background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/medium-button.jpg");}
+input.us-medium-button {background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/medium-button.jpg");}
+
+/* Large */
+a.us-large-button {background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/large-button.jpg");}
+input.us-large-button {background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/large-button.jpg");}
+
+/* X-Large */
+a.us-x-large-button {background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/x-large-button.jpg");}
+input.us-x-large-button {background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/x-large-button.jpg");}
+
+/* Input
+-------------------------------------------------- */
+input.us-textbox, textarea.us-textbox {border-color:#003399;}
+
+/* Links
+-------------------------------------------------- */
+a.us-link-arrow-down { background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/link-arrow-down.jpg"); }
+a.us-link-arrow-up { background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/link-arrow-up.jpg"); }
+a.us-link-arrow-right { background-image:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/link-arrow-right.jpg"); }/* ----------------------------------------------------------------------------------------------------
+
+   ContentBox
+
+---------------------------------------------------------------------------------------------------- */
+
+div.us-content-box div.inner-content {padding:0 12px;}
+div.us-content-box div.content div.text {margin:12px 0;}
+div.us-content-box div.content img {margin:0 0 12px;}
+div.us-content-box div.content a strong, div.us-content-box div.content a b {width:107px; padding:4px 35px 7px 10px; display:block; background:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/medium-button.jpg") no-repeat; font-family:Verdana; font-size:12px; font-weight:bold; text-align:center; color:#000;}
+div.us-content-box div.content a:hover strong, div.us-content-box div.content a:focus strong, div.us-content-box div.content a:active strong, div.us-content-box div.content a:hover b, div.us-content-box div.content a:focus b, div.us-content-box div.content a:active b {text-decoration:none;}
+div.us-content-box.image-float-left div.content img {margin:0 12px 0 0; float:left;}
+div.us-content-box.image-float-right div.content img {margin:0 0 0 12px; float:right;}
+div.us-content-box .cb-image {padding-right: 10px; padding-bottom: 10px;}
+div.us-content-box .cb-button {margin-bottom: 10px;}
+.us-double-panel {width:668px; margin:0 -7px 7px 0; overflow:hidden;}
+.us-double-panel .us-panel {width:327px; margin:0 7px 0 0; float:left;}/* ----------------------------------------------------------------------------------------------------
+
+   Header
+
+---------------------------------------------------------------------------------------------------- */
+
+div#us-header {min-width:974px; margin:0 0 1px 0; padding:6px 0 4px; background:#002B82 url("/SiteResources/themes/default/controls/header/images/background.jpg") repeat-x 0% 100%;}
+div#us-header div.inner-header {width:974px; margin:0 auto; overflow:hidden;}
+div#us-header div.logo {margin:21px 0 0; float:left; color:#FFF;}
+div#us-header div.logo a {color:#FFF;}
+div#us-header div.strapline {margin:50px 0 5px 235px; float:left; color:#FFF;}
+div#us-header div.links {margin:24px 41px 0 0; float:right;}
+div#us-header div.links ul {margin:0; list-style-type:none;}
+div#us-header div.links ul li {margin:0 6px 0 0; padding:0 7px 0 0; float:left; background:url("/SiteResources/themes/default/controls/header/images/seperator.gif") no-repeat 100% 50%; font-size:0.92em;}
+div#us-header div.links ul li.last {margin:0; padding:0; background:none;}
+div#us-header div.links ul li a {color:#FFF;}
+div#us-header div.search {float:right;}
+div#us-header div.search label {display:none; color:#FFF;}
+div#us-header div.search input.textbox {width:186px; height:16px; margin:10px 3px 0; padding:3px 4px 1px 4px; border:solid 2px #1874FF; float:left; font-family:Verdana; font-size:1em; color:#333;}
+div#us-header div.search input.button {margin:7px 0 0; color:#FFF;}div.us-helplink-bubble { z-index: 1; color:#333333; display:block; position: absolute; border:solid 1px #003399; padding:5px; background-color:beige;}
+div.us-helplink-bubble.hidden { display:none; }/* ----------------------------------------------------------------------------------------------------
+
+   uSwitch.Web.UI.WebControls.InputPanel CSS
+
+---------------------------------------------------------------------------------------------------- */
+
+div.us-input-panel div.content div.inner-content {padding:0;}
+div.validation-summary {padding: 8px 0px 5px 12px; font-size:0.92em; line-height:1em; color:#CC0066; background-color: #fff;}
+div.validation-summary p {font-weight:bold;}
+div.validation-summary ul {margin:12px 0 12px 15px; list-style-type:disc;}
+div.validation-summary ul li {padding:0; background:none;}
+div.us-input-panel div.content div.inner-content { background: #none; }
+div.nongrouped div.content div.inner-content { background: #fff; }
+
+div.us-input-panel div.content fieldset {margin:0; padding:0; border:none;}
+div.us-input-panel div.content fieldset legend {display:none;}
+div.us-input-panel div.content fieldset ol {background: #fff; margin:0; list-style-type:none;}
+div.us-input-panel div.content fieldset ol li {padding:5px 12px; border-bottom:#E8E8E8 solid 1px; overflow:hidden;}
+
+div.us-input-panel div.content fieldset.rowgroup legend { display: none; }
+div.us-input-panel div.content fieldset.rowgroup div.legend { font-weight: bold; background-color: #fff; padding: 5px 0px 5px 10px; border-bottom:#E8E8E8 solid 1px; }
+div.us-input-panel div.content fieldset.rowgroup ol { padding: 0 0 12px 0; margin: 0 0 4px 0; list-style-type:none; }
+div.us-input-panel div.content fieldset.rowgroup ol.last { margin: 0; }
+div.us-input-panel div.content fieldset.rowgroup ol li { padding: 5px 12px; overflow: hidden; }
+div.us-input-panel div.content fieldset.rowgroup ol li.last { padding-bottom: 0px; border-bottom: none; }
+
+div.us-input-panel div.content fieldset ol li.nospacing {padding: 0; margin: 0; }
+div.us-input-panel div.content fieldset ol li.last { border-bottom: none; }
+div.us-input-panel div.content fieldset ol li label {width:40%; float:left; text-align:right;}
+div.us-input-panel div.content fieldset ol li input.us-textbox {width:25%;}
+div.us-input-panel div.content fieldset ol li textarea.us-textbox {width: 30%; height: 80px; }
+div.us-input-panel div.content fieldset ol li span.us-checkbox { float: left; }
+div.us-input-panel div.content fieldset ol li span.us-checkbox-agreement {  float: left; margin: 5px; margin-left: 0px; }
+div.us-input-panel div.content fieldset ol li label.us-checklabel { float: left; width: auto; margin: 0; padding: 5px; font-weight:normal; text-align:left;}
+div.us-input-panel div.content fieldset ol li label.us-checklabel-agreement { float: left; width: auto; max-width: 85%; margin: 0; padding: 5px; font-weight:normal; text-align:left;}
+div.us-input-panel div.content div.buttons {padding:12px 0 12px 12px; overflow:hidden; text-align:right; background-color: #fff; }
+div.us-input-panel div.content div.buttons input {margin:0 12px 0 0; float:right;}
+div.us-input-panel div.content fieldset ol li.text label { text-align: left; }
+div.us-input-panel div.content fieldset ol li.labelborder {  background: url("/SiteResources/themes/default/controls/InputPanel/Images/text-row-background.gif") repeat-y 41.5%; } 
+div.us-input-panel div.content fieldset ol li div.us-textrow { float: left; overflow: hidden; height: 1%; margin-top: 4px; width: 52%; }
+div.us-input-panel div.content fieldset ol li div.us-textrowwide { width: auto; }
+div.us-input-panel div.content fieldset ol li div.us-textrow p { padding-top: 0px; margin-top: 0px; }
+div.us-input-panel div.content fieldset ol li div.us-radiorow { padding:4px 12px; border-bottom: solid 1px #E8E8E8; overflow:hidden; }
+div.us-input-panel div.content fieldset ol li div.last { border-bottom: none; }
+div.us-input-panel div.content fieldset ol li div.us-radiorow label { float: left; margin: 0; padding: 0; text-align: left; font-weight: normal; width: 85%; }
+div.us-input-panel div.content fieldset ol li div.us-radiorow input { float: right; }
+
+a.us-help { display: block; float: left; padding: 6px 0 0 6px; }
+a.us-help-inline {padding:6px 0 9px 24px; display:block; float:right; background:url("/SiteResources/themes/default/controls/linklistcontentbox/images/categories/Site/help.jpg") no-repeat 0% 50%; margin: 0px 15px;}
+
+div.us-input-sub-text { display: block; clear: both; margin-left: 42%; font-size: 90%; }
+
+div.us-input-panel .padlabel { margin-left: 45%; margin-top:3px; }/* ----------------------------------------------------------------------------------------------------
+
+   LinkListContentBox
+
+---------------------------------------------------------------------------------------------------- */
+
+div.us-link-list-content-box div.content ul {margin:5px 0 12px 0; list-style-type:none;}
+div.us-link-list-content-box div.content ul li {overflow:hidden;}
+
+/* Arrow
+-------------------------------------------------- */
+div.us-link-list-content-box.arrow-link-list-type div.content ul li {padding:0; background:none;}
+div.us-link-list-content-box.arrow-link-list-type div.content ul li a {padding:0 0 0 15px; display:block; float:left; background:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/xx-small-button.gif") no-repeat 0% 5px; font-size:0.92em;}
+div.us-link-list-content-box.none.arrow-link-list-type ul li a {padding:0 0 0 15px;  background:url("/SiteResources/themes/default/controls/categorystyleimporter/images/categories/Site/xx-small-button.gif") no-repeat 0% 5px; font-size:0.92em;}
+div.us-link-list-content-box.none.arrow-link-list-type ul li { background-image:none;}
+
+/* Article
+-------------------------------------------------- */
+div.us-link-list-content-box.article-link-list-type div.content ul li {padding:0; background:url("/SiteResources/themes/default/controls/linklistcontentbox/images/seperator.gif") repeat-x 0% 100%;}
+div.us-link-list-content-box.article-link-list-type div.content ul li a {padding:6px 0 9px 24px; display:block; float:left; background:url("/SiteResources/themes/default/controls/linklistcontentbox/images/categories/Site/article-bullet.png") no-repeat 0% 50%;}
+
+/* Swoosh
+-------------------------------------------------- */
+div.us-link-list-content-box.swoosh-link-list-type div.content ul li {padding:0; background:url("/SiteResources/themes/default/controls/linklistcontentbox/images/seperator.gif") repeat-x 0% 100%;}
+div.us-link-list-content-box.swoosh-link-list-type div.content ul li a {padding:6px 0 9px 24px; display:block; float:left; background:url("/SiteResources/themes/default/controls/linklistcontentbox/images/global/swoosh-bullet.jpg") no-repeat 0% 50%;}
+
+/* Help
+-------------------------------------------------- */
+div.us-link-list-content-box.help-link-list-type div.content ul li {padding:0; background:url("/SiteResources/themes/default/controls/linklistcontentbox/images/seperator.gif") repeat-x 0% 100%;}
+div.us-link-list-content-box.help-link-list-type div.content ul li a {padding:6px 0 9px 24px; display:block; float:left; background:url("/SiteResources/themes/default/controls/linklistcontentbox/images/categories/Site/help.jpg") no-repeat 0% 50%;}/* ----------------------------------------------------------------------------------------------------
+
+   Navigation
+
+---------------------------------------------------------------------------------------------------- */
+
+div.us-navigation {overflow:hidden;}
+div.us-navigation ul {margin:0; list-style-type:none;}
+div.us-navigation ul li {padding:0; float:left; background:none;}
+div.us-navigation ul li a:hover, div.us-navigation ul li a:focus, div.us-navigation ul li a:active {text-decoration:none;}
+div.us-navigation div.categories {padding:0 0 1px 0; border-bottom:solid 1px #D5D7D9; border-right:solid 1px #D5D7D9; float:left;}
+div.us-navigation div.categories ul li {margin:0 1px 0 0;}
+div.us-navigation div.categories ul li a {padding:6px 21px 6px 22px; border-right:solid 1px #D5D7D9; display:block; background:#E7EBED url("/SiteResources/themes/default/controls/navigation/images/link.jpg") repeat-x; font-family:Arial; font-size:1.33em; line-height:1em; font-weight:bold; color:#676B8A;}
+div.us-navigation div.categories ul li a:hover, div.us-navigation div.categories ul li a:focus, div.us-navigation div.categories ul li a:active, div.us-navigation div.categories ul li a.on {color:#039;}
+div.us-navigation div.categories ul li.last-child a {border-right:none;}
+div.us-navigation div.channels {margin:0 0 5px 0; padding:7px 0 5px 20px; clear:left; overflow:hidden; background:url("/SiteResources/themes/default/controls/navigation/images/channels.gif") no-repeat 0% 50%;}
+div.us-navigation div.channels ul li {margin:0 21px 0 0; padding:0 20px 0 0; background:url("/SiteResources/themes/default/controls/navigation/images/channels-seperator.gif") no-repeat 100% 50%;}
+div.us-navigation div.channels ul li a {padding:0 0 3px 0; display:block; font-family:Verdana; line-height:1em; font-weight:bold; color:#039;}
+div.us-navigation div.channels ul li a:hover, div.us-navigation div.channels ul li a:focus, div.us-navigation div.channels ul li a:active, div.us-navigation div.channels ul li a.on {color:#1874FF;}
+div.us-navigation div.channels ul li.last-child {margin:0; padding:0; background-image:none;}
+div.us-navigation div.channels ul li.rsslink a { padding-left:22px; font-weight:normal; background: url("/SiteResources/themes/default/core/images/rss.gif") no-repeat left; }
+
+/* Home
+-------------------------------------------------- */
+div.us-navigation div.categories ul li.home a {background:none;}
+
+/* Utilities
+-------------------------------------------------- */
+div.us-navigation div.categories ul li.utilities a:hover, div.us-navigation div.categories ul li.utilities a:focus, div.us-navigation div.categories ul li.utilities a.on {background-color:#196EA6; background-image:url("/SiteResources/themes/default/controls/navigation/images/link-utilities.jpg"); color:#FFF;}
+div.us-navigation div.channels.utilities {background-image:url("/SiteResources/themes/default/controls/navigation/images/channels-utilities.gif");}
+div.us-navigation div.channels.utilities ul li a:hover, div.us-navigation div.channels.utilities ul li a:focus, div.us-navigation div.channels.utilities ul li a:active, div.us-navigation div.channels.utilities ul li a.on {color:#1B76B0;}
+
+/* Money
+-------------------------------------------------- */
+div.us-navigation div.categories ul li.money a:hover, div.us-navigation div.categories ul li.money a:focus, div.us-navigation div.categories ul li.money a.on {background-color:#77A032; background-image:url("/SiteResources/themes/default/controls/navigation/images/link-money.jpg"); color:#FFF;}
+div.us-navigation div.channels.money {background-image:url("/SiteResources/themes/default/controls/navigation/images/channels-money.gif");}
+div.us-navigation div.channels.money ul li a:hover, div.us-navigation div.channels.money ul li a:focus, div.us-navigation div.channels.money ul li a:active, div.us-navigation div.channels.money ul li a.on {color:#75AA42;}
+
+/* Communications
+-------------------------------------------------- */
+div.us-navigation div.categories ul li.communications a:hover, div.us-navigation div.categories ul li.communications a:focus, div.us-navigation div.categories ul li.communications a.on {background-color:#CC6723; background-image:url("/SiteResources/themes/default/controls/navigation/images/link-communications.jpg"); color:#FFF;}
+div.us-navigation div.channels.communications {background-image:url("/SiteResources/themes/default/controls/navigation/images/channels-communications.gif");}
+div.us-navigation div.channels.communications ul li a:hover, div.us-navigation div.channels.communications ul li a:focus, div.us-navigation div.channels.communications ul li a:active, div.us-navigation div.channels.communications ul li a.on {color:#DD7842;}
+
+/* Insurance
+-------------------------------------------------- */
+div.us-navigation div.categories ul li.insurance a:hover, div.us-navigation div.categories ul li.insurance a:focus, div.us-navigation div.categories ul li.insurance a.on {background-color:#643099; background-image:url("/SiteResources/themes/default/controls/navigation/images/link-insurance.jpg"); color:#FFF;}
+div.us-navigation div.channels.insurance {background-image:url("/SiteResources/themes/default/controls/navigation/images/channels-insurance.gif");}
+div.us-navigation div.channels.insurance ul li a:hover, div.us-navigation div.channels.insurance ul li a:focus, div.us-navigation div.channels.insurance ul li a:active, div.us-navigation div.channels.insurance ul li a.on {color:#639;}
+/* ----------------------------------------------------------------------------------------------------
+
+   Panel
+
+---------------------------------------------------------------------------------------------------- */
+
+div.us-panel {margin:0 0 7px 0;}
+div.us-panel div.header {margin:0 0 1px 0; padding:3px; overflow:hidden; background:#F3F4F5 url("/SiteResources/themes/default/controls/panel/images/generic-header-background.jpg") repeat-x;}
+div.us-panel div.inner-header {background:#F4F5F5 url("/SiteResources/themes/default/controls/panel/images/generic-inner-header-background.jpg") repeat-x;}
+div.us-panel div.header h1, div.us-panel div.header h2, div.us-panel div.header h3, div.us-panel div.header h4 {margin:0; padding:14px; font-size:1.17em; font-weight:bold; color:#333;}
+div.us-panel div.content {padding:4px; background:#F6F8F7 url("/SiteResources/themes/default/controls/panel/images/generic-content-background.jpg") repeat-x;}
+div.us-panel div.inner-content {border:#E0E0E0 solid 1px; overflow:hidden; background-color:#FFF;}
+div.us-panel div.form div.content div.validation-summary p {color: #CC0066;}
+div.us-panel div.form div.content div.validation-summary ul li {color: #CC0066;}
+
+/* Primary
+-------------------------------------------------- */
+div.us-panel.primary div.header {background-color:#003399; background-image:none;}
+div.us-panel.primary div.inner-header {background-color:#274196; background-image:url("/SiteResources/themes/default/controls/panel/images/categories/Site/primary-inner-header-background.jpg");}
+div.us-panel.primary div.header h1, div.us-panel.primary div.header h2, div.us-panel.primary div.header h3, div.us-panel.primary div.header h4 {color:#FFF;}
+div.us-panel.primary div.content {background-color:#F0F0F0; background-image:url("/SiteResources/themes/default/controls/panel/images/categories/Site/primary-content-background.jpg");}
+
+/* Secondary
+-------------------------------------------------- */
+div.us-panel.secondary div.header {padding:0 3px 3px; border-top:3px solid #003399; background-color:#F5F4F5;}
+div.us-panel.secondary div.header h2, div.us-panel.secondary div.header h3, div.us-panel.secondary div.header h4 {margin:0; padding:16px 14px 12px 14px;}
+div.us-panel.secondary div.inner-header {background-color:#F4F5F5; background-image:url("/SiteResources/themes/default/controls/panel/images/secondary-inner-header-background.jpg");}
+
+/* Category
+-------------------------------------------------- */
+div.us-panel.category div.header {margin:0; padding:1px 1px 0 1px; border-bottom:#003399 solid 3px; background:#E0E0E0 none;}
+div.us-panel.category div.inner-header {background:#FFF none;}
+div.us-panel.category div.header h1, div.us-panel.category div.header h2, div.us-panel.category div.header h3, div.us-panel.category div.header h4 {margin:0; padding:11px 14px;}
+div.us-panel.category div.content {padding:0 1px 1px 1px; background:#E0E0E0 none;}
+div.us-panel.category div.inner-content {border:none;}
+
+/* List
+-------------------------------------------------- */
+div.us-sidebar div.us-panel.list {margin:0 0 0 15px;}
+div.us-panel.list div.header {margin:0; padding:0; border-bottom:#003399 solid 1px; background:none;}
+div.us-panel.list div.inner-header {background:none;}
+div.us-panel.list div.header h1, div.us-panel.list div.header h2, div.us-panel.list div.header h3, div.us-panel.list div.header h4 {margin:0; padding:11px 0;}
+div.us-panel.list div.content {padding:0; background:none;}
+div.us-panel.list div.inner-content {padding:0; border:none;}
+
+/* Textrow
+-------------------------------------------------- */
+div.us-panel li.text div.us-textrowwide p {margin:12px;}/* ----------------------------------------------------------------------------------------------------
+
+   uSwitch.Web.UI.Composite.PhoneHelp CSS
+
+---------------------------------------------------------------------------------------------------- */
+
+div.us-phone-help { overflow: hidden; height: 1%; width:306px; }
+
+div.us-phone-help p {font-family:Arial; font-size:2.33em; line-height:1em; text-align:center; color:#039;}
+
+div.us-phone-help div.question { display: block; float: left; font-size: 8px; margin-top: 7px; }
+div.us-phone-help div.phonenumber { display: block; float: right; }/* ----------------------------------------------------------------------------------------------------
+
+   uSwitch.Web.UI.WebControls.TopDealsContentBox CSS
+
+---------------------------------------------------------------------------------------------------- */
+
+div.us-top-deals-content-box div.content h2, div.us-top-deals-content-box div.content h3, div.us-top-deals-content-box div.content h4, div.us-top-deals-content-box div.content h5 {font-family:Verdana; font-size:1em;}
+div.us-top-deals-content-box div.content div.left {font-size:0.92em;}
+div.us-top-deals-content-box div.content div.left ul {margin:0 0 12px 0; list-style-type:none;}
+div.us-top-deals-content-box div.content div.right {margin:0 0 12px 12px; float:right; text-align:right;}
+div.us-top-deals-content-box div.content div.right img {display:block;}
+/* ----------------------------------------------------------------------------------------------------
+
+   uSwitch.Web.UI.WebControls.Composite.TopSearchBox CSS
+
+---------------------------------------------------------------------------------------------------- */
+
+div.us-top-search-box ul { margin: 0; }
+div.us-top-search-box div.content div.footer a.us-x-small-button { cursor: pointer; }

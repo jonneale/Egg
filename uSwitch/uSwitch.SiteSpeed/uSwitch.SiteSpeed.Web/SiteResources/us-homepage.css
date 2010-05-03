@@ -1,0 +1,137 @@
+﻿/* ----------------------------------------------------------------------------------------------------
+
+   Homepage CSS
+   Definitions for homepage elements
+
+---------------------------------------------------------------------------------------------------- */
+
+div#us-main {width:974px; margin:0 auto;}
+div#us-content {width:699px; float:left;}
+div#us-sidebar {width:265px; margin:0 0 0 10px; float:left;}
+
+/* Promotion Type 1
+-------------------------------------------------- */
+div.us-promotion-type-1 {min-height:210px; overflow:hidden; }
+div.us-promotion-type-1 p {margin:18px 0;}
+div.us-promotion-type-1 p strong, div.us-promotion-type-1 p b {font-family:Arial; font-size:2em; font-weight:normal; color:#006; }
+div.us-promotion-type-1 p a strong, div.us-promotion-type-1 p a b { float:left; width:229px; padding:8px 35px 10px 10px; display:block; font-family:Verdana; font-size:11px; line-height:1em; font-weight:bold; text-align:center; background:url("/homepage/images/promotion/promotiontype1/button.gif") no-repeat; color:#006;}
+div.us-promotion-type-1 p a:hover strong, div.us-promotion-type-1 p a:focus strong, div.us-promotion-type-1 p a:active strong, div.us-promotion-type-1 p a:hover b, div.us-promotion-type-1 p a:focus b, div.us-promotion-type-1 p a:active b {text-decoration:none; cursor:pointer; }
+
+/* Promotion Type 2
+-------------------------------------------------- */
+div.us-promotion-type-2 {min-height:208px; padding:2px 0 0; overflow:hidden;}
+div.us-promotion-type-2 p {margin:1px 0; padding:5px 6px; float:left; clear:left; white-space:nowrap;}
+div.us-promotion-type-2 p strong, div.us-promotion-type-2 p b {padding:5px 0; display:block; font-family:Arial; font-size:2.33em; font-weight:normal;}
+div.us-promotion-type-2 div.form {width:272px; height:33px; margin:8px 0 0; position:relative; float:left; clear:left; background:url("/homepage/images/promotion/promotiontype2/fieldset.gif") no-repeat;}
+div.us-promotion-type-2 div.form fieldset {margin:0; padding:0; border:0;}
+div.us-promotion-type-2 div.form fieldset legend {display:none;}
+div.us-promotion-type-2 div.form fieldset label {display:none;}
+div.us-promotion-type-2 div.form fieldset input.textbox {top:4px; left:5px; width:133px; height:14px; margin:0; padding:4px 6px; border:solid 1px #BABCC7; position:absolute; font-family:Verdana; font-size:1em; line-height:1em; background:url("/homepage/images/promotion/promotiontype2/textbox.jpg") repeat-x 0% 100%; color:#639;}
+div.us-promotion-type-2 div.form input.button {top:4px; right:5px; width:114px; height:24px; margin:0; padding:0 16px 2px 8px; border:none; position:absolute; cursor:pointer; font-family:Verdana; font-size:1em; line-height:1em; font-weight:bold; text-align:left; background:url("/homepage/images/promotion/promotiontype2/button.gif") no-repeat; color:#FFF;}
+
+/* Channels
+-------------------------------------------------- */
+div.us-channels {margin:-48px 0 12px; padding:0 0 12px 0; }
+div.us-channels h1 {font-size:2em; line-height:1em; color:#039;}
+div.us-channels div.channels-row {}
+div.us-channels div.channels-row-bottom {overflow:hidden;}
+div.us-channels div.channel {width:171px; margin:0 5px 0 0; float:left;}
+div.us-channels div.channel.last {margin-right:0;}
+div.us-channels div.channel h2 {margin:0; border-top:solid 2px; border-bottom:solid 2px #E5E5E5; font-size:1.67em; line-height:1em; text-align:center; color:#006;}
+div.us-channels div.channel h2 span.top, div.us-channels div.channel h2 a.top {padding:8px; display:block; }
+
+div.us-channels div.channel h2 a.top:hover { text-decoration:none; }
+div.us-channels div.utilities h2 a.top:hover {   }
+div.us-channels div.utilities ul li h3 a span { width: 110px; }
+div.us-channels div.money h2 a.top:hover {  }
+div.us-channels div.insurance h2 a.top:hover {  }
+div.us-channels div.communications h2 a.top:hover {  }
+
+div.us-channels div.channel ul {padding:0 2px 15px; margin: 0;}
+div.us-channels div.channel ul.more { padding-bottom: 25px;  }
+div.us-channels div.channel ul li {margin:0; padding:2px 1px; }
+div.us-channels div.channel ul li h3 {margin:0; font-family:Verdana; font-size:1em; line-height:1em; font-weight:normal;}
+div.us-channels div.channel ul li h3 a {padding:9px 0 2px 9px; display:block; color:#039;}
+div.us-channels div.channel ul li h3 a span.bullet {padding:1px 0 8px 22px; display:block; }
+
+/* Utilities */
+div.us-channels div.channel.utilities h2 {border-top-color:#2E90CF;}
+div.us-channels div.channel.utilities ul li h3 a:hover, div.us-channels div.channel.utilities ul li h3 a:focus, div.us-channels div.channel.utilities ul li h3 a:active {}
+
+/* Money */
+div.us-channels div.channel.money h2 {border-top-color:#85BA2C;}
+div.us-channels div.channel.money ul li h3 a:hover, div.us-channels div.channel.money ul li h3 a:focus, div.us-channels div.channel.money ul li h3 a:active {}
+
+/* Insurance */
+div.us-channels div.channel.insurance h2 {border-top-color:#7E53A9;}
+div.us-channels div.channel.insurance ul li h3 a:hover, div.us-channels div.channel.insurance ul li h3 a:focus, div.us-channels div.channel.insurance ul li h3 a:active {}
+
+/* Communications */
+div.us-channels div.channel.communications h2 {border-top-color:#E07947;}
+div.us-channels div.channel.communications ul li h3 a:hover, div.us-channels div.channel.communications ul li h3 a:focus, div.us-channels div.channel.communications ul li h3 a:active {}
+
+/* Snippets
+-------------------------------------------------- */
+div.us-snippets {margin:0 0 12px; overflow:hidden; }
+div.us-snippets div.snippet {width:24.96%; float:left; font-size:0.92em;}
+div.us-snippets div.snippet div.inner-snippet {margin:0 15px;}
+div.us-snippets div.snippet h2 {margin:0 0 12px; font-family:Verdana; font-size:1em; font-weight:bold; color:#039;}
+div.us-snippets div.snippet ul li {background-image:url("/homepage/images/snippets/bullet.gif");}
+div.us-snippets div.snippet ul li a {color:#1874FF;}
+div.us-snippets div.snippet a.more {padding:0 0 2px 16px; display:block; float:left; line-height:1em; }
+
+/* uSwitch Promise
+-------------------------------------------------- */
+div.us-uswitch-promise {min-height:198px; margin:0 0 12px;}
+div.us-uswitch-promise h2 {margin:0; border-top:solid 2px #039; border-bottom:solid 3px #E4E2E5; font-size:1.17em; line-height:1em; font-weight:bold; background:url("/homepage/images/contentbox/heading.gif") repeat-y; color:#039;}
+div.us-uswitch-promise h2 span.top {padding:11px 14px 10px; display:block; }
+div.us-uswitch-promise div.content {overflow:hidden;}
+div.us-uswitch-promise div.inner-content {overflow:hidden; }
+div.us-uswitch-promise div.intro {margin:8px 0; padding:0 12px 1px;}
+div.us-uswitch-promise div.intro img {margin:5px 12px 0 0; float:left;}
+div.us-uswitch-promise div.intro p {margin:8px 0; font-family:Arial; font-size:1.25em; line-height:1.2em; color:#039;}
+div.us-uswitch-promise div.blurb {margin:6px 12px 0;}
+div.us-uswitch-promise div.blurb p {margin:6px 0; font-size:0.92em; line-height:1.27em;}
+div.us-uswitch-promise div.blurb p a {margin:8px 0 0; padding:0 0 2px 10px; font-size:1.09em; line-height:1em; color:#1874FF; display: block; }
+
+/* Deals Of The Week
+-------------------------------------------------- */
+div.us-deals-of-the-week {margin:0 0 12px;}
+div.us-deals-of-the-week h2 {margin:0; border-top:solid 2px #039; border-bottom:solid 3px #E4E2E5; font-size:1.17em; line-height:1em; font-weight:bold;  color:#039;}
+div.us-deals-of-the-week h2 span.top {padding:11px 14px 10px; display:block; no-repeat;}
+div.us-deals-of-the-week div.content {overflow:hidden; }
+div.us-deals-of-the-week div.inner-content {overflow:hidden; }
+div.us-deals-of-the-week div.content ul {margin:0}
+div.us-deals-of-the-week div.content ul li {margin:6px 0; padding:0 12px 7px; overflow:hidden;}
+div.us-deals-of-the-week div.content ul li.last {margin-bottom:0; padding-bottom:0; background:none;}
+div.us-deals-of-the-week div.content ul li img {float:right;}
+div.us-deals-of-the-week div.content ul li h3 {margin:0 0 6px; font-family:Verdana; font-size:1em; line-height:1.17em; color:#1874FF;}
+div.us-deals-of-the-week div.content ul li h3 a {color:#1874FF;}
+div.us-deals-of-the-week div.content ul li p {width:150px; margin:0; font-size:0.92em; line-height:1.27em;}
+div.us-deals-of-the-week div.content ul li a.more {padding:0 12px 3px 0; display:block; float:left; font-size:0.92em; line-height:1.27em; color:#1874FF;}
+
+/* Newsletter Signup
+-------------------------------------------------- */
+div.us-newsletter-signup {margin:0 0 12px;}
+div.us-newsletter-signup h2 {margin:0; border-top:solid 2px #039; border-bottom:solid 3px #E4E2E5; font-size:1.17em; line-height:1em; font-weight:bold; color:#039;}
+div.us-newsletter-signup h2 span.top {padding:11px 14px 10px; display:block;}
+div.us-newsletter-signup div.content {overflow:hidden; background:url("/homepage/images/contentbox/content.gif") repeat-y;}
+div.us-newsletter-signup div.inner-content {padding:0 12px; overflow:hidden;}
+div.us-newsletter-signup div.content p {margin:6px 0; font-size:0.92em; line-height:1.5em;}
+div.us-newsletter-signup div.content div.validation-summary {color:Red;}
+div.us-newsletter-signup div.content div.validation-summary ul {margin:6px 0 12px 15px; list-style-type:disc;}
+div.us-newsletter-signup div.content div.validation-summary ul li {padding:0; background:none; font-size:0.92em; line-height:1em;}
+div.us-newsletter-signup div.content fieldset {margin:0; padding:0; border:none;}
+div.us-newsletter-signup div.content fieldset legend {display:none;}
+div.us-newsletter-signup div.content fieldset ol {margin:0; list-style-type:none;}
+div.us-newsletter-signup div.content fieldset ol li {margin:0; padding:0 0 7px; float:left; clear:left;}
+div.us-newsletter-signup div.content fieldset ol li label {display:none;}
+div.us-newsletter-signup div.content fieldset ol li input.textbox {width:230px; padding:3px 4px; border:solid 1px #C1C1C1; float:left; font-family:Verdana; font-size:1em; line-height:1em;  color:#039;}
+div.us-newsletter-signup div.content input.button {width:108px; margin:0; padding:5px 33px 9px 8px; border:none; display:block; float:right; font-family:Verdana; font-size:12px; line-height:1em; font-weight:bold; text-align:center; cursor:pointer; color:#333;}
+
+/* Image Link
+-------------------------------------------------- */
+div.us-image-link {margin:0 0 12px;}
+div.us-image-link p {margin:0;}
+
+.us  .us-promotion-type-2 h1 { font-size: 2em; margin-bottom:3px; }
