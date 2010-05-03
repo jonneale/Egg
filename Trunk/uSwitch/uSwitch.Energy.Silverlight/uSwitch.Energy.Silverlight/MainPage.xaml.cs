@@ -50,7 +50,7 @@ namespace uSwitch.Energy.Silverlight
 			get { return _region; }
 			set
 			{
-				currentRegionTextBlock.Text = value;
+				currentRegionTextBlock.Text = string.Format("Selected region: {0}", value);
 				_region = value;
 			}
 		}
@@ -62,7 +62,17 @@ namespace uSwitch.Energy.Silverlight
 	        get; set;
 	    }
 
-	    public event Action<string> FindRegionPressed = s => { };
+		public bool HasEconomy7
+		{
+			get; set;
+		}
+
+		public string PaymentMethod
+		{
+			get; set;
+		}
+
+		public event Action<string> FindRegionPressed = s => { };
         public event Action<bool> HasGasChanged = g => { };
 	    public event Action Compare = () => {};
 
@@ -145,5 +155,15 @@ namespace uSwitch.Energy.Silverlight
         {
             HasGasChanged(false);
         }
+
+		private void HasEconomy7Radio_Checked(object sender, RoutedEventArgs e)
+		{
+			HasGasChanged(true);
+		}
+
+		private void HasntEconomy7Radio_Checked(object sender, RoutedEventArgs e)
+		{
+			HasGasChanged(false);
+		}
 	}
 }

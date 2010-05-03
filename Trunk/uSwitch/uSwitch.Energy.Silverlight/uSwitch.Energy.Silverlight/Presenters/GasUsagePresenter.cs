@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Threading;
+using uSwitch.Energy.Silverlight.Events;
 using uSwitch.Energy.Silverlight.Model;
 using uSwitch.Energy.Silverlight.Queries;
 using uSwitch.Energy.Silverlight.Rest;
@@ -19,6 +20,19 @@ namespace uSwitch.Energy.Silverlight.Presenters
 			: base(view, restClient, dispatcher)
 		{
 
+		}
+
+		public override void Loaded()
+		{
+			base.Loaded();
+
+			Action<HasGasChangedEvent> hasGasChangedCallBack = HasGasChangedCallBack;
+			EventHub.Register(hasGasChangedCallBack);
+		}
+
+		private void HasGasChangedCallBack(HasGasChangedEvent @event)
+		{
+			View.IsTransparent = @event.HasGas;
 		}
 
         public void SetDefaultRegionInfo(DefaultRegionInformation regionInfo)
@@ -47,11 +61,6 @@ namespace uSwitch.Energy.Silverlight.Presenters
 				View.Plans = plans;
 				View.SelectedPlan = plans.Single(p => p.Name.Equals(View.RegionDefaultPlanName));
 			}));
-		}
-
-		public override void SelectPlan(Plan plan)
-		{
-			
 		}
 
 		public override void SelectSupplier(Supplier supplier)

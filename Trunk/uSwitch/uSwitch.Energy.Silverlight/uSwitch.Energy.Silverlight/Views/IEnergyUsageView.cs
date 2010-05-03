@@ -12,7 +12,7 @@ namespace uSwitch.Energy.Silverlight.Views
 
 		event Action<string> PaymentMethodSelected;
 
-		bool HasGas
+		bool IsVisible
 		{
 			get; set;
 		}
@@ -69,5 +69,22 @@ namespace uSwitch.Energy.Silverlight.Views
 	    { 
             get; set;
 	    }
+
+		double Amount
+		{
+			get;
+			set;
+		}
+
+		bool IsInKwh
+		{ 
+			get;
+		}
+
+		bool IsTransparent { get; set; }
+
+		IEnumerable<string> TimePeriods { get; set; }
+
+		string SelectedTimePeriod { get; set; }
 	}
 }

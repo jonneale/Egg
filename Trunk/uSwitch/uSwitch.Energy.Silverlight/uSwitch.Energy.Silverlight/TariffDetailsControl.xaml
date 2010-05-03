@@ -1,0 +1,30 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Class="uSwitch.Energy.Silverlight.TariffDetailsControl"
+    mc:Ignorable="d" d:DesignWidth="275" d:DesignHeight="138">
+    <Canvas>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
+                <TextBlock x:Name="gasUnitRatesTextBlock" Foreground="White" HorizontalAlignment="Left" />
+                <ListBox x:Name="gasRatesListBox">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Hello Gas"></TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock x:Name="electricityUnitRatesTextBlock" Foreground="White" HorizontalAlignment="Left" />
+
+                <ListBox x:Name="electricityRatesListBox">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Hello Electricity"></TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </StackPanel>
+    </Canvas>
+</UserControl>

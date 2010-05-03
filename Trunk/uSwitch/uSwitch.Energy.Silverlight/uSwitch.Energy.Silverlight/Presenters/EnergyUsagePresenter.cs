@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Threading;
 using uSwitch.Energy.Silverlight.Core;
 using uSwitch.Energy.Silverlight.Events;
@@ -11,7 +12,7 @@ namespace uSwitch.Energy.Silverlight.Presenters
 	public abstract class EnergyUsagePresenter
 	{
 		protected readonly IEnergyUsageView View;
-		protected IRestClient RestClient;
+		protected readonly IRestClient RestClient;
 		protected readonly Dispatcher Dispatcher;
 		protected readonly IEventHub EventHub = Core.EventHub.GetCurrent();
 
@@ -25,12 +26,9 @@ namespace uSwitch.Energy.Silverlight.Presenters
 			View = view;
 			RestClient = restClient;
 			Dispatcher = dispatcher;
-			View.PlanSelected += SelectPlan;
 			View.SupplierSelected += SelectSupplier;
 			View.PaymentMethodSelected += SelectPaymentMethod;
 		}
-
-		public abstract void SelectPlan(Plan plan);
 
 		public abstract void SelectSupplier(Supplier supplier);
 
@@ -38,6 +36,9 @@ namespace uSwitch.Energy.Silverlight.Presenters
 
 		public virtual void Loaded()
 		{
+			View.TimePeriods = TimePeriod.GetAll();
+			View.SelectedTimePeriod = TimePeriod.OneMonth;
+
 			EventHub.Register<RegionFoundEvent>(e =>
 			                                    	{
 														View.Region = e.Region;
@@ -50,6 +51,11 @@ namespace uSwitch.Energy.Silverlight.Presenters
 		protected void CallDispatcher(Action action)
 		{
 			Dispatcher.BeginInvoke(action);
+		}
+
+		protected virtual double GetSpendAmountForMonth()
+		{
+			return TimePeriod.CalculateCostOverMonth(View.SelectedTimePeriod, View.UsageInKwh);
 		}
 	}
 }

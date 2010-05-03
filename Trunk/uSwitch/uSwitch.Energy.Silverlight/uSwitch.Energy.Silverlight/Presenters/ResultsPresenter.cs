@@ -4,6 +4,7 @@ using System.Windows.Threading;
 using uSwitch.Energy.Silverlight.Commands;
 using uSwitch.Energy.Silverlight.Core;
 using uSwitch.Energy.Silverlight.Events;
+using uSwitch.Energy.Silverlight.Events.Extensions;
 using uSwitch.Energy.Silverlight.Model;
 using uSwitch.Energy.Silverlight.Model.Extensions;
 using uSwitch.Energy.Silverlight.Rest;

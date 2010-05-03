@@ -1,8 +1,0 @@
-﻿<UserControl x:Class="uSwitch.Energy.Silverlight.TariffPopupControl"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Canvas Width="100" Height="100" Background="Aqua">
-        <TextBlock x:Name="gasUnitRatesTextBlock" Foreground="White"></TextBlock>
-        <TextBlock x:Name="electricityUnitRatesTextBlock" Foreground="White"></TextBlock>
-    </Canvas>
-</UserControl>

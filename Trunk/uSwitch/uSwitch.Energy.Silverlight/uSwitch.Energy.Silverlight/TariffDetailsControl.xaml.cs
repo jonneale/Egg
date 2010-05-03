@@ -9,14 +9,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using uSwitch.Energy.Silverlight.Model;
 using uSwitch.Energy.Silverlight.Presenters;
+using uSwitch.Energy.Silverlight.Rest;
 using uSwitch.Energy.Silverlight.Views;
 
 namespace uSwitch.Energy.Silverlight
 {
-    public partial class TariffPopupControl : UserControl, ITariffView
+    public partial class TariffDetailsControl : UserControl, ITariffView
     {
-        public TariffPopupControl()
+		public TariffDetailsControl()
         {
             InitializeComponent();
 
@@ -25,7 +27,7 @@ namespace uSwitch.Energy.Silverlight
 
         protected void TariffPopupControl_Loaded(object sender, RoutedEventArgs e)
         {
-            var presenter = new TariffPresenter(this, Dispatcher);
+            var presenter = new TariffPresenter(this, Dispatcher, RestClientFactory.GetDefault());
             presenter.Loaded();
         }
 
@@ -62,5 +64,29 @@ namespace uSwitch.Energy.Silverlight
                 gasUnitRatesTextBlock.Text = value;
             }
         }
+
+    	public IEnumerable<Rate> SelectedPlanGasRates
+    	{
+    		get
+    		{
+    			return (IEnumerable<Rate>) gasRatesListBox.ItemsSource;
+    		}
+			set
+			{
+				gasRatesListBox.ItemsSource = value;
+			}
+    	}
+
+		public IEnumerable<Rate> SelectedPlanElectricityRates
+		{
+			get
+			{
+				return (IEnumerable<Rate>)electricityRatesListBox.ItemsSource;
+			}
+			set
+			{
+				electricityRatesListBox.ItemsSource = value;
+			}
+		}
     }
 }

@@ -79,11 +79,13 @@
       <DependentUpon>EnergyUsageControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Events\CompareEvent.cs" />
-    <Compile Include="Events\CompareEventExtensions.cs" />
+    <Compile Include="Events\Extensions\CompareEventExtensions.cs" />
     <Compile Include="Events\ComparisonReceivedEvent.cs" />
+    <Compile Include="Events\HasGasChangedEvent.cs" />
     <Compile Include="Events\RegionFoundEvent.cs" />
     <Compile Include="Events\ResetSessionEvent.cs" />
     <Compile Include="Events\ResultSelected.cs" />
+    <Compile Include="Events\ComparisonRefinedEvent.cs" />
     <Compile Include="Events\TariffInformationFoundEvent.cs" />
     <Compile Include="Model\Comparison.cs" />
     <Compile Include="Model\ComparisonRequest.cs" />
@@ -96,12 +98,17 @@
     <Compile Include="Model\Products.cs" />
     <Compile Include="Model\Rate.cs" />
     <Compile Include="Model\Tariff.cs" />
+    <Compile Include="Model\TimePeriod.cs" />
     <Compile Include="Presenters\ApplicationPresenter.cs" />
     <Compile Include="Presenters\ElectricityUsagePresenter.cs" />
     <Compile Include="Presenters\GasUsagePresenter.cs" />
+    <Compile Include="Presenters\RefinePresenter.cs" />
     <Compile Include="Presenters\ResultsPresenter.cs" />
     <Compile Include="Presenters\TariffPresenter.cs" />
     <Compile Include="Queries\GetTariffInfoForPlan.cs" />
+    <Compile Include="RefineControl.xaml.cs">
+      <DependentUpon>RefineControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rest\Constants.cs" />
     <Compile Include="Queries\GetDefaultEnergyPlansForAllRegionsQuery.cs" />
     <Compile Include="Queries\GetDefaultEnergyPlansForRegionQuery.cs" />
@@ -115,8 +122,8 @@
     </Compile>
     <Compile Include="Rest\RestClientFactory.cs" />
     <Compile Include="Rest\RestExtensions.cs" />
-    <Compile Include="TariffPopupControl.xaml.cs">
-      <DependentUpon>TariffPopupControl.xaml</DependentUpon>
+    <Compile Include="TariffDetailsControl.xaml.cs">
+      <DependentUpon>TariffDetailsControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\IEnergyUsageView.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -132,6 +139,7 @@
       <DependentUpon>ResultsTable.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\IApplicationView.cs" />
+    <Compile Include="Views\IRefineView.cs" />
     <Compile Include="Views\IResultsView.cs" />
     <Compile Include="Views\ITariffView.cs" />
     <Compile Include="Views\PresentationModel\ResultsViewItem.cs" />
@@ -149,6 +157,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
     </Page>
+    <Page Include="RefineControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
     <Page Include="RestTests.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
@@ -157,7 +169,7 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TariffPopupControl.xaml">
+    <Page Include="TariffDetailsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
     </Page>

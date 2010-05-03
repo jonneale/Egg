@@ -7,5 +7,6 @@ namespace uSwitch.Energy.Silverlight.Events
         public string SupplierName { get; set; }
         public string PlanName { get; set; }
         public string PlanKey { get; set; }
+		public string Region { get; set; }
     }
 }

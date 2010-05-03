@@ -31,71 +31,29 @@ namespace uSwitch.Energy.Silverlight.Presenters
 
         public void HasGasChanged(bool hasGas)
         {
-            View.
+        	View.HasGas = hasGas;
+			EventHub.Publish(new HasGasChangedEvent { HasGas = hasGas});
         }
 
         public void Loaded()
         {
+        	View.PaymentMethod = PaymentMethods.FixedMonthlyDirectDebit;
+        	View.HasEconomy7 = false;
+
             Action<ComparisonReceivedEvent> eventCallBack = c => 
             {
                 View.UsagePanelsVisible = false;
             };
             EventHub.Register(eventCallBack);
 
-        	Action<ResultSelected> resultSelectedEventCallBack = ResultSelectedCallBack;
-            EventHub.Register(resultSelectedEventCallBack);
+        	Action<ComparisonRefinedEvent> comparisonRefinedCallBack = ComparisonRefinedCallBack;
+			EventHub.Register(comparisonRefinedCallBack);
         }
 
-		private void ResultSelectedCallBack(ResultSelected resultSelected)
+		private void ComparisonRefinedCallBack(ComparisonRefinedEvent @event)
 		{
-			var queryElectricity = new GetTariffInfoForPlan(resultSelected.SupplierName, 
-				resultSelected.PlanKey,
-				PaymentMethods.FixedMonthlyDirectDebit,
-				Products.Electricity,
-				View.Region);
-
-            var queryGas = new GetTariffInfoForPlan(resultSelected.SupplierName, 
-				resultSelected.PlanKey,
-				PaymentMethods.FixedMonthlyDirectDebit,
-				Products.Electricity,
-				View.Region);
-
-		    var state = new Tariff[2];
-
-			queryElectricity.Execute(RestClient, tariff => CallDispatcher(() =>
-			{
-                lock (state)
-			    {
-                    state[0] = tariff;
-                    if (state[1] != null)
-                    {
-                        PublishTariffInformationFoundEvent(state);
-                    }
-			    }
-			}));
-
-            queryGas.Execute(RestClient, tariff => CallDispatcher(() =>
-            {
-                lock (state)
-                {
-                    state[1] = tariff;
-                    if (state[0] != null)
-                    {
-                        PublishTariffInformationFoundEvent(state);
-                    }
-                }
-            }));
+			
 		}
-
-        private void PublishTariffInformationFoundEvent(object[] tariffStateObjects)
-        {
-            PublishTariffInformationFoundEvent((Tariff) tariffStateObjects[0], (Tariff) tariffStateObjects[1]);
-        }
-
-        private void PublishTariffInformationFoundEvent(Tariff electricity, Tariff gas)
-        {
-            EventHub.Publish(new TariffInformationFoundEvent { ElectricityTariff = electricity , GasTariff = gas});
-        }
 
 		public void FindRegion(string postcode)
 		{
@@ -131,8 +89,8 @@ namespace uSwitch.Energy.Silverlight.Presenters
                                        ElectricitySupplier = View.ElectricityUsageView.SelectedSupplier,
                                        GasPlan = View.GasUsageView.SelectedPlan,
                                        GasSupplier = View.GasUsageView.SelectedSupplier,
-                                       ComparisonPaymentMethod = PaymentMethods.FixedMonthlyDirectDebit,
-                                       HasGas = true,
+                                       ComparisonPaymentMethod = View.PaymentMethod,
+									   HasGas = View.HasGas,
                                        ElectricityAnnualConsumptionKwh = View.ElectricityUsageView.UsageInKwh,
                                        GasAnnualConsumptionKwh = View.GasUsageView.UsageInKwh,
                                        ElectricityPaymentMethod = View.ElectricityUsageView.PaymentMethod,

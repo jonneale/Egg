@@ -66,10 +66,5 @@ namespace uSwitch.Energy.Silverlight.Presenters
 				View.SelectedPlan = plans.First();
 			}));
 		}
-
-		public override void SelectPlan(Plan plan)
-		{
-			
-		}
 	}
 }

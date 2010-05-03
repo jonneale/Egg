@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -24,7 +25,75 @@ namespace uSwitch.Energy.Silverlight
 		public event Action<Plan> PlanSelected = plan => { };
 		public event Action<string> PaymentMethodSelected = paymentMethod => { };
 
-	    public string HeaderText
+		public bool IsVisible
+		{
+			get
+			{
+				return Visibility == Visibility.Visible;
+			}
+			set
+			{
+				Visibility = value ? Visibility.Visible : Visibility.Collapsed;
+			}
+		}
+
+		public double Amount
+		{
+			get
+			{
+				return double.Parse(Regex.Match(usageAmountTextbox.Text, @"\d.").Value);
+			}
+			set
+			{
+				usageAmountTextbox.Text = value.ToString();
+			}
+		}
+
+		public bool IsInKwh
+		{
+			get
+			{
+				return Regex.Match(usageAmountTextbox.Text, @"Kwh", RegexOptions.IgnorePatternWhitespace).Success;
+			}
+		}
+
+		public bool IsTransparent
+		{
+			get
+			{
+				return Opacity == 0;
+			}
+			set
+			{
+				Opacity = value ? 1 : 0;
+			}
+		}
+
+		public IEnumerable<string> TimePeriods
+		{
+			get
+			{
+				return (IEnumerable<string>) timePeriodComboBox.ItemsSource;
+			}
+			set
+			{
+				timePeriodComboBox.ItemsSource = value;
+			}
+		}
+
+		public string SelectedTimePeriod
+		{
+			get
+			{
+				return (string) timePeriodComboBox.SelectedItem;
+			}
+			set
+			{
+				timePeriodComboBox.SelectedItem = TimePeriods.Where(x => x.Equals(value)).Single();
+			}
+		}
+
+		public string HeaderText
 	    {
 	        get
 	        {
@@ -35,12 +104,6 @@ namespace uSwitch.Energy.Silverlight
                 consumptionHeader.Text = value;
             }
 	    }
-
-		public bool HasGas
-		{
-			get { throw new NotImplementedException(); }
-			set { throw new NotImplementedException(); }
-		}
 
 		public string Region
 		{
@@ -151,7 +214,7 @@ namespace uSwitch.Energy.Silverlight
 			planCombo.SelectionChanged += PlanComboChanged;
 			paymentMethodCombo.SelectionChanged += PaymentMethodComboChanged;
 
-            usageTextBlock.Text = string.Format("{0} usage", Product);
+            usageTextBlock.Text = string.Format("{0} spend", Product);
 
 			presenter.Loaded();
 		}

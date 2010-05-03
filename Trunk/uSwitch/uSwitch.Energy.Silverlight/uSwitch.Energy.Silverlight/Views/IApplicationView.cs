@@ -12,6 +12,10 @@ namespace uSwitch.Energy.Silverlight.Views
 
         bool HasGas { get; set; }
 
+		bool HasEconomy7 { get; set; }
+
+		string PaymentMethod { get; set; }
+
 		event Action<string> FindRegionPressed;
 
 	    event Action<bool> HasGasChanged;
