@@ -30,5 +30,9 @@ namespace BensBoxing.Domain
             get;
             set;
         }
+		public virtual Record Record
+		{
+			get; set;
+		}
     }
 }

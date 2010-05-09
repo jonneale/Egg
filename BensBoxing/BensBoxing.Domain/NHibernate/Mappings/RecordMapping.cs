@@ -15,7 +15,7 @@ namespace BensBoxing.Domain.NHibernate.Mappings
             Map(x => x.Lost);
             Map(x => x.Drawn);
             Map(x => x.KO);
-            Map(x => x.BoxerId);
+        	HasOne(x => x.Boxer);
         }
     }
 }

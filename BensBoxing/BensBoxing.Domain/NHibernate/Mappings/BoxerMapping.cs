@@ -11,9 +11,10 @@ namespace BensBoxing.Domain.NHibernate.Mappings
         public BoxerMapping()
         {
             Id(x => x.Id);
-            Map(x => x.DateOfBirth);
+        	Map(x => x.DateOfBirth);
             Map(x => x.FirstName);
             Map(x => x.LastName);
+        	HasOne(x => x.Record);
             HasManyToMany(x => x.Matches)
                 .Table("Boxer_Match")
                 .ParentKeyColumn("boxerid")

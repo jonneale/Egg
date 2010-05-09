@@ -7,11 +7,6 @@ namespace BensBoxing.Domain
 {
     public class Record : Entity
     {
-        public virtual int BoxerId
-        {
-            get;
-            set;
-        }
         public virtual int Won
         {
             get;
@@ -32,5 +27,9 @@ namespace BensBoxing.Domain
             get;
             set;
         }
+		public virtual Boxer Boxer
+		{
+			get; set;
+		}
     }
 }
