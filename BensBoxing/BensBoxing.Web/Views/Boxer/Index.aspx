@@ -10,7 +10,6 @@
 
     <table>
         <tr>
-            <th></th>
             <th>
                 FirstName
             </th>
@@ -29,17 +28,13 @@
     
         <tr>
             <td>
-                <%= Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %> |
-                <%= Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })%>
-            </td>
-            <td>
                 <%= Html.Encode(item.FirstName) %>
             </td>
             <td>
                 <%= Html.Encode(item.LastName) %>
             </td>
             <td>
-                <%= Html.Encode(String.Format("{0:g}", item.DateOfBirth)) %>
+                <%= Html.Encode(String.Format("{0:g}", item.DateOfBirth))%>
             </td>
             <td>
                 <%= Html.Encode(item.Id) %>

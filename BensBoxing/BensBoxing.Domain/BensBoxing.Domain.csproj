@@ -87,6 +87,8 @@
     <Compile Include="NHibernate\Configure.cs" />
     <Compile Include="NHibernate\Mappings\BoxerMapping.cs" />
     <Compile Include="NHibernate\Mappings\MatchMapping.cs" />
+    <Compile Include="NHibernate\Mappings\RecordMapping.cs" />
+    <Compile Include="Record.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Repository.cs" />
   </ItemGroup>
