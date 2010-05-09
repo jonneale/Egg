@@ -12,7 +12,7 @@ namespace BensBoxing.Domain.NHibernate.Mappings
         {
             Id(x => x.Id);
             Map(x => x.Location);
-            Map(x => x.MatchDate);
+        	Map(x => x.MatchDate).Nullable();
             HasManyToMany(x => x.Boxers)
                 .Table("Boxer_Match")
                 .ParentKeyColumn("matchid")
