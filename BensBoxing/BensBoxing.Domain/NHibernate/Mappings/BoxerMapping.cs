@@ -11,7 +11,7 @@ namespace BensBoxing.Domain.NHibernate.Mappings
         public BoxerMapping()
         {
             Id(x => x.Id);
-        	Map(x => x.DateOfBirth);
+        	Map(x => x.DateOfBirth).Nullable();
             Map(x => x.FirstName);
             Map(x => x.LastName);
         	HasOne(x => x.Record);
