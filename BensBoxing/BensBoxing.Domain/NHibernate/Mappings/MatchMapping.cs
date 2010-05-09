@@ -6,18 +6,17 @@ using FluentNHibernate.Mapping;
 
 namespace BensBoxing.Domain.NHibernate.Mappings
 {
-    public class BoxerMapping : ClassMap<Boxer>
+    public class MatchMapping : ClassMap<Match>
     {
-        public BoxerMapping()
+        public MatchMapping()
         {
             Id(x => x.Id);
-            Map(x => x.DateOfBirth);
-            Map(x => x.FirstName);
-            Map(x => x.LastName);
-            HasManyToMany(x => x.Matches)
+            Map(x => x.Location);
+            Map(x => x.MatchDate);
+            HasManyToMany(x => x.Boxers)
                 .Table("Boxer_Match")
-                .ParentKeyColumn("boxerid")
-                .ChildKeyColumn("matchid")
+                .ParentKeyColumn("matchid")
+                .ChildKeyColumn("boxerid")
                 .AsSet()
                 .Cascade.All();
         }

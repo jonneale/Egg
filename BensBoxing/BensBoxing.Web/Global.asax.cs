@@ -30,6 +30,13 @@ namespace BensBoxing.Web
             Configure.Setup();
 
             RegisterRoutes(RouteTable.Routes);
+
+            this.EndRequest += new EventHandler(MvcApplication_EndRequest);
+        }
+
+        void MvcApplication_EndRequest(object sender, EventArgs e)
+        {
+            
         }
     }
 }

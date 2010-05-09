@@ -15,7 +15,7 @@ namespace BensBoxing.Domain.NHibernate
         public static void Setup()
         {
             _sessionFactory = Fluently.Configure()
-                .Database(MySQLConfiguration.Standard.ConnectionString(cs => cs.FromConnectionStringWithKey("BensBoxing")
+                .Database(MsSqlConfiguration.MsSql2008.ConnectionString(cs => cs.FromConnectionStringWithKey("BensBoxing")
                 ))
                 .Mappings(m =>
                   m.FluentMappings.AddFromAssemblyOf<Boxer>())

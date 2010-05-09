@@ -5,27 +5,21 @@ using System.Text;
 
 namespace BensBoxing.Domain
 {
-    public class Boxer : Entity
+    public class Match : Entity
     {
-        public virtual string FirstName
+        public virtual DateTime MatchDate
         {
             get;
             set;
         }
 
-        public virtual string LastName
+        public virtual ICollection<Boxer> Boxers
         {
             get;
             set;
         }
 
-        public virtual DateTime DateOfBirth
-        {
-            get;
-            set;
-        }
-
-        public virtual ICollection<Match> Matches
+        public virtual string Location
         {
             get;
             set;
