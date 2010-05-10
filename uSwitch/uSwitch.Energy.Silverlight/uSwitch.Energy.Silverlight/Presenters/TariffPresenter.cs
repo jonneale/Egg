@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Threading;
@@ -8,6 +9,7 @@ using uSwitch.Energy.Silverlight.Model;
 using uSwitch.Energy.Silverlight.Queries;
 using uSwitch.Energy.Silverlight.Rest;
 using uSwitch.Energy.Silverlight.Views;
+using uSwitch.Energy.Silverlight.Views.PresentationModel;
 
 namespace uSwitch.Energy.Silverlight.Presenters
 {
@@ -35,14 +37,26 @@ namespace uSwitch.Energy.Silverlight.Presenters
         {
             _view.IsVisible = true;
 
-            _view.ElectricityUnitRates = string.Format("Current electricity rates: {0}",
-                                                       electricity.Rates.ElementAt(0).PencePerkWh);
+		    List<RateViewItem> electricityRates = GetRateItems(electricity);
+		    _view.SelectedPlanElectricityRates = electricityRates.ToArray();
 
-            _view.GasUnitRates = string.Format("Current electricity rates: {0}",
-                                                       electricity.Rates.ElementAt(0).PencePerkWh);
+            List<RateViewItem> gasRates = GetRateItems(electricity);
+            _view.SelectedPlanGasRates = gasRates.ToArray();
         }
 
-		private void ResultSelectedCallBack(ResultSelected resultSelected)
+        private static List<RateViewItem> GetRateItems(Tariff tariff)
+        {
+            var counter = 0;
+            var electricityRates = new List<RateViewItem>();
+            foreach (var rate in tariff.Rates)
+            {
+                electricityRates.Add(new RateViewItem(counter, rate));
+                counter++;
+            }
+            return electricityRates;
+        }
+
+        private void ResultSelectedCallBack(ResultSelected resultSelected)
 		{
 			var queryElectricity = new GetTariffInfoForPlan(resultSelected.SupplierName,
 				resultSelected.PlanKey,

@@ -24,7 +24,12 @@ namespace uSwitch.Energy.Silverlight.Model
 			return new[] {OneMonth, ThreeMonth, SixMonth, OneYear};
 		}
 
-		public static double CalculateCostOverMonth(string period, double amount)
+        public static double CalculateCostOverYear(string period, double amount)
+        {
+            return CalculateCostOverMonth(period, amount)*12;
+        }
+
+	    public static double CalculateCostOverMonth(string period, double amount)
 		{
 			switch (period)
 			{
@@ -57,5 +62,10 @@ namespace uSwitch.Energy.Silverlight.Model
 
 			throw new ArgumentOutOfRangeException("period", "Period not reconised");
 		}
+
+        public static double CalculateKwhOverYear(string period, double amount)
+        {
+            return CalculateKwhOverMonth(period, amount);
+        }
 	}
 }

@@ -37,19 +37,24 @@ namespace uSwitch.Energy.Silverlight
 			}
 		}
 
-		public double Amount
+		public string AmountText
 		{
 			get
 			{
-				return double.Parse(Regex.Match(usageAmountTextbox.Text, @"\d.").Value);
+                return usageAmountTextbox.Text;
 			}
 			set
 			{
-				usageAmountTextbox.Text = value.ToString();
+				usageAmountTextbox.Text = value;
 			}
 		}
 
-		public bool IsInKwh
+        public double CalculatedAnnualSpend
+        {
+            get; set;
+        }
+
+	    public bool IsInKwh
 		{
 			get
 			{
@@ -183,7 +188,7 @@ namespace uSwitch.Energy.Silverlight
 			}
 		}
 
-	    public double UsageInKwh
+	    public double CalculatedUsageInKwh
 	    {
 	        get
 	        {

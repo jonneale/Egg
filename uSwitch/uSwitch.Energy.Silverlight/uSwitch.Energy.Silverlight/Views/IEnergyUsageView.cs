@@ -65,16 +65,21 @@ namespace uSwitch.Energy.Silverlight.Views
 			get; set;
 		}
 
-	    double UsageInKwh
+	    double CalculatedUsageInKwh
 	    { 
             get; set;
 	    }
 
-		double Amount
+		string AmountText
 		{
 			get;
 			set;
 		}
+
+        double CalculatedAnnualSpend
+        {
+            get; set;
+        }
 
 		bool IsInKwh
 		{ 

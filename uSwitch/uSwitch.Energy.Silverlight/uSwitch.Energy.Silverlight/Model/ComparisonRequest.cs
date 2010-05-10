@@ -10,6 +10,10 @@ namespace uSwitch.Energy.Silverlight.Model
 
         public string ElectricitySupplierName { get; set; }
 
+        public double ElectricityMonthlySpend { get; set; }
+
+        public double ElectricityAnnualSpend { get; set; }
+
         public double ElectricityAnnualConsumptionKwh { get; set; }
 
         public double GasAnnualConsumptionKwh { get; set; }
@@ -27,5 +31,9 @@ namespace uSwitch.Energy.Silverlight.Model
         public string GasPaymentMethod { get; set; }
 
         public double GasMonthlySpend { get; set; }
+
+        public double GasAnnualSpend { get; set; }
+
+        public string Ref { get; set; }
     }
 }

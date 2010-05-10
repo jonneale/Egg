@@ -19,7 +19,8 @@ namespace uSwitch.Energy.Silverlight.Events.Extensions
 			       		ElectricityAnnualConsumptionKwh = compareEvent.ElectricityAnnualConsumptionKwh,
 			       		GasAnnualConsumptionKwh = compareEvent.GasAnnualConsumptionKwh,
 			       		HasGas = compareEvent.HasGas,
-			       		IsEconomy7 = compareEvent.IsEconomy7
+			       		IsEconomy7 = compareEvent.IsEconomy7,
+                        Ref = "uSwitch"
 			       	};
 		}
 	}

@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using uSwitch.Energy.Silverlight.Model;
 using uSwitch.Energy.Silverlight.Presenters;
 using uSwitch.Energy.Silverlight.Rest;
 using uSwitch.Energy.Silverlight.Views;
+using uSwitch.Energy.Silverlight.Views.PresentationModel;
 
 namespace uSwitch.Energy.Silverlight
 {
@@ -42,34 +34,11 @@ namespace uSwitch.Energy.Silverlight
                 Visibility = value ? Visibility.Visible : Visibility.Collapsed;
             }
         }
-        public string ElectricityUnitRates
-        {
-            get
-            {
-                return electricityUnitRatesTextBlock.Text;
-            }
-            set
-            {
-                electricityUnitRatesTextBlock.Text = value;
-            }
-        }
-        public string GasUnitRates
-        {
-            get
-            {
-                return gasUnitRatesTextBlock.Text;
-            }
-            set
-            {
-                gasUnitRatesTextBlock.Text = value;
-            }
-        }
-
-    	public IEnumerable<Rate> SelectedPlanGasRates
+        public IEnumerable<RateViewItem> SelectedPlanGasRates
     	{
     		get
     		{
-    			return (IEnumerable<Rate>) gasRatesListBox.ItemsSource;
+                return (IEnumerable<RateViewItem>)gasRatesListBox.ItemsSource;
     		}
 			set
 			{
@@ -77,11 +46,11 @@ namespace uSwitch.Energy.Silverlight
 			}
     	}
 
-		public IEnumerable<Rate> SelectedPlanElectricityRates
+        public IEnumerable<RateViewItem> SelectedPlanElectricityRates
 		{
 			get
 			{
-				return (IEnumerable<Rate>)electricityRatesListBox.ItemsSource;
+                return (IEnumerable<RateViewItem>)electricityRatesListBox.ItemsSource;
 			}
 			set
 			{

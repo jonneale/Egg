@@ -83,6 +83,8 @@ namespace uSwitch.Energy.Silverlight.Presenters
 
         public void Compare()
         {
+            EventHub.Publish(new PreCompareEvent());
+
             var compareEvent = new CompareEvent
                                    {
                                        ElectricityPlan = View.ElectricityUsageView.SelectedPlan,
@@ -91,13 +93,29 @@ namespace uSwitch.Energy.Silverlight.Presenters
                                        GasSupplier = View.GasUsageView.SelectedSupplier,
                                        ComparisonPaymentMethod = View.PaymentMethod,
 									   HasGas = View.HasGas,
-                                       ElectricityAnnualConsumptionKwh = View.ElectricityUsageView.UsageInKwh,
-                                       GasAnnualConsumptionKwh = View.GasUsageView.UsageInKwh,
                                        ElectricityPaymentMethod = View.ElectricityUsageView.PaymentMethod,
                                        GasPaymentMethod = View.GasUsageView.PaymentMethod,
                                        Postcode = View.Postcode,
-                                       IsEconomy7 = false
+                                       IsEconomy7 = View.HasEconomy7
                                    };
+
+            if (View.ElectricityUsageView.IsInKwh)
+            {
+                compareEvent.ElectricityAnnualConsumptionKwh = View.ElectricityUsageView.CalculatedUsageInKwh;
+            } else
+            {
+                compareEvent.ElectricityAnnualSpend = View.ElectricityUsageView.CalculatedAnnualSpend;
+            }
+
+            if (View.GasUsageView.IsInKwh)
+            {
+                compareEvent.GasAnnualConsumptionKwh = View.GasUsageView.CalculatedUsageInKwh;
+            }
+            else
+            {
+                compareEvent.GasAnnualSpend = View.GasUsageView.CalculatedAnnualSpend;
+            }
+
             EventHub.Publish(compareEvent);
         }
 

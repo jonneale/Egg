@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Threading;
 using uSwitch.Energy.Silverlight.Core;
 using uSwitch.Energy.Silverlight.Events;
@@ -34,10 +35,25 @@ namespace uSwitch.Energy.Silverlight.Presenters
 
 		public abstract void SelectPaymentMethod(string paymentMethod);
 
+        public void CalculateSpendOrUsage()
+        {
+            if (View.IsInKwh)
+            {
+                View.CalculatedUsageInKwh = GetUsageAmountForYear();
+                View.CalculatedAnnualSpend = 0;
+            } else
+            {
+                View.CalculatedAnnualSpend = GetSpendAmountForYear();
+                View.CalculatedUsageInKwh = 0;
+            }
+        }
+
 		public virtual void Loaded()
 		{
 			View.TimePeriods = TimePeriod.GetAll();
 			View.SelectedTimePeriod = TimePeriod.OneMonth;
+
+		    EventHub.Register<PreCompareEvent>(e => CalculateSpendOrUsage());
 
 			EventHub.Register<RegionFoundEvent>(e =>
 			                                    	{
@@ -53,9 +69,16 @@ namespace uSwitch.Energy.Silverlight.Presenters
 			Dispatcher.BeginInvoke(action);
 		}
 
-		protected virtual double GetSpendAmountForMonth()
+		protected virtual double GetSpendAmountForYear()
 		{
-			return TimePeriod.CalculateCostOverMonth(View.SelectedTimePeriod, View.UsageInKwh);
+            double amount = double.Parse(Regex.Match(View.AmountText, @"\d.").Value);
+            return TimePeriod.CalculateCostOverYear(View.SelectedTimePeriod, amount);
 		}
+
+        protected virtual double GetUsageAmountForYear()
+        {
+            double amount = double.Parse(Regex.Match(View.AmountText, @"\d.").Value);
+            return TimePeriod.CalculateKwhOverYear(View.SelectedTimePeriod, amount);
+        }
 	}
 }

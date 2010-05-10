@@ -9,7 +9,11 @@
                 <ListBox x:Name="gasRatesListBox">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="Hello Gas"></TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Tier}" />
+                                <TextBlock Text="{Binding StartUnit}" />
+                                <TextBlock Text="{Binding Price}" />
+                            </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
@@ -20,7 +24,11 @@
                 <ListBox x:Name="electricityRatesListBox">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="Hello Electricity"></TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Tier}" />
+                                <TextBlock Text="{Binding StartUnit}" />
+                                <TextBlock Text="{Binding Price}" />
+                            </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>

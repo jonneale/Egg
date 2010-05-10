@@ -82,6 +82,7 @@
     <Compile Include="Events\Extensions\CompareEventExtensions.cs" />
     <Compile Include="Events\ComparisonReceivedEvent.cs" />
     <Compile Include="Events\HasGasChangedEvent.cs" />
+    <Compile Include="Events\PreCompareEvent.cs" />
     <Compile Include="Events\RegionFoundEvent.cs" />
     <Compile Include="Events\ResetSessionEvent.cs" />
     <Compile Include="Events\ResultSelected.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Views\IRefineView.cs" />
     <Compile Include="Views\IResultsView.cs" />
     <Compile Include="Views\ITariffView.cs" />
+    <Compile Include="Views\PresentationModel\RateViewItem.cs" />
     <Compile Include="Views\PresentationModel\ResultsViewItem.cs" />
   </ItemGroup>
   <ItemGroup>

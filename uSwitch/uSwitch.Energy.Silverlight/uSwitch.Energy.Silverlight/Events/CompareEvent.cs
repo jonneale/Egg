@@ -63,5 +63,9 @@ namespace uSwitch.Energy.Silverlight.Events
         public bool HasGas { get; set; }
 
         public bool IsEconomy7 { get; set; }
+
+        public double ElectricityAnnualSpend { get; set; }
+
+        public double GasAnnualSpend { get; set; }
     }
 }
