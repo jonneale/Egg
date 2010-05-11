@@ -18,6 +18,8 @@ namespace uSwitch.Energy.Silverlight.Events.Extensions
 			       		GasPaymentMethod = compareEvent.GasPaymentMethod,
 			       		ElectricityAnnualConsumptionKwh = compareEvent.ElectricityAnnualConsumptionKwh,
 			       		GasAnnualConsumptionKwh = compareEvent.GasAnnualConsumptionKwh,
+                        ElectricityAnnualSpend = compareEvent.ElectricityAnnualSpend,
+                        GasAnnualSpend = compareEvent.GasAnnualSpend,
 			       		HasGas = compareEvent.HasGas,
 			       		IsEconomy7 = compareEvent.IsEconomy7,
                         Ref = "uSwitch"

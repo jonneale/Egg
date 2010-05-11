@@ -47,6 +47,8 @@ namespace uSwitch.Energy.Silverlight.Presenters
 
         public void GetResultsForComparison(CompareEvent @event)
         {
+            View.Region = @event.Region;
+
             ComparisonRequest request = @event.ToRequest();
             var compareCommand = new CompareCommand(request);
             compareCommand.Execute(RestClient, c => Dispatcher.BeginInvoke(() => GetResultsForComparisonCallBack(c)));
@@ -54,7 +56,7 @@ namespace uSwitch.Energy.Silverlight.Presenters
 
         public void ResultSelected(ResultsViewItem item)
         {
-            EventHub.Publish(new ResultSelected { PlanName = item.PlanName, SupplierName = item.SupplierName, PlanKey = item.PlanKey});
+            EventHub.Publish(new ResultSelected { PlanName = item.PlanName, SupplierName = item.SupplierName, PlanKey = item.PlanKey, Region = View.Region});
         }
 
         private void GetResultsForComparisonCallBack(Comparison comparison)

@@ -43,5 +43,10 @@ namespace uSwitch.Energy.Silverlight.Views
         {
             get; set;
         }
+
+        bool DisplayResultsOnly
+        {
+            get; set;
+        }
 	}
 }

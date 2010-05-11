@@ -109,6 +109,7 @@ namespace uSwitch.Energy.Silverlight
 	        {
 	            currentSuppliersCanvas.Visibility = value ? Visibility.Visible : Visibility.Collapsed;
                 compareUsageButton.Visibility = value ? Visibility.Visible : Visibility.Collapsed;
+                hasE7AndGasStackPanel.Visibility = value ? Visibility.Visible : Visibility.Collapsed;
 	        }
 	    }
 
@@ -125,6 +126,22 @@ namespace uSwitch.Energy.Silverlight
                 postcodeTextBox.Visibility = visibility;
 	            findRegionButton.Visibility = visibility;
 	            currentRegionTextBlock.Visibility = visibility;
+	        }
+	    }
+
+	    public bool DisplayResultsOnly
+	    {
+	        get
+	        {
+	            return comparisonResultsTable.Visibility == Visibility.Visible;
+	        }
+	        set
+	        {
+	            comparisonResultsTable.Visibility = value ? Visibility.Visible : Visibility.Collapsed;
+                currentSuppliersCanvas.Visibility = value ? Visibility.Collapsed : Visibility.Visible;
+                hasE7AndGasStackPanel.Visibility = value ? Visibility.Collapsed : Visibility.Visible;
+                postcodeStackPanel.Visibility = value ? Visibility.Collapsed : Visibility.Visible;
+                compareUsageButton.Visibility = value ? Visibility.Collapsed : Visibility.Visible;
 	        }
 	    }
 

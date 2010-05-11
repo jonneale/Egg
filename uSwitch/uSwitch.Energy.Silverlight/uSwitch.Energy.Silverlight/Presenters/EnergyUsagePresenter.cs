@@ -80,5 +80,15 @@ namespace uSwitch.Energy.Silverlight.Presenters
             double amount = double.Parse(Regex.Match(View.AmountText, @"\d.").Value);
             return TimePeriod.CalculateKwhOverYear(View.SelectedTimePeriod, amount);
         }
+
+        protected void DeActivateSelectedSupplierEvent()
+        {
+            View.DeActivateSelectedSupplierEvent = true;
+        }
+
+        protected void ActivateSelectedSupplierEvent()
+        {
+            View.DeActivateSelectedSupplierEvent = false;
+        }
 	}
 }

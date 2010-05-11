@@ -32,9 +32,9 @@ namespace uSwitch.Energy.Silverlight.Views.PresentationModel
 
         public RateViewItem(int rateIndex, Rate rate)
         {
-            Tier = (rateIndex + 1).ToString();
+            Tier = "Tier " + (rateIndex + 1) + " - ";
             StartingRateText = string.Format("Prices start at unit: {0} kWh", rate.StartUnit);
-            Price = string.Format("Current price: {0} kWh", rate.PencePerkWh);
+            Price = string.Format("Unit rates: {0} per kWh", rate.PencePerkWh);
         }
     }
 }

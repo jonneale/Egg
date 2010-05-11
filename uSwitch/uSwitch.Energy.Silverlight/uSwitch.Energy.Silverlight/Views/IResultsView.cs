@@ -14,5 +14,7 @@ namespace uSwitch.Energy.Silverlight.Views
         {
             get; set;
         }
+
+        string Region { get; set; }
     }
 }

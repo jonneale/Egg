@@ -67,5 +67,10 @@ namespace uSwitch.Energy.Silverlight.Events
         public double ElectricityAnnualSpend { get; set; }
 
         public double GasAnnualSpend { get; set; }
+
+        public string Region
+        {
+            get; set;
+        }
     }
 }

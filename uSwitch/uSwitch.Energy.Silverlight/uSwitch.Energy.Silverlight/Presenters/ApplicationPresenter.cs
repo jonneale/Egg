@@ -42,18 +42,10 @@ namespace uSwitch.Energy.Silverlight.Presenters
 
             Action<ComparisonReceivedEvent> eventCallBack = c => 
             {
-                View.UsagePanelsVisible = false;
+                View.DisplayResultsOnly = true;
             };
             EventHub.Register(eventCallBack);
-
-        	Action<ComparisonRefinedEvent> comparisonRefinedCallBack = ComparisonRefinedCallBack;
-			EventHub.Register(comparisonRefinedCallBack);
         }
-
-		private void ComparisonRefinedCallBack(ComparisonRefinedEvent @event)
-		{
-			
-		}
 
 		public void FindRegion(string postcode)
 		{
@@ -96,7 +88,8 @@ namespace uSwitch.Energy.Silverlight.Presenters
                                        ElectricityPaymentMethod = View.ElectricityUsageView.PaymentMethod,
                                        GasPaymentMethod = View.GasUsageView.PaymentMethod,
                                        Postcode = View.Postcode,
-                                       IsEconomy7 = View.HasEconomy7
+                                       IsEconomy7 = View.HasEconomy7,
+                                       Region = View.Region
                                    };
 
             if (View.ElectricityUsageView.IsInKwh)

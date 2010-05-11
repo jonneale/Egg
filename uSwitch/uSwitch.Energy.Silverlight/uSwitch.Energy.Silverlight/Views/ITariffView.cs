@@ -9,5 +9,6 @@ namespace uSwitch.Energy.Silverlight.Views
 
         IEnumerable<RateViewItem> SelectedPlanGasRates { get; set; }
         IEnumerable<RateViewItem> SelectedPlanElectricityRates { get; set; }
+        string StandingChargeText { get; set; }
     }
 }

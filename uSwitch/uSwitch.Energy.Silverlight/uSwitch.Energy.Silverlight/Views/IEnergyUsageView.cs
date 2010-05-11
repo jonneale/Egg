@@ -91,5 +91,6 @@ namespace uSwitch.Energy.Silverlight.Views
 		IEnumerable<string> TimePeriods { get; set; }
 
 		string SelectedTimePeriod { get; set; }
+	    bool DeActivateSelectedSupplierEvent { get; set; }
 	}
 }

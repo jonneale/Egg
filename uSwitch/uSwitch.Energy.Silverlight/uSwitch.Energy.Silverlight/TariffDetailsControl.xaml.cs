@@ -23,6 +23,18 @@ namespace uSwitch.Energy.Silverlight
             presenter.Loaded();
         }
 
+        public string StandingChargeText
+        {
+            get
+            {
+                return standingChargeTextBlock.Text;
+            }
+            set
+            {
+                standingChargeTextBlock.Text = value;
+            }
+        }
+
         public bool IsVisible
         {
             get

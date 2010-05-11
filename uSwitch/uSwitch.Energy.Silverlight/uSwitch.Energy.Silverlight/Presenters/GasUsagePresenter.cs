@@ -48,7 +48,9 @@ namespace uSwitch.Energy.Silverlight.Presenters
             var query = new AllSuppliersForProductAndRegionQuery("gas", defaultRegionInfo.Name);
 			query.Execute(RestClient, suppliers => CallDispatcher(() =>
 			{
+                DeActivateSelectedSupplierEvent();
 				View.Suppliers = suppliers;
+                ActivateSelectedSupplierEvent();
 			    View.SelectedSupplier = suppliers.Single(s => s.Name.Equals(View.RegionDefaultSupplierName));
 			}));
 		}

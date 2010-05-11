@@ -31,6 +31,11 @@ namespace uSwitch.Energy.Silverlight
             Loaded += ResultsTableLoaded;
 		}
 
+        public string Region
+        {
+            get; set;
+        }
+
         protected void ResultsTableLoaded(object sender, RoutedEventArgs e)
         {
             var presenter = new ResultsPresenter(this, Dispatcher);

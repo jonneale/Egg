@@ -25,6 +25,11 @@ namespace uSwitch.Energy.Silverlight
 		public event Action<Plan> PlanSelected = plan => { };
 		public event Action<string> PaymentMethodSelected = paymentMethod => { };
 
+        public bool DeActivateSelectedSupplierEvent
+        {
+            get; set;
+        }
+
 		public bool IsVisible
 		{
 			get
@@ -231,7 +236,7 @@ namespace uSwitch.Energy.Silverlight
 
 		void SupplierComboChanged(object sender, SelectionChangedEventArgs e)
 		{
-            if (e.AddedItems.Count > 0)
+            if (e.AddedItems.Count > 0 && !DeActivateSelectedSupplierEvent)
             {
                 SupplierSelected(SelectedSupplier);
             }

@@ -4,34 +4,37 @@
     mc:Ignorable="d" d:DesignWidth="275" d:DesignHeight="138">
     <Canvas>
         <StackPanel Orientation="Horizontal">
-            <StackPanel Orientation="Vertical">
-                <TextBlock x:Name="gasUnitRatesTextBlock" Foreground="White" HorizontalAlignment="Left" />
-                <ListBox x:Name="gasRatesListBox">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Tier}" />
-                                <TextBlock Text="{Binding StartUnit}" />
-                                <TextBlock Text="{Binding Price}" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </StackPanel>
-            <StackPanel Orientation="Vertical">
-                <TextBlock x:Name="electricityUnitRatesTextBlock" Foreground="White" HorizontalAlignment="Left" />
+            <TextBlock x:Name="standingChargeTextBlock" Foreground="White" />
 
-                <ListBox x:Name="electricityRatesListBox">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Tier}" />
-                                <TextBlock Text="{Binding StartUnit}" />
-                                <TextBlock Text="{Binding Price}" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Gas rates" />
+                    <ListBox x:Name="gasRatesListBox" HorizontalAlignment="Left" Background="Transparent">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Tier}" Foreground="White" />
+                                    <TextBlock Text="{Binding StartUnit}" Foreground="White" />
+                                    <TextBlock Text="{Binding Price}" Foreground="White" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Electricity rates" />
+                    <ListBox x:Name="electricityRatesListBox" HorizontalAlignment="Left" Background="Transparent">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Tier}" Foreground="White" />
+                                    <TextBlock Text="{Binding StartUnit}" Foreground="White" />
+                                    <TextBlock Text="{Binding Price}" Foreground="White" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
     </Canvas>

@@ -10,13 +10,13 @@
 			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="currentSuppliersCanvas" Storyboard.TargetProperty="(UIElement.Opacity)">
 				<EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="1"/>
 			</DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="hasGasStackPanel" Storyboard.TargetProperty="(UIElement.Opacity)">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="hasE7AndGasStackPanel" Storyboard.TargetProperty="(UIElement.Opacity)">
                 <EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="1"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
 	</UserControl.Resources>
     <Canvas Background="#FF05005F" x:Name="mainCanvas">
-	    <StackPanel x:Name="LayoutRoot" Canvas.Left="0" Canvas.Top="0">
+	    <StackPanel x:Name="LayoutRoot" Canvas.Left="0" Canvas.Top="0" Orientation="Vertical">
 		    <Canvas Height="87">
 			    <Path Fill="#FF1B1672" Stretch="Fill" Height="43" UseLayoutRounding="False" Data="M58,131.99974 L58,174 C58,174 277.99997,132.00008 469.99994,133.5" Width="413" Canvas.Top="44"/>
 			    <Rectangle Fill="#FF1B1672" Height="46" Width="640"/>
@@ -42,7 +42,7 @@
 		    </StackPanel>
             <local:TariffDetailsControl Visibility="Collapsed" />
             <TextBlock x:Name="currentRegionTextBlock" Foreground="White" />
-		    <StackPanel Opacity="0" x:Name="hasGasStackPanel" Orientation="Horizontal" Margin="30,0,0,10" VerticalAlignment="Center" HorizontalAlignment="Left">
+		    <StackPanel Opacity="0" x:Name="hasE7AndGasStackPanel" Orientation="Horizontal" Margin="30,0,0,10" VerticalAlignment="Center" HorizontalAlignment="Left">
 			    <TextBlock Foreground="White" Text="Do you have gas?" TextWrapping="Wrap" FontSize="13.333" Margin="0,10,10,10"/>
 			    <RadioButton Checked="HasGasRadio_Checked" Foreground="White" HorizontalAlignment="Left" Content="Yes" IsChecked="True" GroupName="HasGas" FontSize="13.333" Margin="0,0,12,0" VerticalAlignment="Center"/>
 			    <RadioButton Checked="HasntGasRadio_Checked"  Foreground="White" Content="No" GroupName="HasGas" FontSize="13.333" VerticalAlignment="Center"/>               
@@ -63,7 +63,7 @@
 		    <Button Margin="480,20,18,0" FontSize="16" Content="Compare" x:Name="compareUsageButton" FontWeight="Bold" />
             
             <local:RefineControl x:Name="refinePanel" Visibility="Collapsed" />
-		    <local:ResultsTable Margin="8,0" d:IsHidden="True" x:Name="comparisonResultsTable" Visibility="Collapsed" />
+		    <local:ResultsTable Margin="8,50,8,0" d:IsHidden="True" x:Name="comparisonResultsTable" Visibility="Collapsed" />
 	    </StackPanel>
     </Canvas>
 </UserControl>

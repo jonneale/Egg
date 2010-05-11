@@ -42,6 +42,8 @@ namespace uSwitch.Energy.Silverlight.Presenters
 
             List<RateViewItem> gasRates = GetRateItems(electricity);
             _view.SelectedPlanGasRates = gasRates.ToArray();
+
+		    _view.StandingChargeText = string.Format("Standing charge: {0:C}", electricity.StandingCharge);
         }
 
         private static List<RateViewItem> GetRateItems(Tariff tariff)
