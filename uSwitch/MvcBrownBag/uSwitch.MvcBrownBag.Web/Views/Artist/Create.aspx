@@ -1,12 +1,5 @@
-﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<uSwitch.MvcBrownBag.Web.Models.CreateArtistView>" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-    <title>Create</title>
-</head>
-<body>
+﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<uSwitch.MvcBrownBag.Web.Models.CreateArtistView>" MasterPageFile="~/Views/Shared/Site.Master" %>
+<asp:Content runat="server" ContentPlaceHolderID="MainContent">
 <% Html.EnableClientValidation(); %> 
 
     <div>
@@ -19,16 +12,22 @@
                 <ul>
                     <li>
                      <%= Html.LabelFor(x => x.Name) %>
-                     <%= Html.TextBoxFor(x => x.Name) %> %>
+                     <%= Html.EditorFor(x => x.Name) %>
                      <%= Html.ValidationMessageFor(x => x.Name) %>
                     </li>
                     
                     <li>
-                        BandName <%= Html.TextBoxFor(x => x.BandName)%>
+                     <%= Html.LabelFor(x => x.BandName) %>
+                     <%= Html.EditorFor(x => x.BandName) %>
+                     <%= Html.ValidationMessageFor(x => x.BandName) %>
+                    </li>
+                    
+                     <li>
+                     <%= Html.LabelFor(x => x.DOB) %>
+                     <%= Html.EditorFor(x => x.DOB) %>
+                     <%= Html.ValidationMessageFor(x => x.DOB) %>
                     </li>
                 </ul>
                 <input type="submit" value="Create" />
         <%} %>
-    </div>
-</body>
-</html>
+</asp:Content>

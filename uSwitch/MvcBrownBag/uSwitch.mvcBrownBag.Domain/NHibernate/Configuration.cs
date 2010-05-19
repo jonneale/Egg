@@ -31,7 +31,7 @@ namespace uSwitch.MvcBrownBag.Domain.NHibernate
 					                     	{
 					                     		_config = x;
 					                     	})
-					.CreateSchema()
+					.UpdateSchema()
 				.BuildSessionFactory();
 		}
 

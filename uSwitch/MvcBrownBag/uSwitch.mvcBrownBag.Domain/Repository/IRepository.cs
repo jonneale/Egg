@@ -1,5 +1,7 @@
 using System.Linq;
 
+using System.Collections.Generic;
+
 namespace uSwitch.MvcBrownBag.Domain.Repository
 {
 	public interface IRepository
@@ -8,5 +10,6 @@ namespace uSwitch.MvcBrownBag.Domain.Repository
 		TEntity Get<TEntity>(object id);
 		void Delete<TEntity>(TEntity entity) where TEntity : Entity;
 		IQueryable<TEntity> Query<TEntity>() where TEntity : Entity;
+        IEnumerable<TEntity> All<TEntity>();
 	}
 }

@@ -19,5 +19,10 @@ namespace uSwitch.MvcBrownBag.Domain
 		{
 			get; set;
 		}
+
+        public virtual string Venue
+        {
+            get; set;
+        }
 	}
 }

@@ -101,21 +101,30 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ActionResults\CSVResult.cs" />
+    <Compile Include="Core\Attributes\PageMetaFilter.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HeaderController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Core\Bootstrapper.cs" />
+    <Compile Include="Core\DataBinders\CreateEventViewDataBinder.cs" />
     <Compile Include="Core\HtmlExtensions.cs" />
     <Compile Include="Core\StructureMapControllerFactory.cs" />
+    <Compile Include="Core\Validation\DateValidator.cs" />
+    <Compile Include="Core\Validation\UnqiueArtistNameAttribute.cs" />
     <Compile Include="Core\WebRegistry.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ArtistName.cs" />
     <Compile Include="Models\CreateArtistView.cs" />
+    <Compile Include="Models\CreateEventView.cs" />
     <Compile Include="Models\HeaderView.cs" />
+    <Compile Include="Models\MasterPageView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -125,7 +134,13 @@
       <DependentUpon>Music.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="Views\Artist\All.aspx" />
     <Content Include="Views\Artist\Create.aspx" />
+    <Content Include="Views\Artist\Detail.aspx" />
+    <Content Include="Views\Artist\DisplayArtist.ascx" />
+    <Content Include="Views\Artist\DisplayTemplates\Artist.ascx" />
+    <Content Include="Views\Event\Create.aspx" />
+    <Content Include="Views\Header\Show.ascx" />
     <Content Include="Web.config" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery-1.4.1.js" />
@@ -154,13 +169,10 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\uSwitch.mvcBrownBag.Domain\uSwitch.mvcBrownBag.Domain.csproj">
+    <ProjectReference Include="..\uSwitch.mvcBrownBag.Domain\uSwitch.MvcBrownBag.Domain.csproj">
       <Project>{C479EA76-BADA-4E04-AF1F-1A9E9CEF9270}</Project>
-      <Name>uSwitch.mvcBrownBag.Domain</Name>
+      <Name>uSwitch.MvcBrownBag.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Attributes\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

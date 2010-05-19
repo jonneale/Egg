@@ -34,5 +34,15 @@ namespace uSwitch.MvcBrownBag.Domain
 			get;
 			set;
 		}
+
+        public virtual DateTime DOB
+        {
+            get; set;
+        }
+
+        public virtual string Comments
+        {
+            get; set;
+        }
 	}
 }

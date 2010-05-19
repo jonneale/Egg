@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using FluentNHibernate.Cfg;
@@ -27,9 +29,26 @@ namespace uSwitch.MvcBrownBag.Domain.NHibernate
 		{
 			return configuration.ExposeConfiguration(x =>
 			                                  	{
-			                                  		var update = new SchemaUpdate(x);
-			                                  		update.Execute(true, false);
+                                                    using (var connection = new SqlConnection(
+                                                            ConfigurationManager.ConnectionStrings["MusicDb"].ConnectionString))
+                                                    {
+                                                        connection.Open();
+                                                        new SchemaExport(x).Execute(true, true, false, connection, null);
+                                                    }
 			                                  	});
 		}
+
+        public static FluentConfiguration UpdateSchema(this FluentConfiguration configuration)
+        {
+            return configuration.ExposeConfiguration(x =>
+            {
+                using (var connection = new SqlConnection(
+                        ConfigurationManager.ConnectionStrings["MusicDb"].ConnectionString))
+                {
+                    connection.Open();
+                    new SchemaUpdate(x).Execute(true, true);
+                }
+            });
+        }
 	}
 }

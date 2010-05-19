@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using NHibernate;
 
@@ -31,5 +33,10 @@ namespace uSwitch.MvcBrownBag.Domain.Repository
 		{
 			return null;
 		}
+
+	    public IEnumerable<TEntity> All<TEntity>()
+	    {
+	        return _session.CreateCriteria(typeof (TEntity)).List<TEntity>();
+	    }
 	}
 }

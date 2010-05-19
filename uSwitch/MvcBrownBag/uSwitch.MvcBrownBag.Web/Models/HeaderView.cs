@@ -1,3 +1,5 @@
+using System;
+
 namespace uSwitch.MvcBrownBag.Web.Models
 {
 	public class HeaderView
@@ -6,5 +8,10 @@ namespace uSwitch.MvcBrownBag.Web.Models
 		{
 			get; set;
 		}
+
+        public DateTime LastUpdated
+        {
+            get; set;
+        }
 	}
 }

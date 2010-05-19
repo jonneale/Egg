@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uSwitch.MvcBrownBag.Web", "uSwitch.MvcBrownBag.Web\uSwitch.MvcBrownBag.Web.csproj", "{26981D15-9D24-4F90-8CF9-27CF74B798B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uSwitch.mvcBrownBag.Domain", "uSwitch.mvcBrownBag.Domain\uSwitch.mvcBrownBag.Domain.csproj", "{C479EA76-BADA-4E04-AF1F-1A9E9CEF9270}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uSwitch.MvcBrownBag.Domain", "uSwitch.mvcBrownBag.Domain\uSwitch.MvcBrownBag.Domain.csproj", "{C479EA76-BADA-4E04-AF1F-1A9E9CEF9270}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

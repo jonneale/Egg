@@ -72,6 +72,7 @@
       <HintPath>..\..\..\Assemblies\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -92,7 +93,7 @@
     <Compile Include="IOC\DomainRegistry.cs" />
     <Compile Include="NHibernate\Configuration.cs" />
     <Compile Include="NHibernate\ConfigurationExtensions.cs" />
-    <Compile Include="NHibernate\Conventions\Entity.cs" />
+    <Compile Include="NHibernate\Conventions\ColumnNullConvertion.cs" />
     <Compile Include="NHibernate\Conventions\ForeignId.cs" />
     <Compile Include="NHibernate\Conventions\HasMany.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

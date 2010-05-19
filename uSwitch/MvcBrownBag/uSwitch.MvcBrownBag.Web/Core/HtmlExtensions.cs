@@ -8,11 +8,13 @@ using System.Web.Mvc.Html;
 
 namespace uSwitch.MvcBrownBag.Web.Core
 {
-	public static class HtmlExtensions
-	{
-		//public static string InputRow<TModel>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProprt> model)
-		//{
-		//    html.TextBoxFor<TModel>(model)
-		//}
-	}
+    //public static class HtmlExtensions
+    //{
+    //    public static string InputRow<TModel>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProporty>> model)
+    //    {
+    //        html.TextBoxFor()
+
+    //        html.TextBoxFor<TModel>(model)
+    //    }
+    //}
 }
