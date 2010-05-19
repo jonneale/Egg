@@ -29,5 +29,12 @@ namespace uSwitch.MvcBrownBag.Web.Core.ActionResults
 
             this.Content = builder.ToString();
         }
+
+		public override void ExecuteResult(ControllerContext context)
+		{
+			base.ExecuteResult(context);
+			context.RequestContext.HttpContext.Response.AddHeader("Content-Disposition", "attachment;filename=myfilename.csv");
+
+		}
     }
 }

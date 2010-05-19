@@ -23,9 +23,16 @@ namespace uSwitch.MvcBrownBag.Web.Controllers
             return View();
         }
 
-        public CsvResult GetCsv(int eventId)
+        public CsvResult GetCsv()
         {
-            var events = _repository.All<Event>();
+            //var events = _repository.All<Event>();
+
+        	var events = new[]
+        	             	{
+        	             		new Event() {Name = "jamie", ShowTime = DateTime.Now},
+        	             		new Event() {Name = "Nicky", ShowTime = DateTime.Now}
+        	             	};
+
             var simpleEvents = events.Select(x => new {EventName = x.Name, x.ShowTime});
             return new CsvResult(simpleEvents);
         }
