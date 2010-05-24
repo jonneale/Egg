@@ -14,7 +14,7 @@ namespace uSwitch.MvcBrownBag.Web.Controllers
         public ActionResult CreatePartner()
         {
 			Response.Cookies.Add(new HttpCookie("partner", "cobrand"));
-            return Redirect("~/artist");
+            return Redirect("~/");
         }
 
 		public ActionResult RemovePartner()
@@ -23,7 +23,7 @@ namespace uSwitch.MvcBrownBag.Web.Controllers
 			requestCookie.Expires = DateTime.Now.AddDays(-1);
 			Response.Cookies.Add(requestCookie);
 
-			return Redirect("~/artist");
+			return Redirect("~/");
 		}
 
     }

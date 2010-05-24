@@ -113,7 +113,7 @@
     <Compile Include="Controllers\HeaderController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Core\Bootstrapper.cs" />
-    <Compile Include="Core\DataBinders\CreateEventViewDataBinder.cs" />
+    <Compile Include="Core\DataBinders\CreateArtistViewModelBinder.cs" />
     <Compile Include="Core\EmailSender.cs" />
     <Compile Include="Core\EventSignupService.cs" />
     <Compile Include="Core\HtmlExtensions.cs" />
@@ -181,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\cobrand.css" />
+    <Content Include="Views\Header\LoggedIn.ascx" />
     <Content Include="Views\Shared\Cobrand.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

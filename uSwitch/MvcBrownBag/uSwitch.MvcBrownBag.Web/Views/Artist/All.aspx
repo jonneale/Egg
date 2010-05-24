@@ -7,7 +7,7 @@
     <ul>
         <% foreach (var artist in Model)
         {
-            Html.RenderPartial("DisplayArtist", artist);
+            Html.RenderPartial("DisplayArtist");
         } %>
     </ul>
 </asp:Content>

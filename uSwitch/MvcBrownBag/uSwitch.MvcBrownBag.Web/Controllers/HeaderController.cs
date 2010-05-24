@@ -7,10 +7,17 @@ namespace uSwitch.MvcBrownBag.Web.Controllers
 {
 	public class HeaderController : Controller
 	{
-        //[OutputCache(Duration = 60, VaryByParam = "None", Location = OutputCacheLocation.Server)]
 		public ViewResult Show()
 		{
-			return View(new HeaderView { LastUpdated = DateTime.Now, LoginName = string.Empty} );
+		    var isLoggedIn = true;
+            var model = new HeaderView { LastUpdated = DateTime.Now, LoginName = string.Empty };
+
+            if (isLoggedIn)
+            {
+                return View("LoggedIn", model);
+            }
+
+            return View(model);
 		}
 	}
 }

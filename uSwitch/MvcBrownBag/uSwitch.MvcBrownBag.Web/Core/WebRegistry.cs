@@ -25,8 +25,7 @@ namespace uSwitch.MvcBrownBag.Web.Core
 
 			For<ISession>()
 				.HttpContextScoped()
-//				.Use(x => x.GetInstance<ISessionFactory>().OpenSession());
-				.Use(x => null);
+				.Use(x => x.GetInstance<ISessionFactory>().OpenSession());
 
 			For<ISessionFactory>()
 				.Use(x => Configuration.GetSessionFactory());
