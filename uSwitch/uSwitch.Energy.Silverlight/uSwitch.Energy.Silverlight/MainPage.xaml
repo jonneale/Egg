@@ -63,7 +63,7 @@
 		    <Button Margin="480,20,18,0" FontSize="16" Content="Compare" x:Name="compareUsageButton" FontWeight="Bold" />
             
             <local:RefineControl x:Name="refinePanel" Visibility="Collapsed" />
-		    <local:ResultsTable Margin="8,50,8,0" d:IsHidden="True" x:Name="comparisonResultsTable" Visibility="Collapsed" />
+		    <local:ResultsTable Margin="8,80,8,0" d:IsHidden="True" x:Name="comparisonResultsTable" Visibility="Collapsed" />
 	    </StackPanel>
     </Canvas>
 </UserControl>

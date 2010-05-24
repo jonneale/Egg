@@ -8,7 +8,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <TextBlock Text="Gas rates" />
+                    <TextBlock Text="Gas rates" Foreground="White" />
                     <ListBox x:Name="gasRatesListBox" HorizontalAlignment="Left" Background="Transparent">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
@@ -22,7 +22,7 @@
                     </ListBox>
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
-                    <TextBlock Text="Electricity rates" />
+                    <TextBlock Text="Electricity rates" Foreground="White" />
                     <ListBox x:Name="electricityRatesListBox" HorizontalAlignment="Left" Background="Transparent">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
